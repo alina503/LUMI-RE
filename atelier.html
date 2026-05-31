@@ -1,8 +1,8 @@
-﻿<html lang="en">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accessories — LUMIÈRE</title>
+    <title>Atelier — LUMIÈRE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,7 +20,7 @@
           <div class="flex justify-between items-center">
             <nav class="flex flex-wrap gap-2 sm:gap-4 items-center">
               <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">LUMIÈRE</a></li>
-              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="atelier.html" class="hover:font-semibold">ATELIER</a></li>
+              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="atelier.html" class="font-semibold">ATELIER</a></li>
               <li class="list-none text-xs sm:text-sm font-light"><a href="beauty.html" class="hover:font-semibold">BEAUTY</a></li>
             </nav>
             <div class="flex gap-4 items-center">
@@ -45,7 +45,7 @@
             <li><a href="sleepwear.html" class="hover:nav-active px-1 py-2">SLEEPWEAR</a></li>
             <li><a href="activewear.html" class="hover:nav-active px-1 py-2">ACTIVEWEAR</a></li>
             <li><a href="beauty.html" class="hover:nav-active px-1 py-2">BEAUTY</a></li>
-            <li><a href="accessories.html" class="nav-active px-1 py-2">ACCESSORIES</a></li>
+            <li><a href="accessories.html" class="hover:nav-active px-1 py-2">ACCESSORIES</a></li>
             <li><a href="swim.html" class="hover:nav-active px-1 py-2">SWIM</a></li>
             <li><a href="the-edit.html" class="hover:nav-active px-1 py-2">THE EDIT</a></li>
           </ul></nav>
@@ -60,13 +60,13 @@
           <li><a href="sleepwear.html" class="block px-6 py-3 hover:bg-gray-50">SLEEPWEAR</a></li>
           <li><a href="activewear.html" class="block px-6 py-3 hover:bg-gray-50">ACTIVEWEAR</a></li>
           <li><a href="beauty.html" class="block px-6 py-3 hover:bg-gray-50">BEAUTY</a></li>
-          <li><a href="accessories.html" class="block px-6 py-3 bg-gray-50 font-semibold">ACCESSORIES</a></li>
+          <li><a href="accessories.html" class="block px-6 py-3 hover:bg-gray-50">ACCESSORIES</a></li>
           <li><a href="swim.html" class="block px-6 py-3 hover:bg-gray-50">SWIM</a></li>
           <li><a href="the-edit.html" class="block px-6 py-3 hover:bg-gray-50">THE EDIT</a></li>
         </ul></nav>
       </div>
     </header>
-    <!-- Search overlay -->
+
     <div id="search-overlay" style="display:none" class="fixed inset-0 z-50 flex-col items-center justify-start bg-white pt-20 px-4">
       <div class="w-full max-w-2xl mx-auto">
         <div class="flex items-center border-b-2 border-black pb-2 mb-6">
@@ -81,19 +81,44 @@
 
     <div id="toast" style="display:none" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-black text-white text-sm px-6 py-3 rounded z-50 flex items-center gap-3">
       <i class="fa-solid fa-circle-check text-green-400"></i>
-      <span id="toast-msg">Produs adăugat în coș!</span>
-      <a href="cart.html" class="underline whitespace-nowrap">Vezi coșul</a>
+      <span id="toast-msg"></span>
+      <a href="cart.html" class="underline whitespace-nowrap">View bag</a>
     </div>
 
-        <main class="w-full mx-auto">
-      <div class="container mx-auto px-4 py-10">
-        <div class="flex flex-wrap gap-3 items-center pb-6">
-          <h1 class="text-2xl sm:text-3xl font-light">ACCESSORIES</h1>
-          <span id="product-count" class="text-gray-500 text-sm"></span>
+    <main class="w-full mx-auto">
+      <div class="relative w-full h-[60vh] bg-[#F4EEE8] flex items-center justify-center overflow-hidden">
+        <div class="text-center px-4">
+          <p class="text-xs tracking-[0.3em] text-gray-500 uppercase mb-3">Lumière Presents</p>
+          <h1 class="text-4xl sm:text-6xl font-light tracking-widest mb-4">ATELIER</h1>
+          <p class="text-sm font-light text-gray-600 max-w-md mx-auto">Where craft meets couture. Exclusive handcrafted pieces, limited editions, and bespoke lingerie made with the finest European fabrics.</p>
         </div>
-        <div id="product-grid"
-          data-category="accessories"
-          class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
+      </div>
+
+      <div class="container mx-auto px-4 py-16 text-center">
+        <p class="text-xs tracking-[0.2em] text-[#8B5A8C] uppercase mb-4">Coming Soon</p>
+        <h2 class="text-2xl font-light mb-6">The Atelier Collection is being crafted</h2>
+        <p class="text-gray-500 text-sm max-w-lg mx-auto mb-10">Our artisans are putting the finishing touches on something extraordinary. Sign up to be the first to know when the Atelier collection launches.</p>
+        <form class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
+          <input type="email" placeholder="Your email address" class="flex-1 border border-gray-300 px-4 py-3 text-sm outline-none focus:border-black transition" />
+          <button type="submit" class="bg-black text-white text-xs tracking-widest px-6 py-3 hover:bg-gray-800 transition">NOTIFY ME</button>
+        </form>
+      </div>
+
+      <div class="container mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-3 gap-8 border-t border-gray-100">
+        <div class="text-center">
+          <i class="fa-solid fa-scissors text-2xl text-[#8B5A8C] mb-4"></i>
+          <h3 class="text-sm font-semibold tracking-widest mb-2">HANDCRAFTED</h3>
+          <p class="text-xs text-gray-500">Each piece is individually crafted by our master lingerie artisans in Paris and Milan.</p>
+        </div>
+        <div class="text-center">
+          <i class="fa-solid fa-gem text-2xl text-[#8B5A8C] mb-4"></i>
+          <h3 class="text-sm font-semibold tracking-widest mb-2">FINEST FABRICS</h3>
+          <p class="text-xs text-gray-500">We source only the most luxurious silks, French laces, and Italian tulles for the Atelier line.</p>
+        </div>
+        <div class="text-center">
+          <i class="fa-solid fa-star text-2xl text-[#8B5A8C] mb-4"></i>
+          <h3 class="text-sm font-semibold tracking-widest mb-2">LIMITED EDITIONS</h3>
+          <p class="text-xs text-gray-500">Every Atelier piece is numbered and limited — true collector's lingerie, never mass-produced.</p>
         </div>
       </div>
     </main>
@@ -101,23 +126,20 @@
     <footer class="bg-gray-100 w-full mt-10">
       <div class="container mx-auto flex flex-col lg:flex-row gap-10 lg:gap-[150px] px-4 pt-10 pb-10">
         <div class="flex flex-col w-full lg:max-w-[500px]">
-          <p class="text-lg font-semibold pb-4">SUBSCRIBE LA NEWSLETTER</p>
+          <p class="text-lg font-semibold pb-4">SUBSCRIBE TO STAY IN THE STORY</p>
           <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Enter your email address" type="email" />
-          <span class="pt-5 pb-10 text-sm">Prin abonare ești de acord cu <a class="text-[#8B5A8C]" href="politica-de-confidentialitate.html">politica noastră de confidențialitate.</a></span>
+          <span class="pt-5 pb-10 text-sm">By subscribing you agree to our <a class="text-[#8B5A8C]" href="politica-de-confidentialitate.html">Privacy Policy.</a></span>
         </div>
-        <div class="w-full pb-10"><nav class="grid grid-cols-1 sm:grid-cols-3 gap-8"><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">HELP</li><li><a href="faq.html" class="hover:text-[#6B3F6E]">FAQ</a></li><li><a href="contact.html" class="hover:text-[#6B3F6E]">Contact Us</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">INFORMATION</li><li><a href="livrare-plata.html" class="hover:text-[#6B3F6E]">Shipping & Payment</a></li><li><a href="returnari.html" class="hover:text-[#6B3F6E]">Returns</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">ASISTENȚĂ</li><li><a href="contul-meu.html" class="hover:text-[#6B3F6E]">My Account</a></li><li><a href="termeni-conditii.html" class="hover:text-[#6B3F6E]">Termeni</a></li></ul></nav></div>
+        <div class="w-full pb-10">
+          <nav class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">HELP</li><li><a href="faq.html" class="hover:text-[#6B3F6E]">FAQ</a></li><li><a href="contact.html" class="hover:text-[#6B3F6E]">Contact Us</a></li></ul>
+            <ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">INFORMATION</li><li><a href="livrare-plata.html" class="hover:text-[#6B3F6E]">Shipping & Payment</a></li><li><a href="returnari.html" class="hover:text-[#6B3F6E]">Returns</a></li></ul>
+            <ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">CUSTOMER CARE</li><li><a href="contul-meu.html" class="hover:text-[#6B3F6E]">My Account</a></li><li><a href="termeni-conditii.html" class="hover:text-[#6B3F6E]">Terms & Conditions</a></li></ul>
+          </nav>
+        </div>
       </div>
     </footer>
     <div class="w-full py-5 border-t border-gray-200"><div class="container mx-auto px-4"><span class="text-sm text-gray-500">© 2025 Lumière. All Rights Reserved.</span></div></div>
-    <script type="module" src="src/pages/category.ts"></script>
+    <script type="module" src="src/pages/shared.ts"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-

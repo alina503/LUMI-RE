@@ -13,17 +13,17 @@ export interface Product {
 }
 
 export type ProductCategory =
-  | 'nou'
-  | 'sutiene'
-  | 'chiloti'
-  | 'lenjerie'
-  | 'pijama'
-  | 'haine-sport'
+  | 'new-in'
+  | 'bras'
+  | 'panties'
+  | 'lingerie'
+  | 'sleepwear'
+  | 'activewear'
   | 'beauty'
-  | 'accesorii'
+  | 'accessories'
   | 'swim'
-  | 'vs-now'
-  | 'pink';
+  | 'edit'
+  | 'atelier';
 
 export interface CartItem {
   id: string;
@@ -33,7 +33,7 @@ export interface CartItem {
   image: string;
   color: string;
   size: string;
-  promo: string;
+  promo?: string;
   key: string;
   qty: number;
 }
@@ -59,11 +59,13 @@ export interface SearchResult {
   id: string;
   name: string;
   subtitle: string;
+  description?: string;
   price: number;
   image: string;
   color: string;
   sizes: string[];
   promo?: string;
+  category?: ProductCategory;
 }
 
 export interface ToastOptions {

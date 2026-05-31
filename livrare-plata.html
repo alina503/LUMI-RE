@@ -1,31 +1,29 @@
-<html lang="ro">
+﻿<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Livrare și Plată — Victoria's Secret</title>
+    <title>Livrare și Plată — LUMIÈRE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/cart.service.js"></script>
-    <script src="js/auth.service.js"></script>
   </head>
   <body class="bg-white">
     <header>
-      <div class="bg-[#f9e2e7] py-2 w-full text-center">
-        <p class="font-extralight text-xs sm:text-sm">SITE-UL OFICIAL VICTORIA'S SECRET — LIVRARE GRATUITĂ DE LA 269 LEI</p>
+      <div class="bg-[#FAF5F0] py-2 w-full text-center">
+        <p class="font-extralight text-xs sm:text-sm">FREE SHIPPING ON ORDERS OVER 269 LEI — — WEAR YOUR STORY.</p>
       </div>
-      <div class="w-full bg-[#eee9ea] py-2">
+      <div class="w-full bg-[#F4EEE8] py-2">
         <div class="container mx-auto px-4 flex justify-between items-center">
           <nav class="flex gap-4 items-center">
-            <li class="list-none border-r-2 border-gray-400 pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">VICTORIA'S SECRET</a></li>
-            <li class="list-none border-r-2 border-gray-400 pr-6 text-xs sm:text-sm font-light"><a href="pink.html" class="hover:font-semibold">PINK</a></li>
-            <li class="list-none text-xs sm:text-sm font-light"><a href="vs-beauty.html" class="hover:font-semibold">BEAUTY</a></li>
+            <li class="list-none border-r-2 border-gray-400 pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">LUMIÈRE</a></li>
+            <li class="list-none border-r-2 border-gray-400 pr-6 text-xs sm:text-sm font-light"><a href="atelier.html" class="hover:font-semibold">ATELIER</a></li>
+            <li class="list-none text-xs sm:text-sm font-light"><a href="beauty.html" class="hover:font-semibold">BEAUTY</a></li>
           </nav>
           <div class="flex gap-4 items-center">
-            <a href="login.html" id="user-nav-link" title="Contul meu"><i id="user-nav-icon" class="fa-regular fa-user text-xl sm:text-2xl cursor-pointer"></i></a>
-            <a href="cos-de-cumparaturi.html" class="relative">
+            <a href="login.html" id="user-nav-link" title="My Account"><i id="user-nav-icon" class="fa-regular fa-user text-xl sm:text-2xl cursor-pointer"></i></a>
+            <a href="cart.html" class="relative">
               <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer"></i>
-              <span class="cart-badge absolute -top-2 -right-2 bg-[#c37989] text-white text-[10px] rounded-full w-4 h-4 font-bold" style="display:none;align-items:center;justify-content:center">0</span>
+              <span class="cart-badge absolute -top-2 -right-2 bg-[#8B5A8C] text-white text-[10px] rounded-full w-4 h-4 font-bold" style="display:none;align-items:center;justify-content:center">0</span>
             </a>
           </div>
         </div>
@@ -38,11 +36,11 @@
 
       <!-- Shipping options -->
       <section class="mb-12">
-        <h2 class="text-lg font-semibold mb-6 flex items-center gap-2"><i class="fa-solid fa-truck text-[#c37989]"></i> Opțiuni de livrare</h2>
+        <h2 class="text-lg font-semibold mb-6 flex items-center gap-2"><i class="fa-solid fa-truck text-[#8B5A8C]"></i> Opțiuni de livrare</h2>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
           <div class="border border-gray-200 p-6 flex flex-col gap-2">
-            <div class="w-10 h-10 rounded-full bg-[#f9e2e7] flex items-center justify-center mb-2">
-              <i class="fa-solid fa-truck text-[#c37989]"></i>
+            <div class="w-10 h-10 rounded-full bg-[#FAF5F0] flex items-center justify-center mb-2">
+              <i class="fa-solid fa-truck text-[#8B5A8C]"></i>
             </div>
             <h3 class="font-semibold text-sm">Livrare Standard</h3>
             <p class="text-gray-500 text-xs">3–5 zile lucrătoare</p>
@@ -50,9 +48,9 @@
             <p class="text-xs text-green-600 font-medium">GRATUITĂ la comenzi peste 269 lei</p>
           </div>
           <div class="border border-[#c37989] p-6 flex flex-col gap-2 relative">
-            <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#c37989] text-white text-[10px] px-3 py-1 tracking-wider">POPULAR</span>
-            <div class="w-10 h-10 rounded-full bg-[#f9e2e7] flex items-center justify-center mb-2">
-              <i class="fa-solid fa-bolt text-[#c37989]"></i>
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#8B5A8C] text-white text-[10px] px-3 py-1 tracking-wider">POPULAR</span>
+            <div class="w-10 h-10 rounded-full bg-[#FAF5F0] flex items-center justify-center mb-2">
+              <i class="fa-solid fa-bolt text-[#8B5A8C]"></i>
             </div>
             <h3 class="font-semibold text-sm">Livrare Express</h3>
             <p class="text-gray-500 text-xs">1–2 zile lucrătoare</p>
@@ -60,8 +58,8 @@
             <p class="text-xs text-gray-400">Comandă înainte de 14:00</p>
           </div>
           <div class="border border-gray-200 p-6 flex flex-col gap-2">
-            <div class="w-10 h-10 rounded-full bg-[#f9e2e7] flex items-center justify-center mb-2">
-              <i class="fa-solid fa-store text-[#c37989]"></i>
+            <div class="w-10 h-10 rounded-full bg-[#FAF5F0] flex items-center justify-center mb-2">
+              <i class="fa-solid fa-store text-[#8B5A8C]"></i>
             </div>
             <h3 class="font-semibold text-sm">Click & Collect</h3>
             <p class="text-gray-500 text-xs">Ridicare din magazin</p>
@@ -70,21 +68,21 @@
           </div>
         </div>
 
-        <div class="bg-[#f9e2e7] p-5 text-sm flex items-start gap-3">
-          <i class="fa-solid fa-circle-info text-[#c37989] mt-0.5 shrink-0"></i>
+        <div class="bg-[#FAF5F0] p-5 text-sm flex items-start gap-3">
+          <i class="fa-solid fa-circle-info text-[#8B5A8C] mt-0.5 shrink-0"></i>
           <p>Comenzile plasate în weekend sau de sărbători legale sunt procesate în prima zi lucrătoare. Termenele de livrare încep din momentul confirmării plății.</p>
         </div>
       </section>
 
       <!-- Tracking -->
       <section class="mb-12">
-        <h2 class="text-lg font-semibold mb-4 flex items-center gap-2"><i class="fa-solid fa-magnifying-glass text-[#c37989]"></i> Urmărirea coletului</h2>
-        <p class="text-sm text-gray-600 mb-3">Vei primi un e-mail cu numărul de urmărire imediat ce comanda este expediată. Poți urmări statusul direct pe site-ul curierului sau în <a href="contul-meu.html" class="text-[#c37989] hover:underline">contul tău</a>.</p>
+        <h2 class="text-lg font-semibold mb-4 flex items-center gap-2"><i class="fa-solid fa-magnifying-glass text-[#8B5A8C]"></i> Urmărirea coletului</h2>
+        <p class="text-sm text-gray-600 mb-3">Vei primi un e-mail cu numărul de urmărire imediat ce comanda este expediată. Poți urmări statusul direct pe site-ul curierului sau în <a href="contul-meu.html" class="text-[#8B5A8C] hover:underline">contul tău</a>.</p>
       </section>
 
       <!-- Payment methods -->
       <section class="mb-12">
-        <h2 class="text-lg font-semibold mb-6 flex items-center gap-2"><i class="fa-solid fa-credit-card text-[#c37989]"></i> Metode de plată</h2>
+        <h2 class="text-lg font-semibold mb-6 flex items-center gap-2"><i class="fa-solid fa-credit-card text-[#8B5A8C]"></i> Metode de plată</h2>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div class="border border-gray-200 p-5 flex flex-col gap-2">
             <div class="flex gap-2 text-2xl text-gray-400 mb-2">
@@ -109,11 +107,11 @@
 
       <!-- Security -->
       <section>
-        <h2 class="text-lg font-semibold mb-4 flex items-center gap-2"><i class="fa-solid fa-lock text-[#c37989]"></i> Securitatea plăților</h2>
+        <h2 class="text-lg font-semibold mb-4 flex items-center gap-2"><i class="fa-solid fa-lock text-[#8B5A8C]"></i> Securitatea plăților</h2>
         <div class="flex flex-col sm:flex-row gap-4 text-sm text-gray-600">
-          <div class="flex items-start gap-2"><i class="fa-solid fa-shield-halved text-[#c37989] mt-0.5"></i><p>Conexiune criptată SSL/TLS pe toate paginile site-ului.</p></div>
-          <div class="flex items-start gap-2"><i class="fa-solid fa-lock text-[#c37989] mt-0.5"></i><p>Nu stocăm datele complete ale cardului pe serverele noastre.</p></div>
-          <div class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-[#c37989] mt-0.5"></i><p>Procesator de plăți certificat PCI-DSS Level 1.</p></div>
+          <div class="flex items-start gap-2"><i class="fa-solid fa-shield-halved text-[#8B5A8C] mt-0.5"></i><p>Conexiune criptată SSL/TLS pe toate paginile site-ului.</p></div>
+          <div class="flex items-start gap-2"><i class="fa-solid fa-lock text-[#8B5A8C] mt-0.5"></i><p>Nu stocăm datele complete ale cardului pe serverele noastre.</p></div>
+          <div class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-[#8B5A8C] mt-0.5"></i><p>Procesator de plăți certificat PCI-DSS Level 1.</p></div>
         </div>
       </section>
     </main>
@@ -121,17 +119,19 @@
     <footer class="bg-gray-100 w-full mt-14">
       <div class="container mx-auto flex flex-col lg:flex-row gap-10 lg:gap-[150px] px-4 pt-10 pb-10">
         <div class="flex flex-col w-full lg:max-w-[500px]">
-          <p class="text-lg font-semibold pb-4">ABONEAZĂ-TE LA NEWSLETTER</p>
+          <p class="text-lg font-semibold pb-4">SUBSCRIBE LA NEWSLETTER</p>
           <form class="newsletter-form flex flex-col gap-0">
-            <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Introdu adresa de email" type="email" />
-            <button type="submit" class="bg-black text-white text-xs py-3 px-6 hover:bg-gray-800 transition mt-2 tracking-wider w-full">ABONEAZĂ-TE</button>
+            <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Enter your email address" type="email" />
+            <button type="submit" class="bg-black text-white text-xs py-3 px-6 hover:bg-gray-800 transition mt-2 tracking-wider w-full">SUBSCRIBE</button>
             <p class="newsletter-msg text-xs mt-2"></p>
           </form>
-          <span class="pt-5 pb-10 text-sm">Prin abonare ești de acord cu <a class="text-[#c37989]" href="politica-de-confidentialitate.html">politica noastră de confidențialitate.</a></span>
+          <span class="pt-5 pb-10 text-sm">Prin abonare ești de acord cu <a class="text-[#8B5A8C]" href="politica-de-confidentialitate.html">politica noastră de confidențialitate.</a></span>
         </div>
-        <div class="w-full pb-10"><nav class="grid grid-cols-1 sm:grid-cols-3 gap-8"><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">AJUTOR</li><li><a href="faq.html" class="hover:text-[#af5071]">FAQ</a></li><li><a href="contact.html" class="hover:text-[#af5071]">Contactează-ne</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">INFORMAȚII</li><li><a href="livrare-plata.html" class="hover:text-[#af5071]">Livrare și plată</a></li><li><a href="returnari.html" class="hover:text-[#af5071]">Returnări</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">ASISTENȚĂ</li><li><a href="contul-meu.html" class="hover:text-[#af5071]">Contul meu</a></li><li><a href="termeni-conditii.html" class="hover:text-[#af5071]">Termeni</a></li></ul></nav></div>
+        <div class="w-full pb-10"><nav class="grid grid-cols-1 sm:grid-cols-3 gap-8"><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">HELP</li><li><a href="faq.html" class="hover:text-[#6B3F6E]">FAQ</a></li><li><a href="contact.html" class="hover:text-[#6B3F6E]">Contact Us</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">INFORMATION</li><li><a href="livrare-plata.html" class="hover:text-[#6B3F6E]">Shipping & Payment</a></li><li><a href="returnari.html" class="hover:text-[#6B3F6E]">Returns</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">ASISTENȚĂ</li><li><a href="contul-meu.html" class="hover:text-[#6B3F6E]">My Account</a></li><li><a href="termeni-conditii.html" class="hover:text-[#6B3F6E]">Termeni</a></li></ul></nav></div>
       </div>
     </footer>
-    <div class="w-full py-5 border-t border-gray-200"><div class="container mx-auto px-4"><span class="text-sm text-gray-500">© 2024 Victoria's Secret. All Rights Reserved.</span></div></div>
+    <div class="w-full py-5 border-t border-gray-200"><div class="container mx-auto px-4"><span class="text-sm text-gray-500">© 2025 Lumière. All Rights Reserved.</span></div></div>
+  
+    <script type="module" src="src/pages/shared.ts"></script>
   </body>
 </html>

@@ -1,37 +1,35 @@
-<html lang="ro">
+﻿<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Produs — Victoria's Secret</title>
+    <title>Product — LUMIÈRE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/cart.service.js"></script>
-    <script src="js/auth.service.js"></script>
   </head>
   <body>
     <header>
-      <div class="bg-[#f9e2e7] py-2 w-full">
+      <div class="bg-[#FAF5F0] py-2 w-full">
         <div class="font-extralight text-xs sm:text-sm mx-auto flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 text-center px-4">
-          <p>SITE-UL OFICIAL VICTORIA'S SECRET LIVRARE GRATUITĂ DE LA 269 LEI</p>
-          <a class="text-xs sm:text-sm bg-transparent hover:bg-[#e8e3e4] border-black border px-3 py-[3px] rounded-sm whitespace-nowrap" href="#">VEZI OFERTELE</a>
+          <p>FREE SHIPPING ON ORDERS OVER 269 LEI — WEAR YOUR STORY.</p>
+          <a class="text-xs sm:text-sm bg-transparent hover:bg-[#F4EEE8] border-black border px-3 py-[3px] rounded-sm whitespace-nowrap" href="#">VIEW OFFERS</a>
         </div>
       </div>
-      <div class="w-full bg-[#eee9ea] py-2">
+      <div class="w-full bg-[#F4EEE8] py-2">
         <div class="container mx-auto px-4">
           <div class="flex justify-between items-center">
             <nav class="flex flex-wrap gap-2 sm:gap-4 items-center">
-              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">VICTORIA'S SECRET</a></li>
-              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="pink.html" class="hover:font-semibold">PINK</a></li>
-              <li class="list-none text-xs sm:text-sm font-light"><a href="vs-beauty.html" class="hover:font-semibold">BEAUTY</a></li>
+              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">LUMIÈRE</a></li>
+              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="atelier.html" class="hover:font-semibold">ATELIER</a></li>
+              <li class="list-none text-xs sm:text-sm font-light"><a href="beauty.html" class="hover:font-semibold">BEAUTY</a></li>
             </nav>
             <div class="flex gap-4 items-center">
               <button aria-label="Meniu" id="hamburger" class="sm:hidden text-xl"><i class="fa-solid fa-bars"></i></button>
               <button id="search-toggle" aria-label="Căutare" title="Căutare"><i class="fa-solid fa-magnifying-glass text-xl sm:text-2xl cursor-pointer"></i></button>
               <a href="login.html" id="user-nav-link" title="Contul meu"><i id="user-nav-icon" class="fa-regular fa-user text-xl sm:text-2xl cursor-pointer"></i></a>
-              <a href="cos-de-cumparaturi.html" title="Coș de cumpărături" class="relative">
-                <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer text-[#c37989]"></i>
-                <span class="cart-badge absolute -top-2 -right-2 bg-[#c37989] text-white text-[10px] rounded-full w-4 h-4 font-bold" style="display:none;align-items:center;justify-content:center">0</span>
+              <a href="cart.html" title="Shopping bag" class="relative">
+                <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer text-[#8B5A8C]"></i>
+                <span class="cart-badge absolute -top-2 -right-2 bg-[#8B5A8C] text-white text-[10px] rounded-full w-4 h-4 font-bold" style="display:none;align-items:center;justify-content:center">0</span>
               </a>
             </div>
           </div>
@@ -39,34 +37,34 @@
       </div>
       <div class="w-full border-b border-gray-200 hidden sm:block">
         <div class="container mx-auto px-4">
-          <nav aria-label="Categorii produse">
+          <nav aria-label="Product categories">
             <ul class="flex justify-between text-sm font-light py-3">
-              <li><a href="nou.html" class="hover:nav-active px-1 py-2">NOU</a></li>
-              <li><a href="sutiene.html" class="hover:nav-active px-1 py-2">SUTIENE</a></li>
-              <li><a href="chiloti.html" class="hover:nav-active px-1 py-2">CHILOȚI</a></li>
-              <li><a href="lenjerie.html" class="hover:nav-active px-1 py-2">LENJERIE</a></li>
-              <li><a href="pijama.html" class="hover:nav-active px-1 py-2">PIJAMA</a></li>
-              <li><a href="haine-sport.html" class="hover:nav-active px-1 py-2">HAINE SPORT</a></li>
-              <li><a href="vs-beauty.html" class="hover:nav-active px-1 py-2">BEAUTY</a></li>
-              <li><a href="accesorii.html" class="hover:nav-active px-1 py-2">ACCESORII</a></li>
+              <li><a href="new-in.html" class="hover:nav-active px-1 py-2">NEW IN</a></li>
+              <li><a href="bras.html" class="hover:nav-active px-1 py-2">BRAS</a></li>
+              <li><a href="panties.html" class="hover:nav-active px-1 py-2">PANTIES</a></li>
+              <li><a href="lingerie.html" class="hover:nav-active px-1 py-2">LINGERIE</a></li>
+              <li><a href="sleepwear.html" class="hover:nav-active px-1 py-2">SLEEPWEAR</a></li>
+              <li><a href="activewear.html" class="hover:nav-active px-1 py-2">ACTIVEWEAR</a></li>
+              <li><a href="beauty.html" class="hover:nav-active px-1 py-2">BEAUTY</a></li>
+              <li><a href="accessories.html" class="hover:nav-active px-1 py-2">ACCESSORIES</a></li>
               <li><a href="swim.html" class="hover:nav-active px-1 py-2">SWIM</a></li>
-              <li><a href="vs-now.html" class="hover:nav-active px-1 py-2">VS NOW</a></li>
+              <li><a href="the-edit.html" class="hover:nav-active px-1 py-2">THE EDIT</a></li>
             </ul>
           </nav>
         </div>
       </div>
       <div id="mobile-menu" class="sm:hidden bg-white border-b border-gray-200 shadow-md">
         <nav><ul class="flex flex-col text-sm font-light divide-y divide-gray-100">
-          <li><a href="nou.html" class="block px-6 py-3 hover:bg-gray-50">NOU</a></li>
-          <li><a href="sutiene.html" class="block px-6 py-3 hover:bg-gray-50">SUTIENE</a></li>
-          <li><a href="chiloti.html" class="block px-6 py-3 hover:bg-gray-50">CHILOȚI</a></li>
-          <li><a href="lenjerie.html" class="block px-6 py-3 hover:bg-gray-50">LENJERIE</a></li>
-          <li><a href="pijama.html" class="block px-6 py-3 hover:bg-gray-50">PIJAMA</a></li>
-          <li><a href="haine-sport.html" class="block px-6 py-3 hover:bg-gray-50">HAINE SPORT</a></li>
-          <li><a href="vs-beauty.html" class="block px-6 py-3 hover:bg-gray-50">BEAUTY</a></li>
-          <li><a href="accesorii.html" class="block px-6 py-3 hover:bg-gray-50">ACCESORII</a></li>
+          <li><a href="new-in.html" class="block px-6 py-3 hover:bg-gray-50">NEW IN</a></li>
+          <li><a href="bras.html" class="block px-6 py-3 hover:bg-gray-50">BRAS</a></li>
+          <li><a href="panties.html" class="block px-6 py-3 hover:bg-gray-50">PANTIES</a></li>
+          <li><a href="lingerie.html" class="block px-6 py-3 hover:bg-gray-50">LINGERIE</a></li>
+          <li><a href="sleepwear.html" class="block px-6 py-3 hover:bg-gray-50">SLEEPWEAR</a></li>
+          <li><a href="activewear.html" class="block px-6 py-3 hover:bg-gray-50">ACTIVEWEAR</a></li>
+          <li><a href="beauty.html" class="block px-6 py-3 hover:bg-gray-50">BEAUTY</a></li>
+          <li><a href="accessories.html" class="block px-6 py-3 hover:bg-gray-50">ACCESSORIES</a></li>
           <li><a href="swim.html" class="block px-6 py-3 hover:bg-gray-50">SWIM</a></li>
-          <li><a href="vs-now.html" class="block px-6 py-3 hover:bg-gray-50">VS NOW</a></li>
+          <li><a href="the-edit.html" class="block px-6 py-3 hover:bg-gray-50">THE EDIT</a></li>
         </ul></nav>
       </div>
     </header>
@@ -76,11 +74,11 @@
       <div class="w-full max-w-2xl mx-auto">
         <div class="flex items-center border-b-2 border-black pb-2 mb-6">
           <i class="fa-solid fa-magnifying-glass text-gray-400 mr-3"></i>
-          <input id="search-input" type="text" placeholder="Cauta produse..." class="flex-1 text-lg outline-none" autocomplete="off" />
+          <input id="search-input" type="text" placeholder="Search products..." class="flex-1 text-lg outline-none" autocomplete="off" />
           <button id="search-close" class="ml-4 text-2xl text-gray-400 hover:text-black">&times;</button>
         </div>
         <div id="search-results" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
-        <p id="search-empty" class="text-gray-500 text-center mt-8" style="display:none">Niciun produs gasit.</p>
+        <p id="search-empty" class="text-gray-500 text-center mt-8" style="display:none">No products found.</p>
       </div>
     </div>
 
@@ -92,19 +90,19 @@
     </div>
 
     <!-- Not found state -->
-    <div id="not-found" class="hidden min-h-[60vh] flex items-center justify-center text-center px-4 py-16">
+    <div id="not-found" class="hidden min-h-[60vh] items-center justify-center text-center px-4 py-16">
       <div>
         <i class="fa-solid fa-circle-exclamation text-4xl text-gray-300 mb-4 block"></i>
-        <h2 class="text-xl font-light mb-2">Produsul nu a fost găsit</h2>
-        <p class="text-sm text-gray-500 mb-6">Produsul pe care îl cauți nu există sau nu mai este disponibil.</p>
-        <a href="index.html" class="bg-black text-white px-8 py-3 text-sm hover:bg-gray-800 transition">MERGI LA HOMEPAGE</a>
+        <h2 class="text-xl font-light mb-2">Product not found</h2>
+        <p class="text-sm text-gray-500 mb-6">The product you're looking for doesn't exist or is no longer available.</p>
+        <a href="index.html" class="bg-black text-white px-8 py-3 text-sm hover:bg-gray-800 transition">BACK TO HOME</a>
       </div>
     </div>
 
     <main id="product-main" class="hidden container mx-auto px-4 py-10">
       <!-- Breadcrumb -->
       <nav class="text-xs text-gray-400 mb-8 flex items-center gap-2">
-        <a href="index.html" class="hover:text-black">Acasă</a>
+        <a href="index.html" class="hover:text-black">Home</a>
         <span>/</span>
         <a id="breadcrumb-cat" href="#" class="hover:text-black capitalize"></a>
         <span>/</span>
@@ -124,7 +122,7 @@
 
         <!-- Info -->
         <div class="lg:w-96 shrink-0 flex flex-col">
-          <p class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-2">VICTORIA'S SECRET</p>
+          <p class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-2">LUMIÈRE</p>
           <h1 id="pd-name" class="text-2xl sm:text-3xl font-light mb-1"></h1>
           <p id="pd-subtitle" class="text-sm text-gray-500 mb-3"></p>
 
@@ -137,7 +135,7 @@
           </div>
 
           <p id="pd-price" class="text-2xl font-semibold mb-1"></p>
-          <p id="pd-promo" class="text-[#c37989] text-sm mb-4 hidden"></p>
+          <p id="pd-promo" class="text-[#8B5A8C] text-sm mb-4 hidden"></p>
 
           <!-- Color -->
           <div id="pd-color-wrap" class="mb-4 hidden">
@@ -147,16 +145,16 @@
           <!-- Sizes -->
           <div id="pd-sizes-wrap" class="mb-5">
             <div class="flex justify-between items-center mb-2">
-              <p class="text-xs text-gray-600">Mărime</p>
-              <button class="text-xs text-[#c37989] hover:text-[#af5071] underline">Ghid mărimi</button>
+              <p class="text-xs text-gray-600">Size</p>
+              <button class="text-xs text-[#8B5A8C] hover:text-[#6B3F6E] underline">Size Guide</button>
             </div>
             <div id="pd-size-btns" class="flex flex-wrap gap-2"></div>
-            <p id="pd-size-error" class="text-[#c37989] text-xs mt-2 hidden">Selectează o mărime.</p>
+            <p id="pd-size-error" class="text-[#8B5A8C] text-xs mt-2 hidden">Please select a size.</p>
           </div>
 
           <!-- Quantity -->
           <div class="flex items-center gap-4 mb-6">
-            <p class="text-xs text-gray-600">Cantitate</p>
+            <p class="text-xs text-gray-600">Quantity</p>
             <div class="flex items-center border border-gray-300">
               <button id="pd-qty-minus" class="w-9 h-9 flex items-center justify-center border-r border-gray-300 hover:bg-gray-50 text-lg leading-none transition">−</button>
               <span id="pd-qty-val" class="w-9 h-9 flex items-center justify-center text-sm">1</span>
@@ -167,26 +165,26 @@
           <!-- Add to cart -->
           <button id="pd-add-btn"
             class="bg-black text-white text-sm py-4 w-full hover:bg-gray-800 transition tracking-wider mb-3">
-            ADAUGĂ ÎN COȘ
+            ADD TO BAG
           </button>
-          <a href="cos-de-cumparaturi.html"
+          <a href="cart.html"
             class="border border-black text-sm py-4 w-full text-center hover:bg-gray-50 transition tracking-wider mb-6 block">
-            MERGI LA COȘ
+            VIEW BAG
           </a>
 
           <!-- Features -->
           <div class="border-t border-gray-200 pt-5 flex flex-col gap-3 text-sm text-gray-600">
             <div class="flex items-center gap-3">
-              <i class="fa-solid fa-truck w-4 text-center text-[#c37989]"></i>
-              <span>Livrare gratuită pentru comenzi peste 269 lei</span>
+              <i class="fa-solid fa-truck w-4 text-center text-[#8B5A8C]"></i>
+              <span>Free shipping on orders over 269 lei</span>
             </div>
             <div class="flex items-center gap-3">
-              <i class="fa-solid fa-rotate-left w-4 text-center text-[#c37989]"></i>
-              <span>Returnare gratuită în 30 de zile</span>
+              <i class="fa-solid fa-rotate-left w-4 text-center text-[#8B5A8C]"></i>
+              <span>Free returns within 30 days</span>
             </div>
             <div class="flex items-center gap-3">
-              <i class="fa-solid fa-lock w-4 text-center text-[#c37989]"></i>
-              <span>Plată securizată SSL</span>
+              <i class="fa-solid fa-lock w-4 text-center text-[#8B5A8C]"></i>
+              <span>Secure SSL payment</span>
             </div>
           </div>
         </div>
@@ -196,32 +194,30 @@
     <footer class="bg-gray-100 w-full mt-10">
       <div class="container mx-auto flex flex-col lg:flex-row gap-10 lg:gap-[150px] px-4 pt-10 sm:pt-14">
         <div class="flex flex-col w-full lg:max-w-[500px]">
-          <p class="text-lg font-semibold pb-4">ABONEAZĂ-TE LA NEWSLETTER PENTRU A FI LA CURENT</p>
+          <p class="text-lg font-semibold pb-4">SUBSCRIBE TO STAY IN THE STORY</p>
           <form class="newsletter-form flex flex-col gap-0">
-            <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Introdu adresa de email" type="email" />
-            <button type="submit" class="bg-black text-white text-xs py-3 px-6 hover:bg-gray-800 transition mt-2 tracking-wider w-full">ABONEAZĂ-TE</button>
+            <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Enter your email address" type="email" />
+            <button type="submit" class="bg-black text-white text-xs py-3 px-6 hover:bg-gray-800 transition mt-2 tracking-wider w-full">SUBSCRIBE</button>
             <p class="newsletter-msg text-xs mt-2"></p>
           </form>
-          <span class="pt-5 pb-10 text-sm">Prin abonare ești de acord cu <a class="text-[#c37989] hover:text-[#ddaeb8]" href="politica-de-confidentialitate.html">politica noastră de confidențialitate.</a></span>
-          <img class="w-full max-w-[400px] pb-7" src="assets/icon/VSFA_220818_-_ANPC_Buttons_1.avif" alt="ANPC" />
-          <img class="w-full max-w-[400px] pb-11" src="assets/icon/VSFA_220818_-_ANPC_Buttons_2.avif" alt="ANPC" />
+          <span class="pt-5 pb-10 text-sm">By subscribing you agree to our <a class="text-[#8B5A8C] hover:text-[#6B3F6E]" href="politica-de-confidentialitate.html">Privacy Policy.</a></span>
         </div>
         <div class="w-full pb-10">
           <nav class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <ul class="flex flex-col gap-4 text-sm">
-              <li class="font-semibold">AJUTOR</li>
-              <li><a href="faq.html" class="hover:text-[#af5071]">FAQ</a></li>
-              <li><a href="contact.html" class="hover:text-[#af5071]">Contactează-ne</a></li>
+              <li class="font-semibold">HELP</li>
+              <li><a href="faq.html" class="hover:text-[#6B3F6E]">FAQ</a></li>
+              <li><a href="contact.html" class="hover:text-[#6B3F6E]">Contact Us</a></li>
             </ul>
             <ul class="flex flex-col gap-4 text-sm">
-              <li class="font-semibold">INFORMAȚII</li>
-              <li><a href="livrare-plata.html" class="hover:text-[#af5071]">Livrare și plată</a></li>
-              <li><a href="returnari.html" class="hover:text-[#af5071]">Returnări</a></li>
+              <li class="font-semibold">INFORMATION</li>
+              <li><a href="livrare-plata.html" class="hover:text-[#6B3F6E]">Shipping & Payment</a></li>
+              <li><a href="returnari.html" class="hover:text-[#6B3F6E]">Returns</a></li>
             </ul>
             <ul class="flex flex-col gap-4 text-sm">
-              <li class="font-semibold">ASISTENȚĂ CLIENȚI</li>
-              <li><a href="contul-meu.html" class="hover:text-[#af5071]">Contul meu</a></li>
-              <li><a href="termeni-conditii.html" class="hover:text-[#af5071]">Termenii</a></li>
+              <li class="font-semibold">CUSTOMER CARE</li>
+              <li><a href="contul-meu.html" class="hover:text-[#6B3F6E]">My Account</a></li>
+              <li><a href="termeni-conditii.html" class="hover:text-[#6B3F6E]">Terms & Conditions</a></li>
             </ul>
           </nav>
         </div>
@@ -229,7 +225,7 @@
     </footer>
     <div class="w-full py-5 border-t border-gray-200">
       <div class="container mx-auto px-4">
-        <span class="text-sm text-gray-500">© 2024 Victoria's Secret. All Rights Reserved.</span>
+        <span class="text-sm text-gray-500">© 2025 Lumière. All Rights Reserved.</span>
       </div>
     </div>
 
@@ -240,9 +236,9 @@
       var selectedSize = null;
 
       var catPages = {
-        sutiene: 'sutiene.html', chiloti: 'chiloti.html', lenjerie: 'lenjerie.html',
-        pijama: 'pijama.html', sport: 'haine-sport.html', beauty: 'vs-beauty.html',
-        accesorii: 'accesorii.html', swim: 'swim.html', nou: 'nou.html',
+        bras: 'bras.html', panties: 'panties.html', lingerie: 'lingerie.html',
+        sleepwear: 'sleepwear.html', activewear: 'activewear.html', beauty: 'beauty.html',
+        accessories: 'accessories.html', swim: 'swim.html', 'new-in': 'new-in.html', edit: 'the-edit.html',
       };
 
       var params = new URLSearchParams(window.location.search);
@@ -260,11 +256,13 @@
         .catch(function () { showNotFound(); });
 
       function showNotFound() {
-        document.getElementById('not-found').classList.remove('hidden');
+        var el = document.getElementById('not-found');
+        el.classList.remove('hidden');
+        el.classList.add('flex');
       }
 
       function renderProduct(p) {
-        document.title = p.name + ' — Victoria\'s Secret';
+        document.title = p.name + ' — LUMIÈRE';
 
         // Breadcrumb
         var catLabel = p.category || 'produse';
@@ -355,7 +353,7 @@
             color: product.color || '', size: selectedSize, promo: product.promo || '',
           });
         }
-        showToast(product.name + ' adăugat în coș!');
+        showToast(product.name + ' added to bag!');
       });
 
       // Header mobile menu
@@ -377,6 +375,7 @@
       });
     })();
     </script>
-    <script src="js/wishlist.service.js"></script>
+  
+    <script type="module" src="src/pages/category.ts"></script>
   </body>
 </html>

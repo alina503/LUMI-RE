@@ -1,24 +1,22 @@
-<html lang="ro">
+﻿<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Comandă Confirmată — Victoria's Secret</title>
+    <title>Comandă Confirmată — LUMIÈRE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/cart.service.js"></script>
-    <script src="js/auth.service.js"></script>
   </head>
   <body class="bg-white">
 
     <header class="border-b border-gray-200">
-      <div class="bg-[#f9e2e7] py-2 w-full text-center">
-        <p class="font-extralight text-xs sm:text-sm">SITE-UL OFICIAL VICTORIA'S SECRET — LIVRARE GRATUITĂ DE LA 269 LEI</p>
+      <div class="bg-[#FAF5F0] py-2 w-full text-center">
+        <p class="font-extralight text-xs sm:text-sm">FREE SHIPPING ON ORDERS OVER 269 LEI — — WEAR YOUR STORY.</p>
       </div>
       <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-        <a href="index.html" class="font-bold tracking-widest text-lg">VICTORIA'S SECRET</a>
+        <a href="index.html" class="font-bold tracking-widest text-lg">LUMIÈRE</a>
         <div class="flex items-center gap-2 text-xs text-gray-500">
-          <i class="fa-solid fa-lock text-[#c37989]"></i>
+          <i class="fa-solid fa-lock text-[#8B5A8C]"></i>
           <span>Plată securizată SSL</span>
         </div>
       </div>
@@ -28,13 +26,13 @@
 
       <!-- Success icon + headline -->
       <div class="text-center mb-10">
-        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#f9e2e7] mb-6">
-          <i class="fa-solid fa-check text-3xl text-[#c37989]"></i>
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#FAF5F0] mb-6">
+          <i class="fa-solid fa-check text-3xl text-[#8B5A8C]"></i>
         </div>
         <h1 class="text-2xl sm:text-3xl font-light mb-2">Comanda ta a fost plasată!</h1>
         <p class="text-gray-500 text-sm">Îți mulțumim pentru cumpărături. Vei primi un e-mail de confirmare în curând.</p>
         <p class="mt-3 text-sm">
-          Numărul comenzii: <strong id="order-id" class="font-mono text-[#c37989]">—</strong>
+          Numărul comenzii: <strong id="order-id" class="font-mono text-[#8B5A8C]">—</strong>
         </p>
       </div>
 
@@ -99,25 +97,37 @@
           class="bg-black text-white text-sm px-10 py-4 hover:bg-gray-800 transition tracking-wide text-center">
           CONTINUĂ CUMPĂRĂTURILE
         </a>
-        <a href="sutiene.html"
+        <a href="bras.html"
           class="border border-black text-sm px-10 py-4 hover:bg-gray-50 transition tracking-wide text-center">
           DESCOPERĂ COLECȚIA
         </a>
       </div>
 
       <!-- Estimated delivery -->
-      <div class="mt-10 bg-[#f9e2e7] p-6 text-center">
-        <i class="fa-solid fa-truck text-[#c37989] text-2xl mb-3 block"></i>
+      <div class="mt-10 bg-[#FAF5F0] p-6 text-center">
+        <i class="fa-solid fa-truck text-[#8B5A8C] text-2xl mb-3 block"></i>
         <p class="text-sm font-medium mb-1">Livrare estimată</p>
         <p id="conf-eta" class="text-gray-600 text-sm"></p>
       </div>
     </main>
 
-    <footer class="bg-gray-100 w-full mt-10 border-t border-gray-200">
-      <div class="container mx-auto px-4 py-6 text-center text-sm text-gray-500">
-        © 2024 Victoria's Secret. All Rights Reserved.
+    <footer class="bg-gray-100 w-full mt-10">
+      <div class="container mx-auto flex flex-col lg:flex-row gap-10 lg:gap-[150px] px-4 pt-10 pb-10">
+        <div class="flex flex-col w-full lg:max-w-[500px]">
+          <p class="text-lg font-semibold pb-4">SUBSCRIBE TO STAY IN THE STORY</p>
+          <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Enter your email address" type="email" />
+          <span class="pt-5 pb-10 text-sm">By subscribing you agree to our <a class="text-[#8B5A8C]" href="politica-de-confidentialitate.html">Privacy Policy.</a></span>
+        </div>
+        <div class="w-full pb-10">
+          <nav class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">HELP</li><li><a href="faq.html" class="hover:text-[#6B3F6E]">FAQ</a></li><li><a href="contact.html" class="hover:text-[#6B3F6E]">Contact Us</a></li></ul>
+            <ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">INFORMATION</li><li><a href="livrare-plata.html" class="hover:text-[#6B3F6E]">Shipping & Payment</a></li><li><a href="returnari.html" class="hover:text-[#6B3F6E]">Returns</a></li></ul>
+            <ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">CUSTOMER CARE</li><li><a href="contul-meu.html" class="hover:text-[#6B3F6E]">My Account</a></li><li><a href="termeni-conditii.html" class="hover:text-[#6B3F6E]">Terms & Conditions</a></li></ul>
+          </nav>
+        </div>
       </div>
     </footer>
+    <div class="w-full py-5 border-t border-gray-200"><div class="container mx-auto px-4"><span class="text-sm text-gray-500">© 2025 Lumière. All Rights Reserved.</span></div></div>
 
     <script>
     (function () {
@@ -175,5 +185,7 @@
         'Până pe ' + eta.toLocaleDateString('ro-RO', opts);
     })();
     </script>
+  
+    <script type="module" src="src/pages/shared.ts"></script>
   </body>
 </html>

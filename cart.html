@@ -1,37 +1,35 @@
-﻿<html lang="ro">
+﻿<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coș de Cumpărături — Victoria's Secret</title>
+    <title>Shopping Bag — LUMIÈRE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/cart.service.js"></script>
-    <script src="js/auth.service.js"></script>
   </head>
   <body>
     <header>
-      <div class="bg-[#f9e2e7] py-2 w-full">
+      <div class="bg-[#FAF5F0] py-2 w-full">
         <div class="font-extralight text-xs sm:text-sm mx-auto flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 text-center px-4">
-          <p>SITE-UL OFICIAL VICTORIA'S SECRET LIVRARE GRATUITĂ DE LA 269 LEI</p>
-          <a class="text-xs sm:text-sm bg-transparent hover:bg-[#e8e3e4] border-black border px-3 py-[3px] rounded-sm whitespace-nowrap" href="#">VEZI OFERTELE</a>
+          <p>FREE SHIPPING ON ORDERS OVER 269 LEI — WEAR YOUR STORY.</p>
+          <a class="text-xs sm:text-sm bg-transparent hover:bg-[#F4EEE8] border-black border px-3 py-[3px] rounded-sm whitespace-nowrap" href="#">VIEW OFFERS</a>
         </div>
       </div>
-      <div class="w-full bg-[#eee9ea] py-2">
+      <div class="w-full bg-[#F4EEE8] py-2">
         <div class="container mx-auto px-4">
           <div class="flex justify-between items-center">
             <nav class="flex flex-wrap gap-2 sm:gap-4 items-center">
-              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">VICTORIA'S SECRET</a></li>
-              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="pink.html" class="hover:font-semibold">PINK</a></li>
-              <li class="list-none text-xs sm:text-sm font-light"><a href="vs-beauty.html" class="hover:font-semibold">BEAUTY</a></li>
+              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">LUMIÈRE</a></li>
+              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="atelier.html" class="hover:font-semibold">ATELIER</a></li>
+              <li class="list-none text-xs sm:text-sm font-light"><a href="beauty.html" class="hover:font-semibold">BEAUTY</a></li>
             </nav>
             <div class="flex gap-4 items-center">
               <button aria-label="Meniu" id="hamburger" class="sm:hidden text-xl"><i class="fa-solid fa-bars"></i></button>
-              <button id="search-toggle" aria-label="Căutare" title="Căutare"><i class="fa-solid fa-magnifying-glass text-xl sm:text-2xl cursor-pointer"></i></button>
-              <a href="login.html" id="user-nav-link" title="Contul meu"><i id="user-nav-icon" class="fa-regular fa-user text-xl sm:text-2xl cursor-pointer"></i></a>
-              <a href="cos-de-cumparaturi.html" title="Coș de cumpărături" class="relative">
-                <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer text-[#c37989]"></i>
-                <span class="cart-badge absolute -top-2 -right-2 bg-[#c37989] text-white text-[10px] rounded-full w-4 h-4 font-bold" style="display:none;align-items:center;justify-content:center">0</span>
+              <button id="search-toggle" aria-label="Search" title="Search"><i class="fa-solid fa-magnifying-glass text-xl sm:text-2xl cursor-pointer"></i></button>
+              <a href="login.html" id="user-nav-link" title="My Account"><i id="user-nav-icon" class="fa-regular fa-user text-xl sm:text-2xl cursor-pointer"></i></a>
+              <a href="cart.html" title="Shopping bag" class="relative">
+                <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer text-[#8B5A8C]"></i>
+                <span class="cart-badge absolute -top-2 -right-2 bg-[#8B5A8C] text-white text-[10px] rounded-full w-4 h-4 font-bold" style="display:none;align-items:center;justify-content:center">0</span>
               </a>
             </div>
           </div>
@@ -39,35 +37,35 @@
       </div>
       <div class="w-full border-b border-gray-200 hidden sm:block">
         <div class="container mx-auto px-4">
-          <nav aria-label="Categorii produse">
+          <nav aria-label="Product categories">
             <ul class="flex justify-between text-sm font-light py-3">
-              <li><a href="nou.html" class="hover:nav-active px-1 py-2">NOU</a></li>
-              <li><a href="sutiene.html" class="hover:nav-active px-1 py-2">SUTIENE</a></li>
-              <li><a href="chiloti.html" class="hover:nav-active px-1 py-2">CHILOȚI</a></li>
-              <li><a href="lenjerie.html" class="hover:nav-active px-1 py-2">LENJERIE</a></li>
-              <li><a href="pijama.html" class="hover:nav-active px-1 py-2">PIJAMA</a></li>
-              <li><a href="haine-sport.html" class="hover:nav-active px-1 py-2">HAINE SPORT</a></li>
-              <li><a href="vs-beauty.html" class="hover:nav-active px-1 py-2">BEAUTY</a></li>
-              <li><a href="accesorii.html" class="hover:nav-active px-1 py-2">ACCESORII</a></li>
+              <li><a href="new-in.html" class="hover:nav-active px-1 py-2">NEW IN</a></li>
+              <li><a href="bras.html" class="hover:nav-active px-1 py-2">BRAS</a></li>
+              <li><a href="panties.html" class="hover:nav-active px-1 py-2">PANTIES</a></li>
+              <li><a href="lingerie.html" class="hover:nav-active px-1 py-2">LINGERIE</a></li>
+              <li><a href="sleepwear.html" class="hover:nav-active px-1 py-2">SLEEPWEAR</a></li>
+              <li><a href="activewear.html" class="hover:nav-active px-1 py-2">ACTIVEWEAR</a></li>
+              <li><a href="beauty.html" class="hover:nav-active px-1 py-2">BEAUTY</a></li>
+              <li><a href="accessories.html" class="hover:nav-active px-1 py-2">ACCESSORIES</a></li>
               <li><a href="swim.html" class="hover:nav-active px-1 py-2">SWIM</a></li>
-              <li><a href="vs-now.html" class="hover:nav-active px-1 py-2">VS NOW</a></li>
+              <li><a href="the-edit.html" class="hover:nav-active px-1 py-2">THE EDIT</a></li>
             </ul>
           </nav>
         </div>
       </div>
       <div id="mobile-menu" class="sm:hidden bg-white border-b border-gray-200 shadow-md">
-        <nav aria-label="Categorii produse mobile">
+        <nav aria-label="Product categories mobile">
           <ul class="flex flex-col text-sm font-light divide-y divide-gray-100">
-            <li><a href="nou.html" class="block px-6 py-3 hover:bg-gray-50">NOU</a></li>
-            <li><a href="sutiene.html" class="block px-6 py-3 hover:bg-gray-50">SUTIENE</a></li>
-            <li><a href="chiloti.html" class="block px-6 py-3 hover:bg-gray-50">CHILOȚI</a></li>
-            <li><a href="lenjerie.html" class="block px-6 py-3 hover:bg-gray-50">LENJERIE</a></li>
-            <li><a href="pijama.html" class="block px-6 py-3 hover:bg-gray-50">PIJAMA</a></li>
-            <li><a href="haine-sport.html" class="block px-6 py-3 hover:bg-gray-50">HAINE SPORT</a></li>
-            <li><a href="vs-beauty.html" class="block px-6 py-3 hover:bg-gray-50">BEAUTY</a></li>
-            <li><a href="accesorii.html" class="block px-6 py-3 hover:bg-gray-50">ACCESORII</a></li>
+            <li><a href="new-in.html" class="block px-6 py-3 hover:bg-gray-50">NEW IN</a></li>
+            <li><a href="bras.html" class="block px-6 py-3 hover:bg-gray-50">BRAS</a></li>
+            <li><a href="panties.html" class="block px-6 py-3 hover:bg-gray-50">PANTIES</a></li>
+            <li><a href="lingerie.html" class="block px-6 py-3 hover:bg-gray-50">LINGERIE</a></li>
+            <li><a href="sleepwear.html" class="block px-6 py-3 hover:bg-gray-50">SLEEPWEAR</a></li>
+            <li><a href="activewear.html" class="block px-6 py-3 hover:bg-gray-50">ACTIVEWEAR</a></li>
+            <li><a href="beauty.html" class="block px-6 py-3 hover:bg-gray-50">BEAUTY</a></li>
+            <li><a href="accessories.html" class="block px-6 py-3 hover:bg-gray-50">ACCESSORIES</a></li>
             <li><a href="swim.html" class="block px-6 py-3 hover:bg-gray-50">SWIM</a></li>
-            <li><a href="vs-now.html" class="block px-6 py-3 hover:bg-gray-50">VS NOW</a></li>
+            <li><a href="the-edit.html" class="block px-6 py-3 hover:bg-gray-50">THE EDIT</a></li>
           </ul>
         </nav>
       </div>
@@ -77,7 +75,7 @@
       <div class="w-full max-w-2xl mx-auto">
         <div class="flex items-center border-b-2 border-black pb-2 mb-6">
           <i class="fa-solid fa-magnifying-glass text-gray-400 mr-3"></i>
-          <input id="search-input" type="text" placeholder="Cauta produse..." class="flex-1 text-lg outline-none" autocomplete="off" />
+          <input id="search-input" type="text" placeholder="Search products..." class="flex-1 text-lg outline-none" autocomplete="off" />
           <button id="search-close" class="ml-4 text-2xl text-gray-400 hover:text-black">&times;</button>
         </div>
         <div id="search-results" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
@@ -87,10 +85,10 @@
 
     <main class="w-full mx-auto">
       <div class="container mx-auto px-4 py-10">
-        <h1 class="text-2xl sm:text-3xl font-light mb-8">COȘ DE CUMPĂRĂTURI</h1>
+        <h1 class="text-2xl sm:text-3xl font-light mb-8">SHOPPING BAG</h1>
 
         <!-- Promo shipping banner -->
-        <div id="shipping-banner" class="bg-[#f9e2e7] text-center py-3 px-4 mb-8 text-sm"></div>
+        <div id="shipping-banner" class="bg-[#FAF5F0] text-center py-3 px-4 mb-8 text-sm"></div>
 
         <div class="flex flex-col lg:flex-row gap-10">
 
@@ -101,34 +99,34 @@
             <!-- Empty cart -->
             <div id="empty-cart" class="hidden text-center py-16">
               <i class="fa-solid fa-bag-shopping text-5xl text-gray-300 mb-4"></i>
-              <p class="text-gray-500 text-lg mb-6">Coșul tău este gol.</p>
-              <a href="index.html" class="bg-black text-white px-8 py-3 text-sm hover:bg-gray-800 transition">CONTINUĂ CUMPĂRĂTURILE</a>
+              <p class="text-gray-500 text-lg mb-6">Your bag is empty.</p>
+              <a href="index.html" class="bg-black text-white px-8 py-3 text-sm hover:bg-gray-800 transition">CONTINUE SHOPPING</a>
             </div>
 
             <a href="index.html" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-black mt-6 transition">
-              <i class="fa-solid fa-arrow-left text-xs"></i> Continuă cumpărăturile
+              <i class="fa-solid fa-arrow-left text-xs"></i> CONTINUE SHOPPING
             </a>
           </div>
 
           <!-- Order summary -->
           <div class="lg:w-80 xl:w-96 shrink-0">
             <div class="border border-gray-200 p-6 flex flex-col gap-4">
-              <h2 class="text-base font-semibold border-b border-gray-200 pb-4">SUMAR COMANDĂ</h2>
+              <h2 class="text-base font-semibold border-b border-gray-200 pb-4">ORDER SUMMARY</h2>
               <div class="flex justify-between text-sm">
-                <span>Subtotal (<span id="total-items">0</span> produse)</span>
+                <span>Subtotal (<span id="total-items">0</span> items)</span>
                 <span id="subtotal">0.00 lei</span>
               </div>
               <div class="flex justify-between text-sm text-gray-500">
-                <span>Livrare</span>
+                <span>Shipping</span>
                 <span id="shipping-cost">—</span>
               </div>
 
               <!-- Promo code -->
               <div class="border-t border-gray-200 pt-4">
-                <p class="text-xs font-semibold mb-2">COD PROMOȚIONAL</p>
+                <p class="text-xs font-semibold mb-2">PROMO CODE</p>
                 <div class="flex gap-2">
-                  <input id="promo-input" type="text" placeholder="Introdu codul" class="flex-1 border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black" />
-                  <button id="apply-promo" class="bg-black text-white px-4 py-2 text-xs hover:bg-gray-800 transition whitespace-nowrap">APLICĂ</button>
+                  <input id="promo-input" type="text" placeholder="Enter code" class="flex-1 border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black" />
+                  <button id="apply-promo" class="bg-black text-white px-4 py-2 text-xs hover:bg-gray-800 transition whitespace-nowrap">APPLY</button>
                 </div>
                 <p id="promo-msg" class="text-xs mt-1 hidden"></p>
               </div>
@@ -137,11 +135,11 @@
                 <span>TOTAL</span>
                 <span id="total-price">0.00 lei</span>
               </div>
-              <p class="text-xs text-gray-500">Inclusiv TVA. Costul final al livrării se calculează la finalizarea comenzii.</p>
+              <p class="text-xs text-gray-500">VAT included. Final shipping cost calculated at checkout.</p>
 
-              <a id="checkout-btn" href="finalizare-comanda.html"
+              <a id="checkout-btn" href="checkout.html"
                 class="bg-black text-white py-4 text-sm font-semibold hover:bg-gray-800 transition w-full tracking-wide text-center block">
-                FINALIZEAZĂ COMANDA
+                CHECKOUT
               </a>
 
               <div class="flex gap-3 justify-center pt-2 text-gray-400 text-2xl">
@@ -154,7 +152,7 @@
             </div>
             <div class="flex items-center gap-2 text-xs text-gray-500 mt-4">
               <i class="fa-solid fa-lock"></i>
-              <span>Plată securizată SSL — datele tale sunt protejate</span>
+              <span>Secure SSL payment — your data is protected</span>
             </div>
           </div>
         </div>
@@ -164,34 +162,32 @@
     <footer class="bg-gray-100 w-full mt-10">
       <div class="container mx-auto flex flex-col lg:flex-row gap-10 lg:gap-[150px] px-4 pt-10 sm:pt-14">
         <div class="flex flex-col w-full lg:max-w-[500px]">
-          <p class="text-lg font-semibold pb-4">ABONEAZĂ-TE LA NEWSLETTER PENTRU A FI LA CURENT</p>
+          <p class="text-lg font-semibold pb-4">SUBSCRIBE TO STAY IN THE STORY</p>
           <form class="newsletter-form flex flex-col gap-0">
-            <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Introdu adresa de email" type="email" />
-            <button type="submit" class="bg-black text-white text-xs py-3 px-6 hover:bg-gray-800 transition mt-2 tracking-wider w-full">ABONEAZĂ-TE</button>
+            <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Enter your email address" type="email" />
+            <button type="submit" class="bg-black text-white text-xs py-3 px-6 hover:bg-gray-800 transition mt-2 tracking-wider w-full">SUBSCRIBE</button>
             <p class="newsletter-msg text-xs mt-2"></p>
           </form>
-          <span class="pt-5 pb-10 text-sm">Prin abonare ești de acord cu <a class="text-[#c37989] hover:text-[#ddaeb8]" href="politica-de-confidentialitate.html">politica noastră de confidențialitate.</a></span>
-          <img class="w-full max-w-[400px] pb-7" src="assets/icon/VSFA_220818_-_ANPC_Buttons_1.avif" alt="ANPC" />
-          <img class="w-full max-w-[400px] pb-11" src="assets/icon/VSFA_220818_-_ANPC_Buttons_2.avif" alt="ANPC" />
+          <span class="pt-5 pb-10 text-sm">By subscribing you agree to our <a class="text-[#8B5A8C] hover:text-[#8B5A8C]" href="politica-de-confidentialitate.html">Privacy Policy.</a></span>
         </div>
         <div class="w-full pb-10">
           <nav class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <ul class="flex flex-col gap-4 text-sm">
-              <li class="font-semibold">AJUTOR</li>
-              <li><a href="faq.html" class="hover:text-[#af5071]">FAQ</a></li>
-              <li><a href="contact.html" class="hover:text-[#af5071]">Contactează-ne</a></li>
+              <li class="font-semibold">HELP</li>
+              <li><a href="faq.html" class="hover:text-[#6B3F6E]">FAQ</a></li>
+              <li><a href="contact.html" class="hover:text-[#6B3F6E]">Contact Us</a></li>
             </ul>
             <ul class="flex flex-col gap-4 text-sm">
-              <li class="font-semibold">INFORMAȚII</li>
-              <li><a href="livrare-plata.html" class="hover:text-[#af5071]">Livrare și plată</a></li>
-              <li><a href="returnari.html" class="hover:text-[#af5071]">Returnări și reclamații</a></li>
-              <li><a href="politica-de-confidentialitate.html" class="hover:text-[#af5071]">Politică de confidențialitate</a></li>
+              <li class="font-semibold">INFORMATION</li>
+              <li><a href="livrare-plata.html" class="hover:text-[#6B3F6E]">Shipping & Payment</a></li>
+              <li><a href="returnari.html" class="hover:text-[#6B3F6E]">Returns & Claims</a></li>
+              <li><a href="politica-de-confidentialitate.html" class="hover:text-[#6B3F6E]">Privacy Policy</a></li>
             </ul>
             <ul class="flex flex-col gap-4 text-sm">
-              <li class="font-semibold">ASISTENȚĂ CLIENȚI</li>
-              <li><a href="contul-meu.html" class="hover:text-[#af5071]">Contul meu</a></li>
-              <li><a href="lista-de-dorinte.html" class="hover:text-[#af5071]">Lista De Dorințe</a></li>
-              <li><a href="termeni-conditii.html" class="hover:text-[#af5071]">Termenii Și Condițiile</a></li>
+              <li class="font-semibold">CUSTOMER CARE</li>
+              <li><a href="contul-meu.html" class="hover:text-[#6B3F6E]">My Account</a></li>
+              <li><a href="wishlist.html" class="hover:text-[#6B3F6E]">Wishlist</a></li>
+              <li><a href="termeni-conditii.html" class="hover:text-[#6B3F6E]">Terms & Conditions</a></li>
             </ul>
           </nav>
         </div>
@@ -199,7 +195,7 @@
     </footer>
     <div class="w-full py-5 border-t border-gray-200">
       <div class="container mx-auto px-4">
-        <span class="text-sm text-gray-500">© 2024 Victoria's Secret. All Rights Reserved.</span>
+        <span class="text-sm text-gray-500">© 2025 Lumière. All Rights Reserved.</span>
       </div>
     </div>
 
@@ -234,10 +230,10 @@
               <div>
                 <p class="text-sm font-semibold">${item.name}</p>
                 <p class="text-xs text-gray-600">${item.subtitle || ''}</p>
-                <p class="text-xs text-gray-500 mt-1">Mărime: <span class="font-medium">${item.size}</span></p>
-                ${item.color ? `<p class="text-xs text-gray-500">Culoare: <span class="font-medium">${item.color}</span></p>` : ''}
+                <p class="text-xs text-gray-500 mt-1">Size: <span class="font-medium">${item.size}</span></p>
+                ${item.color ? `<p class="text-xs text-gray-500">Color: <span class="font-medium">${item.color}</span></p>` : ''}
               </div>
-              <button class="remove-btn text-gray-400 hover:text-red-500 ml-2 text-sm" data-key="${item.key}" title="Elimină">
+              <button class="remove-btn text-gray-400 hover:text-red-500 ml-2 text-sm" data-key="${item.key}" title="Remove">
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
@@ -272,7 +268,7 @@
           shippingEl.textContent = '—';
           shippingEl.className = 'text-gray-400';
         } else if (shipping === 0) {
-          shippingEl.textContent = 'Gratuită';
+          shippingEl.textContent = 'Free';
           shippingEl.className = 'text-green-600 font-medium';
         } else {
           shippingEl.textContent = formatPrice(shipping);
@@ -281,12 +277,12 @@
 
         const banner = document.getElementById('shipping-banner');
         if (subtotal === 0) {
-          banner.innerHTML = 'Adaugă produse pentru a beneficia de livrare gratuită de la 269 lei.';
+          banner.innerHTML = 'Add products to qualify for free shipping on orders over 269 lei.';
         } else if (subtotal < FREE_SHIPPING_THRESHOLD) {
           const rem = (FREE_SHIPPING_THRESHOLD - subtotal).toFixed(2);
-          banner.innerHTML = `Ești la <strong>${rem} lei</strong> distanță de <strong>livrare gratuită!</strong>`;
+          banner.innerHTML = `You are <strong>${rem} lei</strong> away from <strong>free shipping!</strong>`;
         } else {
-          banner.innerHTML = 'Felicitări! Ai obținut <strong>livrare gratuită!</strong>';
+          banner.innerHTML = 'Congratulations! You have earned <strong>free shipping!</strong>';
         }
       }
 
@@ -345,18 +341,18 @@
         msg.classList.remove('hidden');
 
         if (promoApplied) {
-          msg.textContent = 'Codul a fost deja aplicat.';
+          msg.textContent = 'Code already applied.';
           msg.classList.add('text-gray-500');
           return;
         }
         if (PROMO_CODES[code]) {
           promoApplied = true;
           activePromoRate = PROMO_CODES[code];
-          msg.textContent = `Cod aplicat! Reducere ${activePromoRate * 100}%.`;
+          msg.textContent = `Code applied! ${activePromoRate * 100}% discount.`;
           msg.classList.add('text-green-600');
           recalculate(cartLoad());
         } else {
-          msg.textContent = 'Cod invalid. Încearcă din nou.';
+          msg.textContent = 'Invalid code. Please try again.';
           msg.classList.add('text-red-500');
         }
       });
@@ -366,7 +362,12 @@
       } else {
         renderCart();
       }
-    </script></body>
+    </script>
+    <script type="module" src="src/pages/cart.ts"></script>
+  </body>
 </html>
+
+
+
 
 
