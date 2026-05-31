@@ -15,7 +15,7 @@ export function renderCartItem(
 
   div.innerHTML = `
     <div class="shrink-0">
-      <img src="${s(item.image)}" alt="${s(item.name)}" class="w-24 sm:w-32 object-cover" loading="lazy" onerror="this.src='assets/image/placeholder.avif'" />
+      <img src="${s(item.image)}" alt="${s(item.name)}" class="w-24 sm:w-32 aspect-[3/4] object-cover object-top" loading="lazy" onerror="this.src='assets/image/placeholder.avif'" />
     </div>
     <div class="flex flex-col flex-1 gap-1">
       <div class="flex justify-between items-start">

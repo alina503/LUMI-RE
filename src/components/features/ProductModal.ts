@@ -4,6 +4,7 @@ import { showToast } from '../ui/Toast';
 import { CART_CONFIG } from '../../constants/config';
 import { cart } from '../../hooks/useCart';
 import { useModal } from '../../hooks/useModal';
+import { resolveImage, resolveImageSrcset, PLACEHOLDER } from '../../constants/images';
 
 const s = sanitizeText;
 
@@ -20,12 +21,14 @@ const MODAL_HTML = `
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
         </svg>
-        Înapoi
+        Back
       </button>
     </div>
 
     <div class="flex flex-col items-center p-4 pt-10 sm:w-[55%] flex-shrink-0">
-      <img id="pp-main-img" src="" alt="" class="w-full max-h-72 sm:max-h-96 object-cover object-top mb-3" onerror="this.src='assets/image/placeholder.avif'" />
+      <img id="pp-main-img" src="" alt="" loading="lazy" decoding="async"
+        class="w-full max-h-72 sm:max-h-96 object-cover object-top mb-3 img-loading"
+        onerror="this.src='assets/image/placeholder.avif'" />
       <div id="pp-thumbs" class="flex gap-2 flex-wrap justify-center"></div>
     </div>
 
@@ -50,14 +53,14 @@ const MODAL_HTML = `
       </div>
 
       <div id="pp-sizes-wrap" class="mb-4">
-        <p class="text-xs text-gray-600 mb-2">Mărime</p>
+        <p class="text-xs text-gray-600 mb-2">Size</p>
         <div id="pp-size-btns" class="flex flex-wrap gap-2"></div>
-        <p id="pp-size-error" class="text-[#c37989] text-xs mt-1 hidden">Selectează o mărime.</p>
+        <p id="pp-size-error" class="text-[#8B5A8C] text-xs mt-1 hidden">Please select a size.</p>
       </div>
 
       <button id="pp-add-btn"
         class="bg-gray-200 text-gray-500 text-sm py-3 tracking-wider w-full mt-auto transition hover:bg-black hover:text-white">
-        ADAUGAȚI ÎN COȘ
+        ADD TO BAG
       </button>
 
       <p id="pp-subtitle" class="text-xs text-gray-400 mt-4 leading-relaxed"></p>
@@ -96,10 +99,21 @@ export function initProductModal(): void {
     qtyVal.textContent = '1';
     sizeErr.classList.add('hidden');
 
-    const img = card.dataset.image || card.querySelector('img')?.getAttribute('src') || '';
-    mainImg.src = img;
-    mainImg.alt = s(card.dataset.name ?? '');
-    brandEl.textContent = card.dataset.name ?? "Victoria's Secret";
+    const productId = card.dataset.id ?? '';
+    const imgSrc = resolveImage(productId, 800) || card.dataset.image || '';
+    mainImg.classList.remove('img-loaded');
+    mainImg.classList.add('img-loading');
+    mainImg.alt   = s(card.dataset.name ?? '');
+    mainImg.sizes = '(max-width: 640px) 100vw, 55vw';
+    mainImg.onload = () => {
+      mainImg.classList.remove('img-loading');
+      mainImg.classList.add('img-loaded');
+    };
+    mainImg.onerror = () => { mainImg.src = PLACEHOLDER; mainImg.srcset = ''; };
+    mainImg.srcset = resolveImageSrcset(productId);
+    mainImg.src    = imgSrc;
+
+    brandEl.textContent = card.dataset.name ?? 'LUMIÈRE';
     nameEl.textContent = card.dataset.subtitle ?? '';
     priceEl.textContent = formatPrice(parseFloat(card.dataset.price ?? '0'));
 
@@ -113,10 +127,16 @@ export function initProductModal(): void {
 
     thumbs.innerHTML = '';
     const thumb = document.createElement('img');
-    thumb.src = img;
-    thumb.className = 'w-16 h-16 object-cover object-top cursor-pointer border-2 border-black hover:border-black transition';
-    thumb.addEventListener('click', () => { mainImg.src = img; });
-    thumb.addEventListener('error', () => { thumb.src = 'assets/image/placeholder.avif'; });
+    thumb.src    = resolveImage(productId, 200);
+    thumb.srcset = resolveImageSrcset(productId);
+    thumb.sizes  = '64px';
+    thumb.className = 'w-16 h-16 object-cover object-top cursor-pointer border-2 border-black transition';
+    thumb.loading   = 'lazy';
+    thumb.addEventListener('click', () => {
+      mainImg.src    = imgSrc;
+      mainImg.srcset = resolveImageSrcset(productId);
+    });
+    thumb.onerror = () => { thumb.src = PLACEHOLDER; thumb.srcset = ''; };
     thumbs.appendChild(thumb);
 
     sizeBtns.innerHTML = '';
@@ -153,13 +173,13 @@ export function initProductModal(): void {
       name: currentCard.dataset.name ?? '',
       subtitle: currentCard.dataset.subtitle ?? '',
       price: parseFloat(currentCard.dataset.price ?? '0'),
-      image: currentCard.dataset.image || currentCard.querySelector('img')?.getAttribute('src') || '',
+      image: resolveImage(currentCard.dataset.id ?? '') || currentCard.dataset.image || '',
       color: currentCard.dataset.color ?? '',
       size: selected.textContent?.trim() ?? '',
       promo: currentCard.dataset.promo ?? '',
     }, currentQty);
 
-    showToast(`${currentCard.dataset.name} adăugat în coș!`);
+    showToast(`${currentCard.dataset.name} added to bag!`);
     modal.close();
   });
 
