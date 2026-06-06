@@ -1,3 +1,5 @@
+// DEPRECATED: search is handled entirely by initSearchOverlay() in src/layouts/SearchOverlay.ts.
+// This hook is never called and must not be called — it would attach duplicate listeners.
 import type { SearchResult } from '../types';
 import { collectPageProducts, filterProducts } from '../services/searchService';
 import { renderProductCard } from '../components/features/ProductCard';

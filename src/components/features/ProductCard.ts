@@ -5,6 +5,7 @@ import { initSizeButtons, getSelectedSize, highlightSizeError } from '../ui/Size
 import { showToast } from '../ui/Toast';
 import { cart } from '../../hooks/useCart';
 import { openProductModal } from './ProductModal';
+import { upgradeStaticCardImages } from '../ui/ProductImage';
 
 const s = sanitizeText;
 
@@ -24,23 +25,46 @@ export function renderProductCard(product: SearchResult): HTMLElement {
   div.dataset.image = product.image;
   div.dataset.color = product.color;
 
-  div.innerHTML = `
-    <img class="w-full cursor-pointer" src="${s(product.image)}" alt="${s(product.name)}" loading="lazy" onerror="this.src='assets/image/placeholder.avif'" />
-    <div class="flex flex-col p-2 sm:p-3 flex-1">
-      <p class="text-sm sm:text-base font-medium">${s(product.name)}</p>
-      <p class="text-xs sm:text-sm text-gray-600 mb-1">${s(product.subtitle)}</p>
-      <span class="text-base sm:text-lg font-semibold">${formatPrice(product.price)}</span>
-      <div class="flex gap-1 my-2 size-group">${sizeButtons}</div>
-      <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">
-        ADAUGĂ ÎN COȘ
-      </button>
-    </div>`;
+  const img = document.createElement('img');
+  img.src = product.image;
+  img.alt = product.name;
+  img.loading = 'lazy';
+  img.decoding = 'async';
+  img.className = 'w-full object-cover object-top cursor-pointer';
+  img.style.aspectRatio = '3/4';
+  img.addEventListener('click', () => openProductModal(div));
+  img.addEventListener('error', () => { img.src = 'assets/image/placeholder.avif'; });
+
+  const descHtml = product.description
+    ? `<p class="text-xs text-gray-400 mt-1 mb-2 line-clamp-2">${s(product.description)}</p>`
+    : '';
+
+  const detailLink = product.id
+    ? `<a href="produs.html?id=${s(product.id)}" class="text-xs text-[#8B5A8C] hover:underline mt-1">View Details</a>`
+    : '';
+
+  const promoHtml = product.promo
+    ? `<span class="text-xs text-[#8B5A8C] font-medium">${s(product.promo)}</span>`
+    : '';
+
+  const body = document.createElement('div');
+  body.className = 'flex flex-col p-2 sm:p-3 flex-1';
+  body.innerHTML = `
+    <p class="text-sm sm:text-base font-medium product-name cursor-pointer hover:text-[#8B5A8C] transition">${s(product.name)}</p>
+    <p class="text-xs sm:text-sm text-gray-600 mb-1">${s(product.subtitle)}</p>
+    ${descHtml}
+    <span class="text-base sm:text-lg font-semibold">${formatPrice(product.price)}</span>
+    ${promoHtml}
+    <div class="flex gap-1 my-2 size-group">${sizeButtons}</div>
+    <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">
+      ADD TO BAG
+    </button>
+    ${detailLink}`;
+
+  div.appendChild(img);
+  div.appendChild(body);
 
   initSizeButtons(div);
-
-  div.querySelector<HTMLImageElement>('img')?.addEventListener('click', () => {
-    openProductModal(div);
-  });
 
   div.querySelector('.add-to-cart')?.addEventListener('click', () => {
     const size = getSelectedSize(div);
@@ -66,12 +90,14 @@ export function renderProductCard(product: SearchResult): HTMLElement {
 }
 
 export function initPageProductCards(): void {
+  // Upgrade any server-rendered card images to CDN URLs with lazy loading
+  upgradeStaticCardImages(document);
+
   document.querySelectorAll<HTMLElement>('.product-card').forEach((card) => {
     const img = card.querySelector<HTMLImageElement>('img');
     if (img) {
       img.style.cursor = 'pointer';
       img.addEventListener('click', () => openProductModal(card));
-      img.addEventListener('error', () => { img.src = 'assets/image/placeholder.avif'; });
     }
 
     card.querySelector('.add-to-cart')?.addEventListener('click', () => {
@@ -94,7 +120,7 @@ export function initPageProductCards(): void {
         size,
         promo: card.dataset.promo ?? '',
       });
-      showToast(`${name} adăugat în coș!`);
+      showToast(`${name} added to bag!`);
     });
   });
 }

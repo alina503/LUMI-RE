@@ -1,11 +1,11 @@
 /* ─── Design Tokens ──────────────────────────────────────────────────────── */
 :root {
-  /* Brand colours */
-  --color-brand-primary: #c37989;
-  --color-brand-dark: #af5071;
-  --color-brand-light: #f0c4cc;
-  --color-brand-bg: #f9e2e7;
-  --color-brand-nav-bg: #eee9ea;
+  /* Brand colours — Lumière */
+  --color-brand-primary: #8B5A8C;
+  --color-brand-dark: #6B3F6E;
+  --color-brand-light: #E8D5B0;
+  --color-brand-bg: #FAF5F0;
+  --color-brand-nav-bg: #F4EEE8;
 
   /* Neutral */
   --color-black: #111111;

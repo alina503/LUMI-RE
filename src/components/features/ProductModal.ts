@@ -4,7 +4,7 @@ import { showToast } from '../ui/Toast';
 import { CART_CONFIG } from '../../constants/config';
 import { cart } from '../../hooks/useCart';
 import { useModal } from '../../hooks/useModal';
-import { resolveImage, resolveImageSrcset, PLACEHOLDER } from '../../constants/images';
+import { PLACEHOLDER } from '../../constants/images';
 
 const s = sanitizeText;
 
@@ -99,8 +99,7 @@ export function initProductModal(): void {
     qtyVal.textContent = '1';
     sizeErr.classList.add('hidden');
 
-    const productId = card.dataset.id ?? '';
-    const imgSrc = resolveImage(productId, 800) || card.dataset.image || '';
+    const imgSrc = card.dataset.image || PLACEHOLDER;
     mainImg.classList.remove('img-loaded');
     mainImg.classList.add('img-loading');
     mainImg.alt   = s(card.dataset.name ?? '');
@@ -110,7 +109,7 @@ export function initProductModal(): void {
       mainImg.classList.add('img-loaded');
     };
     mainImg.onerror = () => { mainImg.src = PLACEHOLDER; mainImg.srcset = ''; };
-    mainImg.srcset = resolveImageSrcset(productId);
+    mainImg.srcset = '';
     mainImg.src    = imgSrc;
 
     brandEl.textContent = card.dataset.name ?? 'LUMIÈRE';
@@ -127,14 +126,14 @@ export function initProductModal(): void {
 
     thumbs.innerHTML = '';
     const thumb = document.createElement('img');
-    thumb.src    = resolveImage(productId, 200);
-    thumb.srcset = resolveImageSrcset(productId);
+    thumb.src    = imgSrc;
+    thumb.srcset = '';
     thumb.sizes  = '64px';
     thumb.className = 'w-16 h-16 object-cover object-top cursor-pointer border-2 border-black transition';
     thumb.loading   = 'lazy';
     thumb.addEventListener('click', () => {
       mainImg.src    = imgSrc;
-      mainImg.srcset = resolveImageSrcset(productId);
+      mainImg.srcset = '';
     });
     thumb.onerror = () => { thumb.src = PLACEHOLDER; thumb.srcset = ''; };
     thumbs.appendChild(thumb);
@@ -173,7 +172,7 @@ export function initProductModal(): void {
       name: currentCard.dataset.name ?? '',
       subtitle: currentCard.dataset.subtitle ?? '',
       price: parseFloat(currentCard.dataset.price ?? '0'),
-      image: resolveImage(currentCard.dataset.id ?? '') || currentCard.dataset.image || '',
+      image: currentCard.dataset.image || '',
       color: currentCard.dataset.color ?? '',
       size: selected.textContent?.trim() ?? '',
       promo: currentCard.dataset.promo ?? '',

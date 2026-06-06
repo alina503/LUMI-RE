@@ -1,10 +1,10 @@
 export const APP_CONFIG = {
-  name: "Victoria's Secret",
-  tagline: 'Nu te opri să strălucești',
+  name: 'LUMIÈRE',
+  tagline: 'Wear your story.',
   currency: 'lei',
   locale: 'ro-RO',
-  instagramHandle: '@VICTORIASSECRETROMANIA',
-  copyright: "© 2024 Victoria's Secret. All Rights Reserved.",
+  instagramHandle: '@LUMIERE.LINGERIE',
+  copyright: '© 2025 Lumière. All Rights Reserved.',
 } as const;
 
 export const SHIPPING_CONFIG = {
@@ -14,14 +14,14 @@ export const SHIPPING_CONFIG = {
 } as const;
 
 export const CART_CONFIG = {
-  storageKey: 'vs_cart',
+  storageKey: 'lumiere_cart',
   maxQty: 99,
 } as const;
 
 export const PROMO_CODES: Record<string, number> = {
-  VS10: 0.1,
-  VS15: 0.15,
-  VS20: 0.2,
+  LUM10: 0.1,
+  LUM15: 0.15,
+  LUM20: 0.2,
 };
 
 export const TOAST_DURATION = 3000;

@@ -4,13 +4,18 @@ import { initSizeButtons } from '../components/ui/SizeButton';
 import { initPageProductCards } from '../components/features/ProductCard';
 import { initProductModal } from '../components/features/ProductModal';
 import { injectToast } from '../components/ui/Toast';
+import { initAuthHeader, initNewsletterFooter } from '../services/authService';
+import { initWishlistButtons } from '../services/wishlistService';
 
 function runSharedInit(): void {
   injectToast();
   initHeader();
+  initAuthHeader();
+  initNewsletterFooter();
   initSizeButtons();
   initProductModal();
   initPageProductCards();
+  initWishlistButtons();
   initSearchOverlay();
 }
 

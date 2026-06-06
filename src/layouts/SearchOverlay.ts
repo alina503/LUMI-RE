@@ -116,7 +116,7 @@ export function initSearchOverlay(): void {
 
     matches.slice(0, 12).forEach((p) => {
       const card = document.createElement('a');
-      card.href = `produs.html?id=${s(p.id)}`;
+      card.href = `${import.meta.env.BASE_URL}produs.html?id=${s(p.id)}`;
       card.className = 'search-result-card';
       card.innerHTML = `
         <div class="search-result-img-wrap">
@@ -137,13 +137,25 @@ export function initSearchOverlay(): void {
     });
   }
 
+  const pageCategory = document.getElementById('product-grid')?.dataset.category ?? null;
+
   let allProducts: Awaited<ReturnType<typeof loadAllProducts>> = [];
-  loadAllProducts().then((products) => { allProducts = products; });
+  loadAllProducts()
+    .then((products) => {
+      allProducts = products;
+      const q = newInput.value.trim();
+      if (q) handleInput();
+    })
+    .catch(() => {});
 
   const handleInput = debounce(() => {
     const q = newInput.value.trim();
     if (!q) { showTrending(); return; }
-    const matches = filterProducts(allProducts, q);
+    if (allProducts.length === 0) return;
+    const pool = pageCategory
+      ? allProducts.filter((p) => p.category === pageCategory)
+      : allProducts;
+    const matches = filterProducts(pool, q);
     renderResults(matches);
   }, 180);
 

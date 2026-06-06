@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initCrossTabSync(onExternalChange: () => void): void {
   window.addEventListener('storage', (e) => {
-    if (e.key === 'vs_cart' || e.key === 'vs_cart_state') {
+    if (e.key === 'lumiere_cart' || e.key === 'lumiere_cart_state') {
       onExternalChange();
     }
   });
