@@ -10,6 +10,7 @@ export interface UserSession {
 
 interface StoredUser extends UserSession {
   password: string;
+  salt: string;
 }
 
 function storageGet<T>(key: string, fallback: T): T {
@@ -27,12 +28,19 @@ function storageSet(key: string, value: unknown): void {
   } catch { /* quota */ }
 }
 
-function hashPassword(str: string): string {
-  let h = 0;
-  for (let i = 0; i < str.length; i++) {
-    h = (Math.imul(31, h) + str.charCodeAt(i)) | 0;
-  }
-  return h.toString(36);
+async function hashPassword(password: string, salt: string): Promise<string> {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(salt + password);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(hashBuffer))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
+}
+
+function generateSalt(): string {
+  return Array.from(crypto.getRandomValues(new Uint8Array(16)))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
 }
 
 function getUsers(): StoredUser[] {
@@ -44,17 +52,19 @@ function saveUsers(users: StoredUser[]): void {
 }
 
 export const AuthService = {
-  register(firstName: string, lastName: string, email: string, password: string): { ok: boolean; error?: string } {
+  async register(firstName: string, lastName: string, email: string, password: string): Promise<{ ok: boolean; error?: string }> {
     const users = getUsers();
     if (users.find((u) => u.email.toLowerCase() === email.toLowerCase())) {
       return { ok: false, error: 'exists' };
     }
+    const salt = generateSalt();
     const user: StoredUser = {
       id: Date.now(),
       firstName,
       lastName,
       email,
-      password: hashPassword(password),
+      salt,
+      password: await hashPassword(password, salt),
     };
     users.push(user);
     saveUsers(users);
@@ -62,12 +72,12 @@ export const AuthService = {
     return { ok: true };
   },
 
-  login(email: string, password: string): { ok: boolean; error?: string } {
+  async login(email: string, password: string): Promise<{ ok: boolean; error?: string }> {
     const users = getUsers();
-    const user = users.find(
-      (u) => u.email.toLowerCase() === email.toLowerCase() && u.password === hashPassword(password),
-    );
+    const user = users.find((u) => u.email.toLowerCase() === email.toLowerCase());
     if (!user) return { ok: false, error: 'invalid' };
+    const hash = await hashPassword(password, user.salt ?? '');
+    if (hash !== user.password) return { ok: false, error: 'invalid' };
     this.setSession({ id: user.id, firstName: user.firstName, lastName: user.lastName, email: user.email });
     return { ok: true };
   },

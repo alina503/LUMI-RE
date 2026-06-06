@@ -1,3 +1,4 @@
+import '../styles/index.css';
 import { initHeader } from '../layouts/Header';
 import { initSearchOverlay } from '../layouts/SearchOverlay';
 import { injectToast } from '../components/ui/Toast';

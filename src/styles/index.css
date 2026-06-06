@@ -1,3 +1,9 @@
+@import "tailwindcss";
 @import './tokens.css';
 @import './base.css';
 @import './components.css';
+
+@theme {
+  --color-brand: #8B5A8C;
+  --color-plum: #6B3F6E;
+}

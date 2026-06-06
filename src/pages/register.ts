@@ -1,3 +1,4 @@
+import '../styles/index.css';
 import { AuthService } from '../services/authService';
 import { initHeader } from '../layouts/Header';
 import { initSearchOverlay } from '../layouts/SearchOverlay';
@@ -37,7 +38,7 @@ function init(): void {
   if (emailInput && params.get('email')) emailInput.value = params.get('email')!;
   if (firstNameInput && params.get('name')) firstNameInput.value = params.get('name')!;
 
-  document.getElementById('signup-form')?.addEventListener('submit', (e) => {
+  document.getElementById('signup-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     let valid = true;
     document.querySelectorAll<HTMLElement>('.error-msg').forEach((el) => el.classList.add('hidden'));
@@ -64,7 +65,7 @@ function init(): void {
     if (!terms.checked) { document.getElementById('terms-error')?.classList.remove('hidden'); valid = false; }
     if (!valid) return;
 
-    const result = AuthService.register(
+    const result = await AuthService.register(
       firstName.value.trim(),
       lastName.value.trim(),
       email.value.trim(),

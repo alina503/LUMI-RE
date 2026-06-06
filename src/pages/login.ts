@@ -1,3 +1,4 @@
+import '../styles/index.css';
 import { AuthService } from '../services/authService';
 import { initHeader } from '../layouts/Header';
 import { initSearchOverlay } from '../layouts/SearchOverlay';
@@ -45,7 +46,7 @@ function init(): void {
     });
   });
 
-  document.getElementById('login-form')?.addEventListener('submit', (e) => {
+  document.getElementById('login-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const emailEl = document.getElementById('email') as HTMLInputElement;
     const passwordEl = document.getElementById('password') as HTMLInputElement;
@@ -65,7 +66,7 @@ function init(): void {
     }
     if (!valid) return;
 
-    const result = AuthService.login(emailEl.value.trim(), passwordEl.value);
+    const result = await AuthService.login(emailEl.value.trim(), passwordEl.value);
     if (result.ok) {
       const s = AuthService.getSession()!;
       document.getElementById('login-form')?.classList.add('hidden');

@@ -1,3 +1,4 @@
+import '../styles/index.css';
 import { WishlistService } from '../services/wishlistService';
 import { initHeader } from '../layouts/Header';
 import { initSearchOverlay } from '../layouts/SearchOverlay';

@@ -2,6 +2,7 @@
   "name": "victorias-secret-ro",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "Victoria's Secret Romania – E-commerce storefront",
   "scripts": {
     "dev": "vite",
@@ -10,6 +11,10 @@
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^4.3.0",
     "typescript": "^5.4.5",
     "vite": "^5.3.0"
   }

@@ -1,3 +1,4 @@
+import '../styles/index.css';
 import { AuthService } from '../services/authService';
 import { initHeader } from '../layouts/Header';
 import { initSearchOverlay } from '../layouts/SearchOverlay';
@@ -76,30 +77,46 @@ function init(): void {
 
       const div = document.createElement('div');
       div.className = 'border border-gray-200 p-5';
-      div.innerHTML =
-        `<div class="flex flex-col sm:flex-row justify-between gap-3 mb-4">
-          <div>
-            <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Order</p>
-            <p class="font-mono font-semibold text-[#8B5A8C]">${order.id}</p>
-          </div>
-          <div class="text-right sm:text-right">
-            <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Date</p>
-            <p class="text-sm">${dateStr}</p>
-          </div>
-          <div class="text-right">
-            <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Total</p>
-            <p class="text-sm font-semibold">${order.total.toFixed(2)} lei</p>
-          </div>
+
+      // Use textContent for all user-supplied data to prevent XSS
+      const header = document.createElement('div');
+      header.className = 'flex flex-col sm:flex-row justify-between gap-3 mb-4';
+      header.innerHTML = `
+        <div>
+          <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Order</p>
+          <p class="font-mono font-semibold text-brand order-id"></p>
         </div>
-        <div class="border-t border-gray-100 pt-3 flex flex-wrap gap-2 text-xs text-gray-500">
-          <span><i class="fa-solid fa-box mr-1"></i>${itemCount} item${itemCount === 1 ? '' : 's'}</span>
-          <span class="mx-2">·</span>
-          <span><i class="fa-solid fa-truck mr-1"></i>${order.delivery.method === 'express' ? 'Express' : 'Standard'}</span>
-          <span class="mx-2">·</span>
-          <span><i class="fa-solid fa-credit-card mr-1"></i>${payLabels[order.payment] || order.payment}</span>
-          <span class="mx-2">·</span>
-          <span><i class="fa-solid fa-location-dot mr-1"></i>${order.delivery.city}</span>
+        <div class="text-right sm:text-right">
+          <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Date</p>
+          <p class="text-sm order-date"></p>
+        </div>
+        <div class="text-right">
+          <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Total</p>
+          <p class="text-sm font-semibold order-total"></p>
         </div>`;
+      header.querySelector<HTMLElement>('.order-id')!.textContent = order.id;
+      header.querySelector<HTMLElement>('.order-date')!.textContent = dateStr;
+      header.querySelector<HTMLElement>('.order-total')!.textContent = `${order.total.toFixed(2)} lei`;
+
+      const meta = document.createElement('div');
+      meta.className = 'border-t border-gray-100 pt-3 flex flex-wrap gap-2 text-xs text-gray-500';
+      const deliveryLabel = order.delivery.method === 'express' ? 'Express' : 'Standard';
+      const payLabel = payLabels[order.payment] ?? 'Unknown';
+      meta.innerHTML = `
+        <span><i class="fa-solid fa-box mr-1"></i><span class="meta-items"></span></span>
+        <span class="mx-2">·</span>
+        <span><i class="fa-solid fa-truck mr-1"></i><span class="meta-delivery"></span></span>
+        <span class="mx-2">·</span>
+        <span><i class="fa-solid fa-credit-card mr-1"></i><span class="meta-pay"></span></span>
+        <span class="mx-2">·</span>
+        <span><i class="fa-solid fa-location-dot mr-1"></i><span class="meta-city"></span></span>`;
+      meta.querySelector<HTMLElement>('.meta-items')!.textContent = `${itemCount} item${itemCount === 1 ? '' : 's'}`;
+      meta.querySelector<HTMLElement>('.meta-delivery')!.textContent = deliveryLabel;
+      meta.querySelector<HTMLElement>('.meta-pay')!.textContent = payLabel;
+      meta.querySelector<HTMLElement>('.meta-city')!.textContent = order.delivery.city;
+
+      div.appendChild(header);
+      div.appendChild(meta);
       ordersContainer.appendChild(div);
     });
   }
