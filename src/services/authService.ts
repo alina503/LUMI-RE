@@ -1,5 +1,7 @@
-const AUTH_KEY = 'vs_user';
-const USERS_KEY = 'vs_users';
+import { STORAGE_KEYS } from '../constants/config';
+
+const AUTH_KEY = STORAGE_KEYS.session;
+const USERS_KEY = STORAGE_KEYS.users;
 
 export interface UserSession {
   id: number;
@@ -181,8 +183,8 @@ export function initNewsletterFooter(): void {
         if (msg) { msg.textContent = 'Please enter a valid email.'; msg.className = 'newsletter-msg text-xs text-red-500 mt-2'; }
         return;
       }
-      const subs = storageGet<string[]>('vs_newsletter', []);
-      if (!subs.includes(email)) { subs.push(email); storageSet('vs_newsletter', subs); }
+      const subs = storageGet<string[]>(STORAGE_KEYS.newsletter, []);
+      if (!subs.includes(email)) { subs.push(email); storageSet(STORAGE_KEYS.newsletter, subs); }
       input.value = '';
       if (msg) { msg.textContent = 'Thank you! You are now subscribed.'; msg.className = 'newsletter-msg text-xs text-green-600 mt-2'; }
     });

@@ -14,8 +14,17 @@ export const SHIPPING_CONFIG = {
 } as const;
 
 export const CART_CONFIG = {
-  storageKey: 'lumiere_cart',
   maxQty: 99,
+} as const;
+
+export const STORAGE_KEYS = {
+  cart:       'lumiere_cart',
+  cartState:  'lumiere_cart_state',
+  session:    'vs_user',
+  users:      'vs_users',
+  wishlist:   'vs_wishlist',
+  newsletter: 'vs_newsletter',
+  orders:     (userId: number) => `vs_orders_${userId}`,
 } as const;
 
 export const PROMO_CODES: Record<string, number> = {

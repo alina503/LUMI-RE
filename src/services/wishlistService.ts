@@ -1,6 +1,7 @@
 import { showToast } from '../components/ui/Toast';
+import { STORAGE_KEYS } from '../constants/config';
 
-const WISHLIST_KEY = 'vs_wishlist';
+const WISHLIST_KEY = STORAGE_KEYS.wishlist;
 
 export interface WishlistProduct {
   id: string;

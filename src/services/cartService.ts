@@ -1,17 +1,17 @@
 import type { CartItem, CartState, OrderSummary } from '../types';
 import { storageGet, storageSet } from '../lib/storage';
-import { CART_CONFIG, SHIPPING_CONFIG, PROMO_CODES } from '../constants/config';
+import { CART_CONFIG, SHIPPING_CONFIG, PROMO_CODES, STORAGE_KEYS } from '../constants/config';
 import { buildCartKey } from '../utils/formatters';
 import { clamp } from '../utils/helpers';
 
-const CART_STATE_KEY = CART_CONFIG.storageKey + '_state';
+const CART_STATE_KEY = STORAGE_KEYS.cartState;
 
 export function loadCart(): CartItem[] {
-  return storageGet<CartItem[]>(CART_CONFIG.storageKey, []);
+  return storageGet<CartItem[]>(STORAGE_KEYS.cart, []);
 }
 
 export function saveCart(items: CartItem[]): void {
-  storageSet(CART_CONFIG.storageKey, items);
+  storageSet(STORAGE_KEYS.cart, items);
 }
 
 export function loadCartState(): CartState {
@@ -25,7 +25,7 @@ export function loadCartState(): CartState {
 }
 
 export function saveCartState(state: CartState): void {
-  storageSet(CART_CONFIG.storageKey, state.items);
+  storageSet(STORAGE_KEYS.cart, state.items);
   storageSet(CART_STATE_KEY, {
     promoCode: state.promoCode,
     promoDiscount: state.promoDiscount,

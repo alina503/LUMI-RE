@@ -1,5 +1,6 @@
 import '../styles/index.css';
 import { AuthService } from '../services/authService';
+import { STORAGE_KEYS } from '../constants/config';
 import { initHeader } from '../layouts/Header';
 import { initSearchOverlay } from '../layouts/SearchOverlay';
 import { injectToast } from '../components/ui/Toast';
@@ -61,7 +62,7 @@ function init(): void {
   });
 
   // Load orders
-  const historyKey = `vs_orders_${session.id}`;
+  const historyKey = STORAGE_KEYS.orders(session.id);
   let orders: Order[] = [];
   try { orders = JSON.parse(localStorage.getItem(historyKey) || '[]'); } catch { orders = []; }
 
@@ -129,13 +130,13 @@ function init(): void {
     if (!fn || !ln) return;
 
     let users: Array<{ id: number; firstName: string; lastName: string }> = [];
-    try { users = JSON.parse(localStorage.getItem('vs_users') || '[]'); } catch { users = []; }
+    try { users = JSON.parse(localStorage.getItem(STORAGE_KEYS.users) || '[]'); } catch { users = []; }
     const user = users.find((u) => u.id === session.id);
     if (user) { user.firstName = fn; user.lastName = ln; }
-    try { localStorage.setItem('vs_users', JSON.stringify(users)); } catch { /* quota */ }
+    try { localStorage.setItem(STORAGE_KEYS.users, JSON.stringify(users)); } catch { /* quota */ }
 
     const newSession = { id: session.id, firstName: fn, lastName: ln, email: session.email };
-    localStorage.setItem('vs_user', JSON.stringify(newSession));
+    localStorage.setItem(STORAGE_KEYS.session, JSON.stringify(newSession));
 
     const accNameEl = document.getElementById('acc-name');
     if (accNameEl) accNameEl.textContent = `${fn} ${ln}`;

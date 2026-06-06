@@ -1,4 +1,5 @@
 import '../styles/index.css';
+import { STORAGE_KEYS } from '../constants/config';
 import { initHeader } from '../layouts/Header';
 import { initSearchOverlay } from '../layouts/SearchOverlay';
 import { injectToast } from '../components/ui/Toast';
@@ -52,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initCrossTabSync(onExternalChange: () => void): void {
   window.addEventListener('storage', (e) => {
-    if (e.key === 'lumiere_cart' || e.key === 'lumiere_cart_state') {
+    if (e.key === STORAGE_KEYS.cart || e.key === STORAGE_KEYS.cartState) {
       onExternalChange();
     }
   });
