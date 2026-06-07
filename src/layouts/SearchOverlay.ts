@@ -1,8 +1,8 @@
 import { loadAllProducts, filterProducts } from '../services/searchService';
 import { formatPrice } from '../utils/formatters';
-import { sanitizeText } from '../utils/helpers';
-import { debounce } from '../utils/helpers';
+import { sanitizeText, debounce } from '../utils/helpers';
 import { ROUTES } from '../constants/routes';
+import { lockScroll, unlockScroll } from '../hooks/useModal';
 
 const s = sanitizeText;
 
@@ -21,45 +21,51 @@ export function initSearchOverlay(): void {
 
   if (!overlay || !toggleBtn) return;
 
-  // ── inject VS-style shell ──────────────────────────────────────────────────
+  // ── Inject overlay shell using design system classes ──────────────────────
   overlay.className = 'search-overlay-anim';
-  overlay.style.cssText = 'display:none;position:fixed;inset:0;z-index:1000;background:#fff;flex-direction:column;overflow-y:auto;';
+  overlay.style.cssText = 'display:none;position:fixed;inset:0;z-index:var(--lum-z-modal);background:var(--lum-white);flex-direction:column;overflow-y:auto;';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-label', 'Search');
 
   overlay.innerHTML = `
-    <div class="search-header" style="position:sticky;top:0;background:#fff;z-index:10;border-bottom:1px solid #f3f4f6;">
-      <div style="max-width:960px;margin:0 auto;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;">
-        <i class="fa-solid fa-magnifying-glass" style="color:#9ca3af;font-size:1.125rem;flex-shrink:0;"></i>
+    <div class="search-header" style="position:sticky;top:0;background:var(--lum-white);z-index:var(--lum-z-sticky);border-bottom:1px solid var(--lum-gray-100);">
+      <div style="max-width:960px;margin:0 auto;padding:var(--lum-space-5) var(--lum-space-6);display:flex;align-items:center;gap:var(--lum-space-4);">
+        <i class="fa-solid fa-magnifying-glass" style="color:var(--lum-gray-400);font-size:1.125rem;flex-shrink:0;" aria-hidden="true"></i>
         <input
           id="search-input"
           type="text"
           placeholder="Search for styles, collections, colours…"
-          style="flex:1;font-size:clamp(1rem,3vw,1.5rem);font-weight:300;outline:none;border:none;color:#111;letter-spacing:0.02em;"
+          aria-label="Search products"
+          style="flex:1;font-size:clamp(1rem,3vw,1.5rem);font-weight:300;outline:none;border:none;color:var(--lum-black);letter-spacing:var(--lum-tracking-normal);"
           autocomplete="off"
           spellcheck="false"
         />
-        <button id="search-close" style="display:flex;align-items:center;gap:0.25rem;font-size:0.7rem;letter-spacing:0.15em;color:#6b7280;background:none;border:none;cursor:pointer;flex-shrink:0;">
-          CLOSE <i class="fa-solid fa-xmark" style="font-size:1rem;margin-left:0.25rem;"></i>
+        <button id="search-close"
+          aria-label="Close search"
+          style="display:flex;align-items:center;gap:0.25rem;font-size:var(--lum-text-xs);letter-spacing:var(--lum-tracking-widest);color:var(--lum-gray-500);background:none;border:none;cursor:pointer;flex-shrink:0;text-transform:uppercase;transition:color var(--lum-duration-150);">
+          CLOSE <i class="fa-solid fa-xmark" style="font-size:1rem;margin-left:0.25rem;" aria-hidden="true"></i>
         </button>
       </div>
     </div>
 
-    <div style="max-width:960px;margin:0 auto;padding:2rem 1.5rem;width:100%;">
+    <div style="max-width:960px;margin:0 auto;padding:var(--lum-space-8) var(--lum-space-6);width:100%;">
       <div id="search-trending">
-        <p style="font-size:0.65rem;letter-spacing:0.2em;color:#9ca3af;text-transform:uppercase;margin-bottom:1.25rem;">Trending</p>
-        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
+        <p class="section-eyebrow" style="margin-bottom:var(--lum-space-5);">Trending</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--lum-space-3);">
           ${TRENDING.map((t) => `<a href="${t.href}" class="search-trend-pill">${t.label.toUpperCase()}</a>`).join('')}
         </div>
       </div>
 
       <div id="search-results" style="display:none;">
-        <p id="search-count" style="font-size:0.65rem;letter-spacing:0.2em;color:#9ca3af;text-transform:uppercase;margin-bottom:1.5rem;"></p>
+        <p id="search-count" class="section-eyebrow" style="margin-bottom:var(--lum-space-6);"></p>
         <div id="search-cards" class="search-cards-grid"></div>
       </div>
 
-      <div id="search-empty" style="display:none;text-align:center;padding:5rem 0;">
-        <i class="fa-regular fa-face-frown" style="font-size:2rem;color:#d1d5db;display:block;margin-bottom:1rem;"></i>
-        <p style="font-size:0.875rem;color:#9ca3af;">No results found.</p>
-        <p style="font-size:0.75rem;color:#d1d5db;margin-top:0.25rem;">Try a different keyword or browse a category above.</p>
+      <div id="search-empty" class="empty-state" style="display:none;">
+        <i class="fa-regular fa-face-frown empty-state__icon" aria-hidden="true"></i>
+        <p class="empty-state__title">No results found.</p>
+        <p class="empty-state__description">Try a different keyword or browse a category above.</p>
       </div>
     </div>`;
 
@@ -73,24 +79,31 @@ export function initSearchOverlay(): void {
   const newEmpty = overlay.querySelector<HTMLElement>('#search-empty')!;
 
   let isOpen = false;
+  let closing = false;
 
   function openOverlay(): void {
+    if (isOpen) return;
+    closing = false;
     overlay!.style.display = 'flex';
     requestAnimationFrame(() => overlay!.classList.add('search-open'));
     isOpen = true;
-    document.body.style.overflow = 'hidden';
+    lockScroll();
     setTimeout(() => newInput.focus(), 50);
   }
 
   function closeOverlay(): void {
+    if (!isOpen || closing) return;
+    closing = true;
     overlay!.classList.remove('search-open');
+    unlockScroll();
     setTimeout(() => {
       overlay!.style.display = 'none';
       newInput.value = '';
       showTrending();
+      isOpen = false;
+      closing = false;
+      toggleBtn!.focus();
     }, 250);
-    isOpen = false;
-    document.body.style.overflow = '';
   }
 
   function showTrending(): void {
@@ -159,9 +172,13 @@ export function initSearchOverlay(): void {
     renderResults(matches);
   }, 180);
 
+  function onKeyDown(e: KeyboardEvent): void {
+    if (e.key === 'Escape' && isOpen) closeOverlay();
+  }
+
   newInput.addEventListener('input', handleInput);
   toggleBtn.addEventListener('click', openOverlay);
   newClose.addEventListener('click', closeOverlay);
   overlay.addEventListener('click', (e) => { if (e.target === overlay) closeOverlay(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && isOpen) closeOverlay(); });
+  document.addEventListener('keydown', onKeyDown);
 }

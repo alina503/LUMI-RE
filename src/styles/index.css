@@ -1,9 +1,49 @@
 @import "tailwindcss";
+@source "../../";
+
+/* ── Layer order matters: tokens → base → components ───────────────────── */
 @import './tokens.css';
 @import './base.css';
 @import './components.css';
 
+/* ── Tailwind theme bridge ───────────────────────────────────────────────── */
+/*
+ * Expose token values as Tailwind utility classes.
+ * e.g. bg-brand  text-plum  border-blush  etc.
+ * Only add what is actually used as a Tailwind utility across HTML/TS files.
+ */
 @theme {
-  --color-brand: #8B5A8C;
-  --color-plum: #6B3F6E;
+  /* Brand */
+  --color-brand:         var(--lum-plum-500);
+  --color-brand-dark:    var(--lum-plum-700);
+  --color-plum:          var(--lum-plum-700);
+  --color-rose:          var(--lum-rose-400);
+
+  /* Warm surfaces */
+  --color-blush:         var(--lum-blush);
+  --color-nav:           var(--lum-nav);
+  --color-champagne:     var(--lum-champagne);
+  --color-champagne-dark:var(--lum-champagne-dark);
+
+  /* PINK sub-brand */
+  --color-pink-hero:     var(--lum-pink-hero);
+  --color-pink-dark:     var(--lum-pink-dark);
+  --color-pink-darker:   var(--lum-pink-darker);
+  --color-pink-light:    var(--lum-pink-light);
+  --color-pink-border:   var(--lum-pink-border);
+
+  /* Socials */
+  --color-facebook:      var(--lum-facebook);
+
+  /* Feedback */
+  --color-success:       var(--lum-success);
+  --color-error:         var(--lum-error);
+  --color-warning:       var(--lum-warning);
+
+  /* Deep dark neutral */
+  --color-ink:           var(--lum-ink);
+
+  /* Typography */
+  --font-sans:  var(--lum-font-sans);
+  --font-serif: var(--lum-font-serif);
 }

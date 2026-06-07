@@ -20,11 +20,11 @@ export const CART_CONFIG = {
 export const STORAGE_KEYS = {
   cart:       'lumiere_cart',
   cartState:  'lumiere_cart_state',
-  session:    'vs_user',
-  users:      'vs_users',
-  wishlist:   'vs_wishlist',
-  newsletter: 'vs_newsletter',
-  orders:     (userId: number) => `vs_orders_${userId}`,
+  session:    'lumiere_user',
+  users:      'lumiere_users',
+  wishlist:   'lumiere_wishlist',
+  newsletter: 'lumiere_newsletter',
+  orders:     (userId: string) => `lumiere_orders_${userId}`,
 } as const;
 
 export const PROMO_CODES: Record<string, number> = {

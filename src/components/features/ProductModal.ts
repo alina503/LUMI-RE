@@ -9,16 +9,18 @@ import { PLACEHOLDER } from '../../constants/images';
 const s = sanitizeText;
 
 const MODAL_HTML = `
-<div id="product-popup" style="display:none"
-  class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 py-8">
-  <div class="bg-white relative w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col sm:flex-row">
+<div id="product-popup" role="dialog" aria-modal="true" aria-labelledby="pp-name" style="display:none"
+  class="fixed inset-0 flex items-center justify-center bg-black/60 px-4 py-8"
+  style="z-index:var(--lum-z-modal);">
+  <div class="bg-white relative w-full max-w-2xl max-h-[90vh] overflow-y-auto flex flex-col sm:flex-row"
+    style="box-shadow:var(--lum-shadow-xl);">
 
-    <button id="pp-close"
-      class="absolute top-3 right-4 text-2xl text-gray-500 hover:text-black z-10 leading-none">&times;</button>
+    <button id="pp-close" aria-label="Close product preview"
+      class="modal-close">&times;</button>
 
     <div class="absolute top-3 left-4 text-xs text-gray-500 flex items-center gap-1">
-      <button id="pp-back" class="flex items-center gap-1 hover:text-black">
-        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <button id="pp-back" class="flex items-center gap-1 hover:text-black transition-colors duration-150">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
         </svg>
         Back
@@ -33,33 +35,25 @@ const MODAL_HTML = `
     </div>
 
     <div class="flex flex-col p-5 pt-10 flex-1 min-w-0">
-      <p id="pp-brand" class="text-xs font-bold tracking-widest text-gray-500 uppercase mb-1"></p>
-      <h2 id="pp-name" class="text-xl sm:text-2xl font-light mb-1"></h2>
+      <p id="pp-brand" class="section-eyebrow mb-1"></p>
+      <h2 id="pp-name" class="text-xl sm:text-2xl font-light mb-1 text-balance"></h2>
 
-      <div class="flex items-center gap-1 mb-2 text-sm text-yellow-400">
-        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-      </div>
+      <p id="pp-price" class="text-lg font-semibold mb-2 mt-1"></p>
+      <p id="pp-promo" class="product-card__promo mb-2 hidden"></p>
 
-      <p id="pp-price" class="text-lg font-semibold mb-3"></p>
-      <p id="pp-promo" class="text-red-400 text-xs mb-3 hidden"></p>
-
-      <div class="flex items-center gap-3 mb-4">
-        <button id="pp-qty-minus"
-          class="w-7 h-7 border border-gray-300 flex items-center justify-center hover:border-black text-lg leading-none">−</button>
-        <span id="pp-qty-val" class="text-sm w-4 text-center">1</span>
-        <button id="pp-qty-plus"
-          class="w-7 h-7 border border-gray-300 flex items-center justify-center hover:border-black text-lg leading-none">+</button>
+      <div class="flex items-center gap-3 mb-4" role="group" aria-label="Quantity">
+        <button id="pp-qty-minus" class="qty-btn" aria-label="Decrease quantity">−</button>
+        <span id="pp-qty-val" class="text-sm w-6 text-center tabular-nums" aria-live="polite">1</span>
+        <button id="pp-qty-plus" class="qty-btn" aria-label="Increase quantity">+</button>
       </div>
 
       <div id="pp-sizes-wrap" class="mb-4">
-        <p class="text-xs text-gray-600 mb-2">Size</p>
-        <div id="pp-size-btns" class="flex flex-wrap gap-2"></div>
-        <p id="pp-size-error" class="text-[#8B5A8C] text-xs mt-1 hidden">Please select a size.</p>
+        <p class="lum-label mb-2">Size</p>
+        <div id="pp-size-btns" class="flex flex-wrap gap-2" role="group" aria-label="Available sizes"></div>
+        <p id="pp-size-error" class="lum-field-error hidden">Please select a size.</p>
       </div>
 
-      <button id="pp-add-btn"
-        class="bg-gray-200 text-gray-500 text-sm py-3 tracking-wider w-full mt-auto transition hover:bg-black hover:text-white">
+      <button id="pp-add-btn" class="add-to-cart mt-auto">
         ADD TO BAG
       </button>
 
@@ -112,8 +106,8 @@ export function initProductModal(): void {
     mainImg.srcset = '';
     mainImg.src    = imgSrc;
 
-    brandEl.textContent = card.dataset.name ?? 'LUMIÈRE';
-    nameEl.textContent = card.dataset.subtitle ?? '';
+    brandEl.textContent = 'LUMIÈRE';
+    nameEl.textContent = card.dataset.name ?? '';
     priceEl.textContent = formatPrice(parseFloat(card.dataset.price ?? '0'));
 
     if (card.dataset.promo) {

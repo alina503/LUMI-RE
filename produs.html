@@ -2,40 +2,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product � LUMI�RE</title>
+    <title>Product | LUMIÈRE</title>
     <meta property="og:type"        content="website" />
     <meta property="og:url"         content="https://alina503.github.io/victoria.secret.clone/produs.html" />
     <meta property="og:image"       content="https://alina503.github.io/victoria.secret.clone/assets/image/og-image.jpg" />
-    <meta property="og:title"       content="Product � LUMI�RE" />
+    <meta property="og:title"       content="Product | LUMIÈRE" />
     <meta property="og:description" content="Product details — LUMIÈRE. Free shipping on orders over 269 lei." />
     <meta name="twitter:card"       content="summary_large_image" />
     <meta name="description"        content="Product details — LUMIÈRE. Free shipping on orders over 269 lei." />
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body>
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:text-sm">Skip to content</a>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <header>
-      <div class="bg-[#FAF5F0] py-2 w-full">
+      <div class="bg-blush py-2 w-full">
         <div class="font-extralight text-xs sm:text-sm mx-auto flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 text-center px-4">
-          <p>FREE SHIPPING ON ORDERS OVER 269 LEI � WEAR YOUR STORY.</p>
-          <a class="text-xs sm:text-sm bg-transparent hover:bg-[#F4EEE8] border-black border px-3 py-[3px] rounded-sm whitespace-nowrap" href="#">VIEW OFFERS</a>
+          <p>FREE SHIPPING ON ORDERS OVER 269 LEI | WEAR YOUR STORY.</p>
+          <a class="banner-offer-btn" href="#">VIEW OFFERS</a>
         </div>
       </div>
-      <div class="w-full bg-[#F4EEE8] py-2">
+      <div class="w-full bg-nav py-2">
         <div class="container mx-auto px-4">
           <div class="flex justify-between items-center">
-            <nav class="flex flex-wrap gap-2 sm:gap-4 items-center">
-              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">LUMI�RE</a></li>
+            <nav aria-label="Brand navigation"><ul class="flex flex-wrap gap-2 sm:gap-4 items-center">
+              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">LUMIÈRE</a></li>
               <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="atelier.html" class="hover:font-semibold">ATELIER</a></li>
               <li class="list-none text-xs sm:text-sm font-light"><a href="beauty.html" class="hover:font-semibold">BEAUTY</a></li>
-            </nav>
+            </ul></nav>
             <div class="flex gap-4 items-center">
               <button aria-label="Meniu" id="hamburger" class="sm:hidden text-xl"><i class="fa-solid fa-bars"></i></button>
               <button id="search-toggle" aria-label="Cautare" title="Cautare"><i class="fa-solid fa-magnifying-glass text-xl sm:text-2xl cursor-pointer"></i></button>
               <a href="login.html" id="user-nav-link" title="Contul meu"><i id="user-nav-icon" class="fa-regular fa-user text-xl sm:text-2xl cursor-pointer"></i></a>
-              <a href="cart.html" title="Shopping bag" class="relative">
-                <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer text-[#8B5A8C]"></i>
-                <span class="cart-badge absolute -top-2 -right-2 bg-[#8B5A8C] text-white text-[10px] rounded-full w-4 h-4 font-bold" style="display:none;align-items:center;justify-content:center">0</span>
+              <a href="cart.html" title="Shopping bag" aria-label="Shopping bag, 0 items" class="relative">
+                <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer text-brand"></i>
+                <span class="cart-badge absolute -top-2 -right-2 bg-brand text-white text-[10px] rounded-full w-4 h-4 font-bold" aria-live="polite" aria-atomic="true">0</span>
               </a>
             </div>
           </div>
@@ -76,7 +76,7 @@
     </header>
 
     <!-- Search overlay -->
-    <div id="search-overlay" style="display:none" class="fixed inset-0 z-50 flex-col items-center justify-start bg-white pt-20 px-4">
+    <div id="search-overlay" class="hidden fixed inset-0 z-50 flex-col items-center justify-start bg-white pt-20 px-4">
       <div class="w-full max-w-2xl mx-auto">
         <div class="flex items-center border-b-2 border-black pb-2 mb-6">
           <i class="fa-solid fa-magnifying-glass text-gray-400 mr-3"></i>
@@ -84,12 +84,12 @@
           <button id="search-close" class="ml-4 text-2xl text-gray-400 hover:text-black">&times;</button>
         </div>
         <div id="search-results" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
-        <p id="search-empty" class="text-gray-500 text-center mt-8" style="display:none">No products found.</p>
+        <p id="search-empty" class="hidden text-gray-500 text-center mt-8">No products found.</p>
       </div>
     </div>
 
     <!-- Toast -->
-    <div id="toast" style="display:none"
+    <div id="toast"
       class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-black text-white px-6 py-3 text-sm flex items-center gap-3 shadow-lg">
       <i class="fa-solid fa-bag-shopping"></i>
       <span id="toast-msg"></span>
@@ -101,48 +101,50 @@
         <i class="fa-solid fa-circle-exclamation text-4xl text-gray-300 mb-4 block"></i>
         <h2 class="text-xl font-light mb-2">Product not found</h2>
         <p class="text-sm text-gray-500 mb-6">The product you're looking for doesn't exist or is no longer available.</p>
-        <a href="index.html" class="bg-black text-white px-8 py-3 text-sm hover:bg-gray-800 transition">BACK TO HOME</a>
+        <a href="index.html" class="btn btn-primary">BACK TO HOME</a>
       </div>
     </div>
 
-    <div id="main-content"></div>
+    <div id="main-content" aria-live="polite"></div>
     <main id="product-main" class="hidden container mx-auto px-4 py-10">
       <!-- Breadcrumb -->
-      <nav class="text-xs text-gray-400 mb-8 flex items-center gap-2">
-        <a href="index.html" class="hover:text-black">Home</a>
-        <span>/</span>
-        <a id="breadcrumb-cat" href="#" class="hover:text-black capitalize"></a>
-        <span>/</span>
-        <span id="breadcrumb-name" class="text-gray-700"></span>
+      <nav aria-label="Breadcrumb" class="breadcrumb mb-8">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb__separator" aria-hidden="true">/</span>
+        <a id="breadcrumb-cat" href="#" class="capitalize"></a>
+        <span class="breadcrumb__separator" aria-hidden="true">/</span>
+        <span id="breadcrumb-name" class="breadcrumb__current"></span>
       </nav>
 
       <div class="flex flex-col lg:flex-row gap-12">
 
         <!-- Images -->
         <div class="flex-1 max-w-xl">
-          <div class="relative overflow-hidden bg-gray-50 mb-3">
-            <img id="pd-main-img" src="" alt="" class="w-full object-cover object-top" style="max-height:600px" />
-            <span id="pd-promo-badge" class="hidden absolute top-3 left-3 bg-[#c37989] text-white text-xs px-2 py-1 tracking-wider"></span>
+          <div class="relative overflow-hidden bg-gray-50 mb-3 aspect-3/4">
+            <img id="pd-main-img" src="" alt="" class="w-full h-full object-cover object-top" />
+            <span id="pd-promo-badge" class="hidden absolute top-3 left-3 bg-rose text-white text-xs px-2 py-1 tracking-wider"></span>
           </div>
           <div id="pd-thumbs" class="flex gap-2 flex-wrap"></div>
         </div>
 
         <!-- Info -->
         <div class="lg:w-96 shrink-0 flex flex-col">
-          <p class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-2">LUMI�RE</p>
+          <p class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-2">LUMIÈRE</p>
           <h1 id="pd-name" class="text-2xl sm:text-3xl font-light mb-1"></h1>
           <p id="pd-subtitle" class="text-sm text-gray-500 mb-3"></p>
 
           <!-- Rating -->
-          <div class="flex items-center gap-1 mb-4 text-sm text-yellow-400">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star-half-stroke"></i>
+          <div class="flex items-center gap-1 mb-4 text-sm text-yellow-400" aria-label="4.5 out of 5 stars, 48 reviews">
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star-half-stroke" aria-hidden="true"></i>
             <span class="text-gray-400 text-xs ml-1">(48 recenzii)</span>
           </div>
 
           <p id="pd-price" class="text-2xl font-semibold mb-1"></p>
-          <p id="pd-promo" class="text-[#8B5A8C] text-sm mb-4 hidden"></p>
+          <p id="pd-promo" class="text-brand text-sm mb-4 hidden"></p>
 
           <!-- Color -->
           <div id="pd-color-wrap" class="mb-4 hidden">
@@ -152,45 +154,43 @@
           <!-- Sizes -->
           <div id="pd-sizes-wrap" class="mb-5">
             <div class="flex justify-between items-center mb-2">
-              <p class="text-xs text-gray-600">Size</p>
-              <button class="text-xs text-[#8B5A8C] hover:text-[#6B3F6E] underline">Size Guide</button>
+              <p class="text-xs text-gray-600" id="size-label">Mărime</p>
+              <button class="text-xs text-brand hover:text-plum underline" aria-label="Deschide ghidul de mărimi">Ghid mărimi</button>
             </div>
-            <div id="pd-size-btns" class="flex flex-wrap gap-2"></div>
-            <p id="pd-size-error" class="text-[#8B5A8C] text-xs mt-2 hidden">Please select a size.</p>
+            <div id="pd-size-btns" class="flex flex-wrap gap-2" role="group" aria-labelledby="size-label"></div>
+            <p id="pd-size-error" role="alert" class="text-error text-xs mt-2 hidden">Selectați o mărime.</p>
           </div>
 
           <!-- Quantity -->
           <div class="flex items-center gap-4 mb-6">
-            <p class="text-xs text-gray-600">Quantity</p>
-            <div class="flex items-center border border-gray-300">
-              <button id="pd-qty-minus" class="w-9 h-9 flex items-center justify-center border-r border-gray-300 hover:bg-gray-50 text-lg leading-none transition">-</button>
-              <span id="pd-qty-val" class="w-9 h-9 flex items-center justify-center text-sm">1</span>
-              <button id="pd-qty-plus" class="w-9 h-9 flex items-center justify-center border-l border-gray-300 hover:bg-gray-50 text-lg leading-none transition">+</button>
+            <p class="text-xs text-gray-600" id="qty-label">Cantitate</p>
+            <div class="flex items-center border border-gray-300" role="group" aria-labelledby="qty-label">
+              <button id="pd-qty-minus" aria-label="Scade cantitatea" class="qty-btn border-r border-gray-300">−</button>
+              <span id="pd-qty-val" class="w-11 h-11 flex items-center justify-center text-sm" aria-live="polite" aria-atomic="true">1</span>
+              <button id="pd-qty-plus" aria-label="Crește cantitatea" class="qty-btn border-l border-gray-300">+</button>
             </div>
           </div>
 
           <!-- Add to cart -->
-          <button id="pd-add-btn"
-            class="bg-black text-white text-sm py-4 w-full hover:bg-gray-800 transition tracking-wider mb-3">
+          <button id="pd-add-btn" class="btn btn-primary btn-block btn-lg mb-3">
             ADD TO BAG
           </button>
-          <a href="cart.html"
-            class="border border-black text-sm py-4 w-full text-center hover:bg-gray-50 transition tracking-wider mb-6 block">
+          <a href="cart.html" class="btn btn-ghost btn-block btn-lg mb-6">
             VIEW BAG
           </a>
 
           <!-- Features -->
           <div class="border-t border-gray-200 pt-5 flex flex-col gap-3 text-sm text-gray-600">
             <div class="flex items-center gap-3">
-              <i class="fa-solid fa-truck w-4 text-center text-[#8B5A8C]"></i>
+              <i class="fa-solid fa-truck w-4 text-center text-brand"></i>
               <span>Free shipping on orders over 269 lei</span>
             </div>
             <div class="flex items-center gap-3">
-              <i class="fa-solid fa-rotate-left w-4 text-center text-[#8B5A8C]"></i>
+              <i class="fa-solid fa-rotate-left w-4 text-center text-brand"></i>
               <span>Free returns within 30 days</span>
             </div>
             <div class="flex items-center gap-3">
-              <i class="fa-solid fa-lock w-4 text-center text-[#8B5A8C]"></i>
+              <i class="fa-solid fa-lock w-4 text-center text-brand"></i>
               <span>Secure SSL payment</span>
             </div>
           </div>
@@ -203,28 +203,28 @@
         <div class="flex flex-col w-full lg:max-w-[500px]">
           <p class="text-lg font-semibold pb-4">SUBSCRIBE TO STAY IN THE STORY</p>
           <form class="newsletter-form flex flex-col gap-0">
-            <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Enter your email address" type="email" />
-            <button type="submit" class="bg-black text-white text-xs py-3 px-6 hover:bg-gray-800 transition mt-2 tracking-wider w-full">SUBSCRIBE</button>
+            <input class="lum-input" placeholder="Enter your email address" type="email" />
+            <button type="submit" class="btn btn-primary btn-block btn-sm mt-2">SUBSCRIBE</button>
             <p class="newsletter-msg text-xs mt-2"></p>
           </form>
-          <span class="pt-5 pb-10 text-sm">By subscribing you agree to our <a class="text-[#8B5A8C] hover:text-[#6B3F6E]" href="politica-de-confidentialitate.html">Privacy Policy.</a></span>
+          <span class="pt-5 pb-10 text-sm">By subscribing you agree to our <a class="text-brand hover:text-plum" href="politica-de-confidentialitate.html">Privacy Policy.</a></span>
         </div>
         <div class="w-full pb-10">
           <nav class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <ul class="flex flex-col gap-4 text-sm">
               <li class="font-semibold">HELP</li>
-              <li><a href="faq.html" class="hover:text-[#6B3F6E]">FAQ</a></li>
-              <li><a href="contact.html" class="hover:text-[#6B3F6E]">Contact Us</a></li>
+              <li><a href="faq.html" class="footer-link">FAQ</a></li>
+              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
             </ul>
             <ul class="flex flex-col gap-4 text-sm">
               <li class="font-semibold">INFORMATION</li>
-              <li><a href="livrare-plata.html" class="hover:text-[#6B3F6E]">Shipping & Payment</a></li>
-              <li><a href="returnari.html" class="hover:text-[#6B3F6E]">Returns</a></li>
+              <li><a href="livrare-plata.html" class="footer-link">Shipping & Payment</a></li>
+              <li><a href="returnari.html" class="footer-link">Returns</a></li>
             </ul>
             <ul class="flex flex-col gap-4 text-sm">
               <li class="font-semibold">CUSTOMER CARE</li>
-              <li><a href="contul-meu.html" class="hover:text-[#6B3F6E]">My Account</a></li>
-              <li><a href="termeni-conditii.html" class="hover:text-[#6B3F6E]">Terms & Conditions</a></li>
+              <li><a href="contul-meu.html" class="footer-link">My Account</a></li>
+              <li><a href="termeni-conditii.html" class="footer-link">Terms & Conditions</a></li>
             </ul>
           </nav>
         </div>
@@ -232,157 +232,10 @@
     </footer>
     <div class="w-full py-5 border-t border-gray-200">
       <div class="container mx-auto px-4">
-        <span class="text-sm text-gray-500">� 2025 Lumi�re. All Rights Reserved.</span>
+        <span class="text-sm text-gray-500">© 2025 Lumière. All Rights Reserved.</span>
       </div>
     </div>
 
-    <script>
-    (function () {
-      var qty = 1;
-      var product = null;
-      var selectedSize = null;
-
-      var catPages = {
-        bras: 'bras.html', panties: 'panties.html', lingerie: 'lingerie.html',
-        sleepwear: 'sleepwear.html', activewear: 'activewear.html', beauty: 'beauty.html',
-        accessories: 'accessories.html', swim: 'swim.html', 'new-in': 'new-in.html', edit: 'the-edit.html',
-      };
-
-      var params = new URLSearchParams(window.location.search);
-      var productId = params.get('id');
-
-      if (!productId) { showNotFound(); return; }
-
-      fetch('data/products.json')
-        .then(function (r) { return r.json(); })
-        .then(function (products) {
-          product = products.find(function (p) { return p.id === productId; });
-          if (!product) { showNotFound(); return; }
-          renderProduct(product);
-        })
-        .catch(function () { showNotFound(); });
-
-      function showNotFound() {
-        var el = document.getElementById('not-found');
-        el.classList.remove('hidden');
-        el.classList.add('flex');
-      }
-
-      function renderProduct(p) {
-        document.title = p.name + ' � LUMI�RE';
-
-        // Breadcrumb
-        var catLabel = p.category || 'produse';
-        var catHref = catPages[p.category] || 'index.html';
-        document.getElementById('breadcrumb-cat').textContent = catLabel;
-        document.getElementById('breadcrumb-cat').href = catHref;
-        document.getElementById('breadcrumb-name').textContent = p.name;
-
-        // Main image
-        document.getElementById('pd-main-img').src = p.image;
-        document.getElementById('pd-main-img').alt = p.name;
-
-        // Thumbs � use main image; add extras if product has images array
-        var thumbs = document.getElementById('pd-thumbs');
-        var images = p.images || [p.image];
-        images.forEach(function (src) {
-          var img = document.createElement('img');
-          img.src = src;
-          img.alt = p.name;
-          img.className = 'w-20 h-20 object-cover object-top cursor-pointer border-2 hover:border-black transition';
-          img.addEventListener('click', function () {
-            document.getElementById('pd-main-img').src = src;
-            thumbs.querySelectorAll('img').forEach(function (t) { t.classList.remove('border-black'); t.classList.add('border-transparent'); });
-            img.classList.add('border-black'); img.classList.remove('border-transparent');
-          });
-          thumbs.appendChild(img);
-        });
-        if (thumbs.firstChild) thumbs.firstChild.classList.add('border-black');
-
-        // Promo badge
-        if (p.promo) {
-          var badge = document.getElementById('pd-promo-badge');
-          badge.textContent = p.promo;
-          badge.classList.remove('hidden');
-          var promoEl = document.getElementById('pd-promo');
-          promoEl.textContent = p.promo;
-          promoEl.classList.remove('hidden');
-        }
-
-        document.getElementById('pd-name').textContent = p.name;
-        document.getElementById('pd-subtitle').textContent = p.subtitle;
-        document.getElementById('pd-price').textContent = parseFloat(p.price).toFixed(2) + ' lei';
-
-        // Color
-        if (p.color) {
-          document.getElementById('pd-color-wrap').classList.remove('hidden');
-          document.getElementById('pd-color-label').textContent = p.color;
-        }
-
-        // Sizes
-        var sizeContainer = document.getElementById('pd-size-btns');
-        (p.sizes || []).forEach(function (size) {
-          var btn = document.createElement('button');
-          btn.textContent = size;
-          btn.className = 'pd-size border border-gray-300 text-xs px-4 py-2 hover:border-black transition';
-          btn.addEventListener('click', function () {
-            sizeContainer.querySelectorAll('.pd-size').forEach(function (b) {
-              b.classList.remove('bg-black', 'text-white', 'border-black');
-            });
-            btn.classList.add('bg-black', 'text-white', 'border-black');
-            selectedSize = size;
-            document.getElementById('pd-size-error').classList.add('hidden');
-          });
-          sizeContainer.appendChild(btn);
-        });
-
-        document.getElementById('product-main').classList.remove('hidden');
-      }
-
-      // Qty controls
-      document.getElementById('pd-qty-minus').addEventListener('click', function () {
-        if (qty > 1) { qty--; document.getElementById('pd-qty-val').textContent = qty; }
-      });
-      document.getElementById('pd-qty-plus').addEventListener('click', function () {
-        qty++; document.getElementById('pd-qty-val').textContent = qty;
-      });
-
-      // Add to cart
-      document.getElementById('pd-add-btn').addEventListener('click', function () {
-        if (!selectedSize) {
-          document.getElementById('pd-size-error').classList.remove('hidden');
-          return;
-        }
-        for (var i = 0; i < qty; i++) {
-          cartAdd({
-            id: product.id, name: product.name, subtitle: product.subtitle,
-            price: parseFloat(product.price), image: product.image,
-            color: product.color || '', size: selectedSize, promo: product.promo || '',
-          });
-        }
-        showToast(product.name + ' added to bag!');
-      });
-
-      // Header mobile menu
-      document.getElementById('hamburger').addEventListener('click', function () {
-        document.getElementById('mobile-menu').classList.toggle('open');
-      });
-
-      // Search overlay
-      document.getElementById('search-toggle').addEventListener('click', function () {
-        var overlay = document.getElementById('search-overlay');
-        overlay.style.display = 'flex'; overlay.style.flexDirection = 'column';
-        document.getElementById('search-input').focus();
-      });
-      document.getElementById('search-close').addEventListener('click', function () {
-        document.getElementById('search-overlay').style.display = 'none';
-        document.getElementById('search-input').value = '';
-        document.getElementById('search-results').innerHTML = '';
-        document.getElementById('search-empty').style.display = 'none';
-      });
-    })();
-    </script>
-  
-    <script type="module" src="src/pages/category.ts"></script>
+    <script type="module" src="src/pages/produs.ts"></script>
   </body>
 </html>

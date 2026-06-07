@@ -21,10 +21,6 @@ function init(): void {
     return;
   }
 
-  document.getElementById('hamburger')?.addEventListener('click', () => {
-    document.getElementById('mobile-menu')?.classList.toggle('open');
-  });
-
   const pwdInput = document.getElementById('password') as HTMLInputElement | null;
   document.getElementById('toggle-pwd')?.addEventListener('click', function () {
     if (!pwdInput) return;

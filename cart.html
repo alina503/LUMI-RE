@@ -2,40 +2,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping Bag � LUMI�RE</title>
+    <title>Shopping Bag | LUMIÈRE</title>
     <meta property="og:type"        content="website" />
     <meta property="og:url"         content="https://alina503.github.io/victoria.secret.clone/cart.html" />
     <meta property="og:image"       content="https://alina503.github.io/victoria.secret.clone/assets/image/og-image.jpg" />
-    <meta property="og:title"       content="Shopping Bag � LUMI�RE" />
+    <meta property="og:title"       content="Shopping Bag | LUMIÈRE" />
     <meta property="og:description" content="Your LUMIÈRE shopping bag — review your items and proceed to checkout." />
     <meta name="twitter:card"       content="summary_large_image" />
     <meta name="description"        content="Your LUMIÈRE shopping bag — review your items and proceed to checkout." />
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body>
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:text-sm">Skip to content</a>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <header>
-      <div class="bg-[#FAF5F0] py-2 w-full">
+      <div class="bg-blush py-2 w-full">
         <div class="font-extralight text-xs sm:text-sm mx-auto flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 text-center px-4">
-          <p>FREE SHIPPING ON ORDERS OVER 269 LEI � WEAR YOUR STORY.</p>
-          <a class="text-xs sm:text-sm bg-transparent hover:bg-[#F4EEE8] border-black border px-3 py-[3px] rounded-sm whitespace-nowrap" href="#">VIEW OFFERS</a>
+          <p>FREE SHIPPING ON ORDERS OVER 269 LEI | WEAR YOUR STORY.</p>
+          <a class="banner-offer-btn" href="#">VIEW OFFERS</a>
         </div>
       </div>
-      <div class="w-full bg-[#F4EEE8] py-2">
+      <div class="w-full bg-nav py-2">
         <div class="container mx-auto px-4">
           <div class="flex justify-between items-center">
-            <nav class="flex flex-wrap gap-2 sm:gap-4 items-center">
-              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">LUMI�RE</a></li>
+            <nav aria-label="Brand navigation"><ul class="flex flex-wrap gap-2 sm:gap-4 items-center">
+              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">LUMIÈRE</a></li>
               <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="atelier.html" class="hover:font-semibold">ATELIER</a></li>
               <li class="list-none text-xs sm:text-sm font-light"><a href="beauty.html" class="hover:font-semibold">BEAUTY</a></li>
-            </nav>
+            </ul></nav>
             <div class="flex gap-4 items-center">
               <button aria-label="Meniu" id="hamburger" class="sm:hidden text-xl"><i class="fa-solid fa-bars"></i></button>
               <button id="search-toggle" aria-label="Search" title="Search"><i class="fa-solid fa-magnifying-glass text-xl sm:text-2xl cursor-pointer"></i></button>
               <a href="login.html" id="user-nav-link" title="My Account"><i id="user-nav-icon" class="fa-regular fa-user text-xl sm:text-2xl cursor-pointer"></i></a>
-              <a href="cart.html" title="Shopping bag" class="relative">
-                <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer text-[#8B5A8C]"></i>
-                <span class="cart-badge absolute -top-2 -right-2 bg-[#8B5A8C] text-white text-[10px] rounded-full w-4 h-4 font-bold" style="display:none;align-items:center;justify-content:center">0</span>
+              <a href="cart.html" title="Shopping bag" aria-label="Shopping bag, 0 items" class="relative">
+                <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer text-brand"></i>
+                <span class="cart-badge absolute -top-2 -right-2 bg-brand text-white text-[10px] rounded-full w-4 h-4 font-bold" aria-live="polite" aria-atomic="true">0</span>
               </a>
             </div>
           </div>
@@ -77,7 +77,7 @@
       </div>
     </header>
     <!-- Search overlay -->
-    <div id="search-overlay" style="display:none" class="fixed inset-0 z-50 flex-col items-center justify-start bg-white pt-20 px-4">
+    <div id="search-overlay" class="hidden fixed inset-0 z-50 flex-col items-center justify-start bg-white pt-20 px-4">
       <div class="w-full max-w-2xl mx-auto">
         <div class="flex items-center border-b-2 border-black pb-2 mb-6">
           <i class="fa-solid fa-magnifying-glass text-gray-400 mr-3"></i>
@@ -85,7 +85,7 @@
           <button id="search-close" class="ml-4 text-2xl text-gray-400 hover:text-black">&times;</button>
         </div>
         <div id="search-results" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
-        <p id="search-empty" class="text-gray-500 text-center mt-8" style="display:none">Niciun produs gasit.</p>
+        <p id="search-empty" class="hidden text-gray-500 text-center mt-8">Niciun produs gasit.</p>
       </div>
     </div>
 
@@ -94,7 +94,7 @@
         <h1 class="text-2xl sm:text-3xl font-light mb-8">SHOPPING BAG</h1>
 
         <!-- Promo shipping banner -->
-        <div id="shipping-banner" class="bg-[#FAF5F0] text-center py-3 px-4 mb-8 text-sm"></div>
+        <div id="shipping-banner" class="bg-blush text-center py-3 px-4 mb-8 text-sm"></div>
 
         <div class="flex flex-col lg:flex-row gap-10">
 
@@ -124,7 +124,7 @@
               </div>
               <div class="flex justify-between text-sm text-gray-500">
                 <span>Shipping</span>
-                <span id="shipping-cost">�</span>
+                <span id="shipping-cost">—</span>
               </div>
 
               <!-- Promo code -->
@@ -144,7 +144,7 @@
               <p class="text-xs text-gray-500">VAT included. Final shipping cost calculated at checkout.</p>
 
               <a id="checkout-btn" href="checkout.html"
-                class="bg-black text-white py-4 text-sm font-semibold hover:bg-gray-800 transition w-full tracking-wide text-center block">
+                class="btn btn-primary btn-block text-center">
                 CHECKOUT
               </a>
 
@@ -158,7 +158,7 @@
             </div>
             <div class="flex items-center gap-2 text-xs text-gray-500 mt-4">
               <i class="fa-solid fa-lock"></i>
-              <span>Secure SSL payment � your data is protected</span>
+              <span>Secure SSL payment | your data is protected</span>
             </div>
           </div>
         </div>
@@ -170,30 +170,30 @@
         <div class="flex flex-col w-full lg:max-w-[500px]">
           <p class="text-lg font-semibold pb-4">SUBSCRIBE TO STAY IN THE STORY</p>
           <form class="newsletter-form flex flex-col gap-0">
-            <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Enter your email address" type="email" />
-            <button type="submit" class="bg-black text-white text-xs py-3 px-6 hover:bg-gray-800 transition mt-2 tracking-wider w-full">SUBSCRIBE</button>
+            <input class="lum-input" placeholder="Enter your email address" type="email" />
+            <button type="submit" class="btn btn-primary btn-block btn-sm mt-2">SUBSCRIBE</button>
             <p class="newsletter-msg text-xs mt-2"></p>
           </form>
-          <span class="pt-5 pb-10 text-sm">By subscribing you agree to our <a class="text-[#8B5A8C] hover:text-[#8B5A8C]" href="politica-de-confidentialitate.html">Privacy Policy.</a></span>
+          <span class="pt-5 pb-10 text-sm">By subscribing you agree to our <a class="text-brand hover:text-brand" href="politica-de-confidentialitate.html">Privacy Policy.</a></span>
         </div>
         <div class="w-full pb-10">
           <nav class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <ul class="flex flex-col gap-4 text-sm">
               <li class="font-semibold">HELP</li>
-              <li><a href="faq.html" class="hover:text-[#6B3F6E]">FAQ</a></li>
-              <li><a href="contact.html" class="hover:text-[#6B3F6E]">Contact Us</a></li>
+              <li><a href="faq.html" class="footer-link">FAQ</a></li>
+              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
             </ul>
             <ul class="flex flex-col gap-4 text-sm">
               <li class="font-semibold">INFORMATION</li>
-              <li><a href="livrare-plata.html" class="hover:text-[#6B3F6E]">Shipping & Payment</a></li>
-              <li><a href="returnari.html" class="hover:text-[#6B3F6E]">Returns & Claims</a></li>
-              <li><a href="politica-de-confidentialitate.html" class="hover:text-[#6B3F6E]">Privacy Policy</a></li>
+              <li><a href="livrare-plata.html" class="footer-link">Shipping & Payment</a></li>
+              <li><a href="returnari.html" class="footer-link">Returns & Claims</a></li>
+              <li><a href="politica-de-confidentialitate.html" class="footer-link">Privacy Policy</a></li>
             </ul>
             <ul class="flex flex-col gap-4 text-sm">
               <li class="font-semibold">CUSTOMER CARE</li>
-              <li><a href="contul-meu.html" class="hover:text-[#6B3F6E]">My Account</a></li>
-              <li><a href="wishlist.html" class="hover:text-[#6B3F6E]">Wishlist</a></li>
-              <li><a href="termeni-conditii.html" class="hover:text-[#6B3F6E]">Terms & Conditions</a></li>
+              <li><a href="contul-meu.html" class="footer-link">My Account</a></li>
+              <li><a href="wishlist.html" class="footer-link">Wishlist</a></li>
+              <li><a href="termeni-conditii.html" class="footer-link">Terms & Conditions</a></li>
             </ul>
           </nav>
         </div>
@@ -201,172 +201,17 @@
     </footer>
     <div class="w-full py-5 border-t border-gray-200">
       <div class="container mx-auto px-4">
-        <span class="text-sm text-gray-500">� 2025 Lumi�re. All Rights Reserved.</span>
+        <span class="text-sm text-gray-500">© 2025 Lumière. All Rights Reserved.</span>
       </div>
     </div>
 
     <!-- Toast -->
-    <div id="toast" style="display:none"
+    <div id="toast"
       class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-black text-white px-6 py-3 text-sm flex items-center gap-3 shadow-lg">
       <i class="fa-solid fa-bag-shopping"></i>
       <span id="toast-msg"></span>
     </div>
 
-    <script>
-      // --- Cart Page Logic ----------------------------------------------------
-      let promoApplied = false;
-      let activePromoRate = 0;
-
-      function formatPrice(amount) {
-        return amount.toFixed(2) + ' lei';
-      }
-
-      function renderCartItem(item) {
-        const div = document.createElement('div');
-        div.className = 'flex gap-4 py-6';
-        div.dataset.key = item.key;
-        div.innerHTML = `
-          <div class="shrink-0">
-            <img src="${item.image}" alt="${item.name}" class="w-24 sm:w-32 object-cover" loading="lazy" />
-          </div>
-          <div class="flex flex-col flex-1 gap-1">
-            <div class="flex justify-between items-start">
-              <div>
-                <p class="text-sm font-semibold">${item.name}</p>
-                <p class="text-xs text-gray-600">${item.subtitle || ''}</p>
-                <p class="text-xs text-gray-500 mt-1">Size: <span class="font-medium">${item.size}</span></p>
-                ${item.color ? `<p class="text-xs text-gray-500">Color: <span class="font-medium">${item.color}</span></p>` : ''}
-              </div>
-              <button class="remove-btn text-gray-400 hover:text-red-500 ml-2 text-sm" data-key="${item.key}" title="Remove">
-                <i class="fa-solid fa-xmark"></i>
-              </button>
-            </div>
-            <div class="flex items-center justify-between mt-3">
-              <div class="flex items-center border border-gray-300">
-                <button class="qty-btn minus w-8 h-8 flex items-center justify-center border-r border-gray-300 text-sm transition" data-key="${item.key}">-</button>
-                <span class="qty-val w-8 h-8 flex items-center justify-center text-sm">${item.qty}</span>
-                <button class="qty-btn plus w-8 h-8 flex items-center justify-center border-l border-gray-300 text-sm transition" data-key="${item.key}">+</button>
-              </div>
-              <p class="item-total text-base font-semibold">${formatPrice(item.price * item.qty)}</p>
-            </div>
-            ${item.promo ? `<p class="text-red-400 text-xs mt-1">${item.promo}</p>` : ''}
-          </div>`;
-        return div;
-      }
-
-      function recalculate(items) {
-        const subtotal = items.reduce((s, i) => s + i.price * i.qty, 0);
-        const itemCount = items.reduce((s, i) => s + i.qty, 0);
-        const shipping = subtotal > 0
-          ? (subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : STANDARD_SHIPPING_COST)
-          : 0;
-        const discount = promoApplied ? (subtotal + shipping) * activePromoRate : 0;
-        const total = subtotal + shipping - discount;
-
-        document.getElementById('subtotal').textContent = formatPrice(subtotal);
-        document.getElementById('total-items').textContent = itemCount;
-        document.getElementById('total-price').textContent = formatPrice(total);
-
-        const shippingEl = document.getElementById('shipping-cost');
-        if (subtotal === 0) {
-          shippingEl.textContent = '�';
-          shippingEl.className = 'text-gray-400';
-        } else if (shipping === 0) {
-          shippingEl.textContent = 'Free';
-          shippingEl.className = 'text-green-600 font-medium';
-        } else {
-          shippingEl.textContent = formatPrice(shipping);
-          shippingEl.className = 'text-gray-700';
-        }
-
-        const banner = document.getElementById('shipping-banner');
-        if (subtotal === 0) {
-          banner.innerHTML = 'Add products to qualify for free shipping on orders over 269 lei.';
-        } else if (subtotal < FREE_SHIPPING_THRESHOLD) {
-          const rem = (FREE_SHIPPING_THRESHOLD - subtotal).toFixed(2);
-          banner.innerHTML = `You are <strong>${rem} lei</strong> away from <strong>free shipping!</strong>`;
-        } else {
-          banner.innerHTML = 'Congratulations! You have earned <strong>free shipping!</strong>';
-        }
-      }
-
-      function renderCart() {
-        const items = cartLoad();
-        const container = document.getElementById('cart-items');
-        const emptyCart = document.getElementById('empty-cart');
-        container.innerHTML = '';
-
-        if (items.length === 0) {
-          emptyCart.classList.remove('hidden');
-          recalculate([]);
-          return;
-        }
-        emptyCart.classList.add('hidden');
-
-        items.forEach(item => {
-          const el = renderCartItem(item);
-          container.appendChild(el);
-        });
-
-        container.querySelectorAll('.remove-btn').forEach(btn => {
-          btn.addEventListener('click', function () {
-            cartRemove(this.dataset.key);
-            renderCart();
-          });
-        });
-        container.querySelectorAll('.qty-btn.plus').forEach(btn => {
-          btn.addEventListener('click', function () {
-            const key = this.dataset.key;
-            const item = cartLoad().find(i => i.key === key);
-            if (item) { cartSetQty(key, item.qty + 1); renderCart(); }
-          });
-        });
-        container.querySelectorAll('.qty-btn.minus').forEach(btn => {
-          btn.addEventListener('click', function () {
-            const key = this.dataset.key;
-            const item = cartLoad().find(i => i.key === key);
-            if (!item) return;
-            if (item.qty > 1) {
-              cartSetQty(key, item.qty - 1);
-            } else {
-              cartRemove(key);
-            }
-            renderCart();
-          });
-        });
-
-        recalculate(cartLoad());
-      }
-
-      document.getElementById('apply-promo').addEventListener('click', function () {
-        const code = document.getElementById('promo-input').value.trim().toUpperCase();
-        const msg = document.getElementById('promo-msg');
-        msg.className = 'text-xs mt-1';
-        msg.classList.remove('hidden');
-
-        if (promoApplied) {
-          msg.textContent = 'Code already applied.';
-          msg.classList.add('text-gray-500');
-          return;
-        }
-        if (PROMO_CODES[code]) {
-          promoApplied = true;
-          activePromoRate = PROMO_CODES[code];
-          msg.textContent = `Code applied! ${activePromoRate * 100}% discount.`;
-          msg.classList.add('text-green-600');
-          recalculate(cartLoad());
-        } else {
-          msg.textContent = 'Invalid code. Please try again.';
-          msg.classList.add('text-red-500');
-        }
-      });
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', renderCart);
-      } else {
-        renderCart();
-      }
-    </script>
     <script type="module" src="src/pages/cart.ts"></script>
   </body>
 </html>

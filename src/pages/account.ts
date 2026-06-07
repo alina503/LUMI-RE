@@ -1,5 +1,5 @@
 import '../styles/index.css';
-import { AuthService } from '../services/authService';
+import { AuthService, openLogoutModal } from '../services/authService';
 import { STORAGE_KEYS } from '../constants/config';
 import { initHeader } from '../layouts/Header';
 import { initSearchOverlay } from '../layouts/SearchOverlay';
@@ -18,10 +18,6 @@ function init(): void {
   injectToast();
   initHeader();
   initSearchOverlay();
-
-  document.getElementById('hamburger')?.addEventListener('click', () => {
-    document.getElementById('mobile-menu')?.classList.toggle('open');
-  });
 
   const session = AuthService.getSession();
 
@@ -123,20 +119,13 @@ function init(): void {
   }
 
   // Profile save
-  document.getElementById('profile-form')?.addEventListener('submit', (e) => {
+  document.getElementById('profile-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const fn = (document.getElementById('pf-first-name') as HTMLInputElement).value.trim();
     const ln = (document.getElementById('pf-last-name') as HTMLInputElement).value.trim();
     if (!fn || !ln) return;
 
-    let users: Array<{ id: number; firstName: string; lastName: string }> = [];
-    try { users = JSON.parse(localStorage.getItem(STORAGE_KEYS.users) || '[]'); } catch { users = []; }
-    const user = users.find((u) => u.id === session.id);
-    if (user) { user.firstName = fn; user.lastName = ln; }
-    try { localStorage.setItem(STORAGE_KEYS.users, JSON.stringify(users)); } catch { /* quota */ }
-
-    const newSession = { id: session.id, firstName: fn, lastName: ln, email: session.email };
-    localStorage.setItem(STORAGE_KEYS.session, JSON.stringify(newSession));
+    await AuthService.updateProfile(session.id, fn, ln);
 
     const accNameEl = document.getElementById('acc-name');
     if (accNameEl) accNameEl.textContent = `${fn} ${ln}`;
@@ -148,14 +137,10 @@ function init(): void {
     }
   });
 
-  // Logout
   document.getElementById('logout-btn')?.addEventListener('click', () => {
-    // Re-use the modal from authService via dynamic import not needed — just do inline
-    const confirmed = window.confirm(`Sign out from ${session.firstName} ${session.lastName}?`);
-    if (confirmed) {
-      AuthService.logout();
-      window.location.href = 'index.html';
-    }
+    openLogoutModal(`${session.firstName} ${session.lastName}`, () => {
+      AuthService.logout().then(() => { window.location.href = 'index.html'; });
+    });
   });
 }
 

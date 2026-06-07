@@ -2,27 +2,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Finalizare Comanda � LUMI�RE</title>
+    <title>Finalizare Comanda | LUMIÈRE</title>
     <meta property="og:type"        content="website" />
     <meta property="og:url"         content="https://alina503.github.io/victoria.secret.clone/finalizare-comanda.html" />
     <meta property="og:image"       content="https://alina503.github.io/victoria.secret.clone/assets/image/og-image.jpg" />
-    <meta property="og:title"       content="Finalizare Comanda � LUMI�RE" />
+    <meta property="og:title"       content="Finalizare Comanda | LUMIÈRE" />
     <meta property="og:description" content="Complete your LUMIÈRE order — secure checkout with multiple payment options." />
     <meta name="twitter:card"       content="summary_large_image" />
     <meta name="description"        content="Complete your LUMIÈRE order — secure checkout with multiple payment options." />
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body class="bg-white">
 
     <!-- Minimal header for checkout -->
     <header class="border-b border-gray-200">
-      <div class="bg-[#FAF5F0] py-2 w-full text-center">
-        <p class="font-extralight text-xs sm:text-sm">FREE SHIPPING ON ORDERS OVER 269 LEI � � WEAR YOUR STORY.</p>
+      <div class="bg-blush py-2 w-full text-center">
+        <p class="font-extralight text-xs sm:text-sm">FREE SHIPPING ON ORDERS OVER 269 LEI | ✦ WEAR YOUR STORY.</p>
       </div>
       <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-        <a href="index.html" class="font-bold tracking-widest text-lg">LUMI�RE</a>
+        <a href="index.html" class="font-bold tracking-widest text-lg">LUMIÈRE</a>
         <div class="flex items-center gap-2 text-xs text-gray-500">
-          <i class="fa-solid fa-lock text-[#8B5A8C]"></i>
+          <i class="fa-solid fa-lock text-brand"></i>
           <span>Plata securizata SSL</span>
         </div>
       </div>
@@ -34,7 +34,7 @@
               <a href="cart.html" class="text-gray-400 hover:text-black">Co?</a>
             </li>
             <li class="text-gray-300">/</li>
-            <li id="step-info-label" class="flex items-center gap-1 font-semibold text-black">Informa?ii</li>
+            <li id="step-info-label" class="flex items-center gap-1 font-semibold text-black">Informații</li>
             <li class="text-gray-300">/</li>
             <li id="step-pay-label" class="flex items-center gap-1 text-gray-400">Plata</li>
           </ol>
@@ -50,7 +50,7 @@
 
           <!-- STEP 1: Delivery info -->
           <section id="step-info" class="">
-            <h2 class="text-lg font-semibold mb-6">Informa?ii de livrare</h2>
+            <h2 class="text-lg font-semibold mb-6">Informații de livrare</h2>
 
             <form id="delivery-form" class="flex flex-col gap-4" novalidate>
 
@@ -60,26 +60,26 @@
                 <div class="flex flex-col sm:flex-row gap-4">
                   <div class="flex-1">
                     <input id="d-first-name" type="text" placeholder="Prenume *"
-                      class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
-                    <p class="field-error text-red-400 text-xs mt-1 hidden">C�mp obligatoriu.</p>
+                      class="lum-input" />
+                    <p class="lum-field-error hidden">Câmp obligatoriu.</p>
                   </div>
                   <div class="flex-1">
                     <input id="d-last-name" type="text" placeholder="Nume *"
-                      class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
-                    <p class="field-error text-red-400 text-xs mt-1 hidden">C�mp obligatoriu.</p>
+                      class="lum-input" />
+                    <p class="lum-field-error hidden">Câmp obligatoriu.</p>
                   </div>
                 </div>
               </div>
 
               <div>
                 <input id="d-email" type="email" placeholder="Adresa de e-mail *"
-                  class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
-                <p class="field-error text-red-400 text-xs mt-1 hidden">Introduce?i un e-mail valid.</p>
+                  class="lum-input" />
+                <p class="lum-field-error hidden">Introduceți un e-mail valid.</p>
               </div>
               <div>
                 <input id="d-phone" type="tel" placeholder="Telefon *"
-                  class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
-                <p class="field-error text-red-400 text-xs mt-1 hidden">Introduce?i un numar de telefon valid.</p>
+                  class="lum-input" />
+                <p class="lum-field-error hidden">Introduceți un numar de telefon valid.</p>
               </div>
 
               <!-- Address -->
@@ -87,27 +87,27 @@
                 <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Adresa de livrare</p>
                 <div class="flex flex-col gap-4">
                   <div>
-                    <input id="d-address" type="text" placeholder="Strada ?i numar *"
-                      class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
-                    <p class="field-error text-red-400 text-xs mt-1 hidden">C�mp obligatoriu.</p>
+                    <input id="d-address" type="text" placeholder="Strada și numar *"
+                      class="lum-input" />
+                    <p class="lum-field-error hidden">Câmp obligatoriu.</p>
                   </div>
-                  <input id="d-address2" type="text" placeholder="Apartament, bloc, scara (op?ional)"
-                    class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
+                  <input id="d-address2" type="text" placeholder="Apartament, bloc, scara (opțional)"
+                    class="lum-input" />
                   <div class="flex flex-col sm:flex-row gap-4">
                     <div class="flex-1">
                       <input id="d-city" type="text" placeholder="Ora? *"
-                        class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
-                      <p class="field-error text-red-400 text-xs mt-1 hidden">C�mp obligatoriu.</p>
+                        class="lum-input" />
+                      <p class="lum-field-error hidden">Câmp obligatoriu.</p>
                     </div>
                     <div class="flex-1">
                       <input id="d-county" type="text" placeholder="Jude? *"
-                        class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
-                      <p class="field-error text-red-400 text-xs mt-1 hidden">C�mp obligatoriu.</p>
+                        class="lum-input" />
+                      <p class="lum-field-error hidden">Câmp obligatoriu.</p>
                     </div>
                     <div class="w-28">
-                      <input id="d-zip" type="text" placeholder="Cod po?tal *"
-                        class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
-                      <p class="field-error text-red-400 text-xs mt-1 hidden">C�mp obligatoriu.</p>
+                      <input id="d-zip" type="text" placeholder="Cod poștal *"
+                        class="lum-input" />
+                      <p class="lum-field-error hidden">Câmp obligatoriu.</p>
                     </div>
                   </div>
                 </div>
@@ -122,7 +122,7 @@
                       <input type="radio" name="shipping" value="standard" class="accent-black" checked />
                       <div>
                         <p class="text-sm font-medium">Livrare Standard</p>
-                        <p class="text-xs text-gray-500">3�5 zile lucratoare</p>
+                        <p class="text-xs text-gray-500">3–5 zile lucratoare</p>
                       </div>
                     </div>
                     <span id="shipping-standard-price" class="text-sm font-medium">20.00 lei</span>
@@ -132,7 +132,7 @@
                       <input type="radio" name="shipping" value="express" class="accent-black" />
                       <div>
                         <p class="text-sm font-medium">Livrare Express</p>
-                        <p class="text-xs text-gray-500">1�2 zile lucratoare</p>
+                        <p class="text-xs text-gray-500">1–2 zile lucratoare</p>
                       </div>
                     </div>
                     <span class="text-sm font-medium">39.00 lei</span>
@@ -141,11 +141,11 @@
               </div>
 
               <button type="submit"
-                class="bg-black text-white py-4 text-sm font-semibold hover:bg-gray-800 transition w-full tracking-wide mt-2">
+                class="btn btn-primary btn-block mt-2">
                 CONTINUA SPRE PLATA
               </button>
               <a href="cart.html" class="flex items-center gap-2 text-xs text-gray-500 hover:text-black">
-                <i class="fa-solid fa-arrow-left text-xs"></i> �napoi la co?
+                <i class="fa-solid fa-arrow-left text-xs"></i> înapoi la coș
               </a>
             </form>
           </section>
@@ -158,7 +158,7 @@
             <div id="delivery-summary" class="border border-gray-200 p-4 mb-6 text-sm flex flex-col gap-2">
               <div class="flex justify-between text-gray-600">
                 <span class="text-xs text-gray-400 uppercase">Contact</span>
-                <button id="edit-delivery" class="text-xs text-[#8B5A8C] hover:text-[#6B3F6E]">Modifica</button>
+                <button id="edit-delivery" class="text-xs text-brand hover:text-brand-dark transition-colors duration-150">Modifica</button>
               </div>
               <p id="ds-name" class="font-medium"></p>
               <p id="ds-email" class="text-gray-500 text-xs"></p>
@@ -205,41 +205,41 @@
               <div id="card-fields" class="flex flex-col gap-4 border border-gray-200 p-4">
                 <div>
                   <input id="p-card-name" type="text" placeholder="Titularul cardului *"
-                    class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
-                  <p class="field-error text-red-400 text-xs mt-1 hidden">C�mp obligatoriu.</p>
+                    class="lum-input" />
+                  <p class="lum-field-error hidden">Câmp obligatoriu.</p>
                 </div>
                 <div>
                   <div class="relative">
                     <input id="p-card-number" type="text" placeholder="Numarul cardului *" maxlength="19"
-                      class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition pr-10" />
+                      class="lum-input pr-10" />
                     <i class="fa-regular fa-credit-card absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
                   </div>
-                  <p class="field-error text-red-400 text-xs mt-1 hidden">Numar de card invalid.</p>
+                  <p class="lum-field-error hidden">Numar de card invalid.</p>
                 </div>
                 <div class="flex gap-4">
                   <div class="flex-1">
                     <input id="p-expiry" type="text" placeholder="LL/AA *" maxlength="5"
-                      class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
-                    <p class="field-error text-red-400 text-xs mt-1 hidden">Data expirare invalida.</p>
+                      class="lum-input" />
+                    <p class="lum-field-error hidden">Data expirare invalida.</p>
                   </div>
                   <div class="w-28">
                     <div class="relative">
                       <input id="p-cvv" type="text" placeholder="CVV *" maxlength="4"
-                        class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition pr-8" />
+                        class="lum-input pr-8" />
                       <i class="fa-solid fa-lock absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
                     </div>
-                    <p class="field-error text-red-400 text-xs mt-1 hidden">CVV invalid.</p>
+                    <p class="lum-field-error hidden">CVV invalid.</p>
                   </div>
                 </div>
               </div>
 
               <button type="submit"
-                class="bg-black text-white py-4 text-sm font-semibold hover:bg-gray-800 transition w-full tracking-wide mt-2">
+                class="btn btn-primary btn-block mt-2">
                 PLASEAZA COMANDA
               </button>
               <div class="flex items-center justify-center gap-2 text-xs text-gray-500">
-                <i class="fa-solid fa-lock text-[#8B5A8C]"></i>
-                <span>Plata securizata SSL � datele tale sunt protejate</span>
+                <i class="fa-solid fa-lock text-brand"></i>
+                <span>Plata securizata SSL | datele tale sunt protejate</span>
               </div>
             </form>
           </section>
@@ -259,7 +259,7 @@
               </div>
               <div class="flex justify-between">
                 <span class="text-gray-500">Livrare</span>
-                <span id="co-shipping">�</span>
+                <span id="co-shipping">—</span>
               </div>
               <div id="co-discount-row" class="justify-between hidden">
                 <span class="text-gray-500">Reducere</span>
@@ -324,7 +324,7 @@
             <div class="flex-1 text-sm">
               <p class="font-medium leading-tight">${item.name}</p>
               <p class="text-gray-500 text-xs">${item.subtitle}</p>
-              <p class="text-gray-400 text-xs">Marime: ${item.size}${item.color ? ' � ' + item.color : ''}</p>
+              <p class="text-gray-400 text-xs">Marime: ${item.size}${item.color ? ' | ' + item.color : ''}</p>
             </div>
             <p class="text-sm font-semibold shrink-0">${fmtPrice(item.price * item.qty)}</p>`;
           container.appendChild(div);
@@ -424,8 +424,8 @@
         var subtotalCheck = items.reduce(function (s, i) { return s + i.price * i.qty; }, 0);
         var isFreeShip = subtotalCheck >= FREE_SHIPPING;
         var shippingLabel = shippingMethod === 'express'
-          ? (isFreeShip ? 'Express (1�2 zile) � Gratuita' : 'Express (1�2 zile) � 39.00 lei')
-          : (isFreeShip ? 'Standard (3�5 zile) � Gratuita' : 'Standard (3�5 zile) � 20.00 lei');
+          ? (isFreeShip ? 'Express (1–2 zile) | Gratuita' : 'Express (1–2 zile) | 39.00 lei')
+          : (isFreeShip ? 'Standard (3–5 zile) | Gratuita' : 'Standard (3–5 zile) | 20.00 lei');
 
         document.getElementById('ds-name').textContent = fn + ' ' + ln;
         document.getElementById('ds-email').textContent = getField('d-email').value.trim();
@@ -522,19 +522,23 @@
       <div class="container mx-auto flex flex-col lg:flex-row gap-10 lg:gap-[150px] px-4 pt-10 pb-10">
         <div class="flex flex-col w-full lg:max-w-[500px]">
           <p class="text-lg font-semibold pb-4">SUBSCRIBE TO STAY IN THE STORY</p>
-          <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Enter your email address" type="email" />
-          <span class="pt-5 pb-10 text-sm">By subscribing you agree to our <a class="text-[#8B5A8C]" href="politica-de-confidentialitate.html">Privacy Policy.</a></span>
+          <form class="newsletter-form flex flex-col gap-0">
+            <input class="lum-input" placeholder="Enter your email address" type="email" />
+            <button type="submit" class="btn btn-primary btn-block btn-sm mt-2">SUBSCRIBE</button>
+            <p class="newsletter-msg text-xs mt-2"></p>
+          </form>
+          <span class="pt-5 pb-10 text-sm">By subscribing you agree to our <a class="text-brand" href="politica-de-confidentialitate.html">Privacy Policy.</a></span>
         </div>
         <div class="w-full pb-10">
           <nav class="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            <ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">HELP</li><li><a href="faq.html" class="hover:text-[#6B3F6E]">FAQ</a></li><li><a href="contact.html" class="hover:text-[#6B3F6E]">Contact Us</a></li></ul>
-            <ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">INFORMATION</li><li><a href="livrare-plata.html" class="hover:text-[#6B3F6E]">Shipping & Payment</a></li><li><a href="returnari.html" class="hover:text-[#6B3F6E]">Returns</a></li></ul>
-            <ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">CUSTOMER CARE</li><li><a href="contul-meu.html" class="hover:text-[#6B3F6E]">My Account</a></li><li><a href="termeni-conditii.html" class="hover:text-[#6B3F6E]">Terms & Conditions</a></li></ul>
+            <ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">HELP</li><li><a href="faq.html" class="footer-link">FAQ</a></li><li><a href="contact.html" class="footer-link">Contact Us</a></li></ul>
+            <ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">INFORMATION</li><li><a href="livrare-plata.html" class="footer-link">Shipping & Payment</a></li><li><a href="returnari.html" class="footer-link">Returns</a></li></ul>
+            <ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">CUSTOMER CARE</li><li><a href="contul-meu.html" class="footer-link">My Account</a></li><li><a href="termeni-conditii.html" class="footer-link">Terms & Conditions</a></li></ul>
           </nav>
         </div>
       </div>
     </footer>
-    <div class="w-full py-5 border-t border-gray-200"><div class="container mx-auto px-4"><span class="text-sm text-gray-500">� 2025 Lumi�re. All Rights Reserved.</span></div></div>
+    <div class="w-full py-5 border-t border-gray-200"><div class="container mx-auto px-4"><span class="text-sm text-gray-500">© 2025 Lumière. All Rights Reserved.</span></div></div>
 
     <script type="module" src="src/pages/shared.ts"></script>
   </body>

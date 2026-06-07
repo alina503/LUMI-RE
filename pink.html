@@ -2,43 +2,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ATELIER � LUMI�RE</title>
+    <title>ATELIER | LUMIÈRE</title>
     <meta property="og:type"        content="website" />
     <meta property="og:url"         content="https://alina503.github.io/victoria.secret.clone/pink.html" />
     <meta property="og:image"       content="https://alina503.github.io/victoria.secret.clone/assets/image/og-image.jpg" />
-    <meta property="og:title"       content="ATELIER � LUMI�RE" />
+    <meta property="og:title"       content="ATELIER | LUMIÈRE" />
     <meta property="og:description" content="LUMIÈRE PINK — playful styles for the modern woman." />
     <meta name="twitter:card"       content="summary_large_image" />
     <meta name="description"        content="LUMIÈRE PINK — playful styles for the modern woman." />
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body>
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:text-sm">Skip to content</a>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <header>
       <!-- Top banner -->
-      <div class="bg-[#FAF5F0] py-2 w-full">
+      <div class="bg-blush py-2 w-full">
         <div class="font-extralight text-xs sm:text-sm mx-auto flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 text-center px-4">
-          <p>FREE SHIPPING ON ORDERS OVER 269 LEI � WEAR YOUR STORY.</p>
-          <a class="text-xs sm:text-sm bg-transparent hover:bg-[#F4EEE8] border-black border px-3 py-[3px] rounded-sm whitespace-nowrap" href="#">VIEW OFFERS</a>
+          <p>FREE SHIPPING ON ORDERS OVER 269 LEI | WEAR YOUR STORY.</p>
+          <a class="banner-offer-btn" href="#">VIEW OFFERS</a>
         </div>
       </div>
 
       <!-- Brand bar -->
-      <div class="w-full bg-[#F4EEE8] py-2">
+      <div class="w-full bg-nav py-2">
         <div class="container mx-auto px-4">
           <div class="flex justify-between items-center">
-            <nav class="flex flex-wrap gap-2 sm:gap-4 items-center">
-              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">LUMI�RE</a></li>
+            <nav aria-label="Brand navigation"><ul class="flex flex-wrap gap-2 sm:gap-4 items-center">
+              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">LUMIÈRE</a></li>
               <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-semibold"><a href="atelier.html" class="nav-active">ATELIER</a></li>
               <li class="list-none text-xs sm:text-sm font-light"><a href="beauty.html" class="hover:font-semibold">BEAUTY</a></li>
-            </nav>
+            </ul></nav>
             <div class="flex gap-4 items-center">
               <button aria-label="Meniu" id="hamburger" class="sm:hidden text-xl"><i class="fa-solid fa-bars"></i></button>
               <button id="search-toggle" aria-label="Cautare" title="Cautare"><i class="fa-solid fa-magnifying-glass text-xl sm:text-2xl cursor-pointer"></i></button>
               <a href="login.html" id="user-nav-link" title="My Account"><i id="user-nav-icon" class="fa-regular fa-user text-xl sm:text-2xl cursor-pointer"></i></a>
-              <a href="cart.html" title="Co? de cumparaturi" class="relative">
+              <a href="cart.html" title="Shopping bag" aria-label="Shopping bag, 0 items" class="relative">
                 <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer"></i>
-                <span class="cart-badge absolute -top-2 -right-2 bg-[#8B5A8C] text-white text-[10px] rounded-full w-4 h-4 font-bold" style="display:none;align-items:center;justify-content:center">0</span>
+                <span class="cart-badge absolute -top-2 -right-2 bg-brand text-white text-[10px] rounded-full w-4 h-4 font-bold" aria-live="polite" aria-atomic="true">0</span>
               </a>
             </div>
           </div>
@@ -85,7 +85,7 @@
     </header>
 
     <!-- Search overlay -->
-    <div id="search-overlay" style="display:none" class="fixed inset-0 z-50 flex-col items-center justify-start bg-white pt-20 px-4">
+    <div id="search-overlay" class="hidden fixed inset-0 z-50 flex-col items-center justify-start bg-white pt-20 px-4">
       <div class="w-full max-w-2xl mx-auto">
         <div class="flex items-center border-b-2 border-black pb-2 mb-6">
           <i class="fa-solid fa-magnifying-glass text-gray-400 mr-3"></i>
@@ -93,24 +93,24 @@
           <button id="search-close" class="ml-4 text-2xl text-gray-400 hover:text-black">&times;</button>
         </div>
         <div id="search-results" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
-        <p id="search-empty" class="text-gray-500 text-center mt-8" style="display:none">No products found.</p>
+        <p id="search-empty" class="hidden text-gray-500 text-center mt-8">No products found.</p>
       </div>
     </div>
 
     <!-- Toast -->
-    <div id="toast" style="display:none" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-black text-white text-sm px-6 py-3 rounded z-50 flex items-center gap-3">
+    <div id="toast" class="lum-toast hidden">
       <i class="fa-solid fa-circle-check text-green-400"></i>
-      <span id="toast-msg">Produs adaugat �n co?!</span>
-      <a href="cart.html" class="underline whitespace-nowrap">Vezi co?ul</a>
+      <span id="toast-msg"></span>
+      <a href="cart.html" class="underline whitespace-nowrap">View bag</a>
     </div>
 
     <main id="main-content" class="w-full mx-auto">
       <!-- ATELIER hero banner -->
-      <div class="bg-[#f472b6] w-full py-20 px-4 text-center text-white">
-        <p class="text-xs tracking-[0.4em] mb-2 font-light">LUMI�RE</p>
+      <div class="bg-pink-hero w-full py-20 px-4 text-center text-white">
+        <p class="text-xs tracking-[0.4em] mb-2 font-light">LUMIÈRE</p>
         <h1 class="text-6xl sm:text-8xl font-bold tracking-widest mb-4">ATELIER</h1>
-        <p class="text-base sm:text-lg font-light max-w-md mx-auto mb-8">Colec?ia t�nara, �ndraznea?a ?i plina de culoare. Sport, casual ?i lenjerie pentru fiecare zi.</p>
-        <a href="activewear.html" class="inline-block bg-white text-[#db2777] text-sm font-semibold px-8 py-3 hover:bg-gray-100 transition tracking-wider">DESCOPERA COLEC?IA</a>
+        <p class="text-base sm:text-lg font-light max-w-md mx-auto mb-8">Colecția tânără, îndrăzneață și plina de culoare. Sport, casual și lenjerie pentru fiecare zi.</p>
+        <a href="activewear.html" class="inline-block bg-white text-pink-dark text-sm font-semibold px-8 py-3 hover:bg-gray-100 transition tracking-wider">DESCOPERĂ COLECȚIA</a>
       </div>
 
       <div class="container mx-auto px-4 py-10">
@@ -148,11 +148,11 @@
         <h2 class="text-xl sm:text-2xl font-light mb-6">PRODUSE POPULARE ATELIER</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 mb-14">
 
-          <div class="product-card flex flex-col" data-id="pink-1" data-name="ATELIER" data-subtitle="Chilo?i tanga din bumbac cu imprimeu" data-price="75" data-image="assets/icon/chiloti/NCpPz_112862787PG2_OM_F.jpg.jpeg" data-color="Roz" data-promo="Cumpara 3 pentru 180 lei">
-            <img class="w-full cursor-pointer" src="assets/icon/chiloti/NCpPz_112862787PG2_OM_F.jpg.jpeg" alt="ATELIER chilo?i" />
+          <div class="product-card flex flex-col" data-id="pink-1" data-name="ATELIER" data-subtitle="Chiloți tanga din bumbac cu imprimeu" data-price="75" data-image="assets/icon/chiloti/NCpPz_112862787PG2_OM_F.jpg.jpeg" data-color="Roz" data-promo="Cumpara 3 pentru 180 lei">
+            <img class="w-full cursor-pointer" src="assets/icon/chiloti/NCpPz_112862787PG2_OM_F.jpg.jpeg" alt="ATELIER chiloți" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
               <p class="text-sm sm:text-base font-medium">ATELIER</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Chilo?i tanga din bumbac cu imprimeu</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Chiloți tanga din bumbac cu imprimeu</p>
               <span class="text-base sm:text-lg font-semibold">75.00 lei</span>
               <span class="text-red-400 text-xs mt-1">Cumpara 3 pentru 180 lei</span>
               <div class="flex gap-1 my-2 size-group">
@@ -166,11 +166,11 @@
             </div>
           </div>
 
-          <div class="product-card flex flex-col" data-id="pink-2" data-name="ATELIER" data-subtitle="Chilo?i hipster cu talie �nalta" data-price="80" data-image="assets/icon/chiloti/LvRBY_112818460EB9_OM_F.jpg.jpeg" data-color="Mov">
-            <img class="w-full cursor-pointer" src="assets/icon/chiloti/LvRBY_112818460EB9_OM_F.jpg.jpeg" alt="ATELIER chilo?i" />
+          <div class="product-card flex flex-col" data-id="pink-2" data-name="ATELIER" data-subtitle="Chiloți hipster cu talie înaltă" data-price="80" data-image="assets/icon/chiloti/LvRBY_112818460EB9_OM_F.jpg.jpeg" data-color="Mov">
+            <img class="w-full cursor-pointer" src="assets/icon/chiloti/LvRBY_112818460EB9_OM_F.jpg.jpeg" alt="ATELIER chiloți" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
               <p class="text-sm sm:text-base font-medium">ATELIER</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Chilo?i hipster cu talie �nalta</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Chiloți hipster cu talie înaltă</p>
               <span class="text-base sm:text-lg font-semibold">80.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
@@ -200,11 +200,11 @@
             </div>
           </div>
 
-          <div class="product-card flex flex-col" data-id="pink-4" data-name="ATELIER" data-subtitle="Chilo?i bikini din bumbac moale" data-price="70" data-image="assets/icon/chiloti/u123a_1127595254A2_OM_F.jpg.jpeg" data-color="Bej" data-promo="Cumpara 3 pentru 180 lei">
-            <img class="w-full cursor-pointer" src="assets/icon/chiloti/u123a_1127595254A2_OM_F.jpg.jpeg" alt="ATELIER chilo?i" />
+          <div class="product-card flex flex-col" data-id="pink-4" data-name="ATELIER" data-subtitle="Chiloți bikini din bumbac moale" data-price="70" data-image="assets/icon/chiloti/u123a_1127595254A2_OM_F.jpg.jpeg" data-color="Bej" data-promo="Cumpara 3 pentru 180 lei">
+            <img class="w-full cursor-pointer" src="assets/icon/chiloti/u123a_1127595254A2_OM_F.jpg.jpeg" alt="ATELIER chiloți" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
               <p class="text-sm sm:text-base font-medium">ATELIER</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Chilo?i bikini din bumbac moale</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Chiloți bikini din bumbac moale</p>
               <span class="text-base sm:text-lg font-semibold">70.00 lei</span>
               <span class="text-red-400 text-xs mt-1">Cumpara 3 pentru 180 lei</span>
               <div class="flex gap-1 my-2 size-group">
@@ -218,11 +218,11 @@
             </div>
           </div>
 
-          <div class="product-card flex flex-col" data-id="pink-5" data-name="ATELIER" data-subtitle="Chilo?i tanga cu imprimeu floral" data-price="75" data-image="assets/icon/chiloti/uWhzO_1128204354A2_OM_F_2048x2048.jpg.jpeg" data-color="Roz" data-promo="Cumpara 3 pentru 180 lei">
-            <img class="w-full cursor-pointer" src="assets/icon/chiloti/uWhzO_1128204354A2_OM_F_2048x2048.jpg.jpeg" alt="ATELIER chilo?i" />
+          <div class="product-card flex flex-col" data-id="pink-5" data-name="ATELIER" data-subtitle="Chiloți tanga cu imprimeu floral" data-price="75" data-image="assets/icon/chiloti/uWhzO_1128204354A2_OM_F_2048x2048.jpg.jpeg" data-color="Roz" data-promo="Cumpara 3 pentru 180 lei">
+            <img class="w-full cursor-pointer" src="assets/icon/chiloti/uWhzO_1128204354A2_OM_F_2048x2048.jpg.jpeg" alt="ATELIER chiloți" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
               <p class="text-sm sm:text-base font-medium">ATELIER</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Chilo?i tanga cu imprimeu floral</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Chiloți tanga cu imprimeu floral</p>
               <span class="text-base sm:text-lg font-semibold">75.00 lei</span>
               <span class="text-red-400 text-xs mt-1">Cumpara 3 pentru 180 lei</span>
               <div class="flex gap-1 my-2 size-group">
@@ -236,11 +236,11 @@
             </div>
           </div>
 
-          <div class="product-card flex flex-col" data-id="pink-6" data-name="ATELIER" data-subtitle="Chilo?i hipster cu logo" data-price="80" data-image="assets/icon/chiloti/28vLQ_1128184754A2_OM_F.jpg.jpeg" data-color="Gri">
-            <img class="w-full cursor-pointer" src="assets/icon/chiloti/28vLQ_1128184754A2_OM_F.jpg.jpeg" alt="ATELIER chilo?i" />
+          <div class="product-card flex flex-col" data-id="pink-6" data-name="ATELIER" data-subtitle="Chiloți hipster cu logo" data-price="80" data-image="assets/icon/chiloti/28vLQ_1128184754A2_OM_F.jpg.jpeg" data-color="Gri">
+            <img class="w-full cursor-pointer" src="assets/icon/chiloti/28vLQ_1128184754A2_OM_F.jpg.jpeg" alt="ATELIER chiloți" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
               <p class="text-sm sm:text-base font-medium">ATELIER</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Chilo?i hipster cu logo</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Chiloți hipster cu logo</p>
               <span class="text-base sm:text-lg font-semibold">80.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
@@ -253,11 +253,11 @@
             </div>
           </div>
 
-          <div class="product-card flex flex-col" data-id="pink-7" data-name="ATELIER" data-subtitle="Chilo?i bikini cu talie medie" data-price="70" data-image="assets/icon/chiloti/pP3mT_112818447K14_OM_F.jpg.jpeg" data-color="Alb">
-            <img class="w-full cursor-pointer" src="assets/icon/chiloti/pP3mT_112818447K14_OM_F.jpg.jpeg" alt="ATELIER chilo?i" />
+          <div class="product-card flex flex-col" data-id="pink-7" data-name="ATELIER" data-subtitle="Chiloți bikini cu talie medie" data-price="70" data-image="assets/icon/chiloti/pP3mT_112818447K14_OM_F.jpg.jpeg" data-color="Alb">
+            <img class="w-full cursor-pointer" src="assets/icon/chiloti/pP3mT_112818447K14_OM_F.jpg.jpeg" alt="ATELIER chiloți" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
               <p class="text-sm sm:text-base font-medium">ATELIER</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Chilo?i bikini cu talie medie</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Chiloți bikini cu talie medie</p>
               <span class="text-base sm:text-lg font-semibold">70.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
@@ -270,11 +270,11 @@
             </div>
           </div>
 
-          <div class="product-card flex flex-col" data-id="pink-8" data-name="ATELIER" data-subtitle="Chilo?i tanga din dantela" data-price="85" data-image="assets/icon/chiloti/bqA9T_112759521NG0_OM_F.jpg.jpeg" data-color="Negru">
-            <img class="w-full cursor-pointer" src="assets/icon/chiloti/bqA9T_112759521NG0_OM_F.jpg.jpeg" alt="ATELIER chilo?i dantela" />
+          <div class="product-card flex flex-col" data-id="pink-8" data-name="ATELIER" data-subtitle="Chiloți tanga din dantela" data-price="85" data-image="assets/icon/chiloti/bqA9T_112759521NG0_OM_F.jpg.jpeg" data-color="Negru">
+            <img class="w-full cursor-pointer" src="assets/icon/chiloti/bqA9T_112759521NG0_OM_F.jpg.jpeg" alt="ATELIER chiloți dantela" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
               <p class="text-sm sm:text-base font-medium">ATELIER</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Chilo?i tanga din dantela</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Chiloți tanga din dantela</p>
               <span class="text-base sm:text-lg font-semibold">85.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
@@ -290,13 +290,13 @@
         </div>
 
         <!-- ATELIER brand strip -->
-        <div class="bg-[#fdf2f8] border border-[#f9a8d4] rounded-sm px-8 py-10 text-center mb-14">
-          <h2 class="text-2xl sm:text-3xl font-light mb-3 text-[#db2777]">Tot ce �nseamna ATELIER</h2>
-          <p class="text-sm text-gray-600 max-w-xl mx-auto mb-6">Culori �ndrazne?e, materiale confortabile ?i designs exclusiv pentru tine. Colec?ia ATELIER este perfecta pentru sport, relaxare sau o zi �n ora?.</p>
+        <div class="bg-pink-light border border-pink-border rounded-sm px-8 py-10 text-center mb-14">
+          <h2 class="text-2xl sm:text-3xl font-light mb-3 text-pink-dark">Tot ce înseamnă ATELIER</h2>
+          <p class="text-sm text-gray-600 max-w-xl mx-auto mb-6">Culori îndrăznețe, materiale confortabile și designs exclusiv pentru tine. Colecția ATELIER este perfecta pentru sport, relaxare sau o zi în ora?.</p>
           <div class="flex flex-wrap justify-center gap-4">
-            <a href="activewear.html" class="bg-[#db2777] text-white text-sm px-6 py-3 hover:bg-[#be185d] transition">ACTIVEWEAR</a>
-            <a href="lingerie.html" class="border border-[#db2777] text-[#db2777] text-sm px-6 py-3 hover:bg-[#fdf2f8] transition">LINGERIE</a>
-            <a href="sleepwear.html" class="border border-[#db2777] text-[#db2777] text-sm px-6 py-3 hover:bg-[#fdf2f8] transition">SLEEPWEAR</a>
+            <a href="activewear.html" class="bg-pink-dark text-white text-sm px-6 py-3 hover:bg-pink-darker transition">ACTIVEWEAR</a>
+            <a href="lingerie.html" class="border border-pink-dark text-pink-dark text-sm px-6 py-3 hover:bg-pink-light transition">LINGERIE</a>
+            <a href="sleepwear.html" class="border border-pink-dark text-pink-dark text-sm px-6 py-3 hover:bg-pink-light transition">SLEEPWEAR</a>
           </div>
         </div>
 
@@ -307,31 +307,33 @@
     <footer class="bg-gray-100 w-full mt-10">
       <div class="container mx-auto flex flex-col lg:flex-row gap-10 lg:gap-[150px] px-4 pt-10 sm:pt-14">
         <div class="flex flex-col w-full lg:max-w-[500px]">
-          <p class="text-lg font-semibold pb-4">SUBSCRIBE LA NEWSLETTER PENTRU A FI LA CURENT</p>
-          <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Enter your email address" type="email" aria-label="Adresa de email newsletter" />
-          <span class="pt-5 pb-10 text-sm">Prin abonare e?ti de acord cu <a class="text-[#8B5A8C] hover:text-[#8B5A8C]" href="politica-de-confidentialitate.html">politica noastra de confiden?ialitate.</a></span>
-          <img class="w-full max-w-[400px] pb-7" src="assets/icon/VSFA_220818_-_ANPC_Buttons_1.avif" alt="ANPC" />
-          <img class="w-full max-w-[400px] pb-11" src="assets/icon/VSFA_220818_-_ANPC_Buttons_2.avif" alt="ANPC" />
+          <p class="text-lg font-semibold pb-4">SUBSCRIBE TO STAY IN THE STORY</p>
+          <form class="newsletter-form flex flex-col gap-0">
+            <input class="lum-input" placeholder="Enter your email address" type="email" aria-label="Adresa de email newsletter" />
+            <button type="submit" class="btn btn-primary btn-block btn-sm mt-2">SUBSCRIBE</button>
+            <p class="newsletter-msg text-xs mt-2"></p>
+          </form>
+          <span class="pt-5 pb-10 text-sm">Prin abonare ești de acord cu <a class="text-brand hover:text-brand" href="politica-de-confidentialitate.html">politica noastra de confidențialitate.</a></span>
         </div>
         <div class="w-full pb-10">
           <nav class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <ul class="flex flex-col gap-4 text-sm">
               <li class="font-semibold">HELP</li>
-              <li><a href="faq.html" class="hover:text-[#6B3F6E]">FAQ</a></li>
-              <li><a href="contact.html" class="hover:text-[#6B3F6E]">Magazinele Noastre</a></li>
-              <li><a href="contact.html" class="hover:text-[#6B3F6E]">Contact Us</a></li>
+              <li><a href="faq.html" class="footer-link">FAQ</a></li>
+              <li><a href="contact.html" class="footer-link">Magazinele Noastre</a></li>
+              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
             </ul>
             <ul class="flex flex-col gap-4 text-sm">
               <li class="font-semibold">INFORMATION</li>
-              <li><a href="livrare-plata.html" class="hover:text-[#6B3F6E]">Shipping & Payment</a></li>
-              <li><a href="returnari.html" class="hover:text-[#6B3F6E]">Returns & Claims</a></li>
-              <li><a href="politica-de-confidentialitate.html" class="hover:text-[#6B3F6E]">Privacy Policy</a></li>
+              <li><a href="livrare-plata.html" class="footer-link">Shipping & Payment</a></li>
+              <li><a href="returnari.html" class="footer-link">Returns & Claims</a></li>
+              <li><a href="politica-de-confidentialitate.html" class="footer-link">Privacy Policy</a></li>
             </ul>
             <ul class="flex flex-col gap-4 text-sm">
               <li class="font-semibold">CUSTOMER CARE</li>
-              <li><a href="contul-meu.html" class="hover:text-[#6B3F6E]">My Account</a></li>
-              <li><a href="wishlist.html" class="hover:text-[#6B3F6E]">Wishlist</a></li>
-              <li><a href="termeni-conditii.html" class="hover:text-[#6B3F6E]">Terms & Conditions</a></li>
+              <li><a href="contul-meu.html" class="footer-link">My Account</a></li>
+              <li><a href="wishlist.html" class="footer-link">Wishlist</a></li>
+              <li><a href="termeni-conditii.html" class="footer-link">Terms & Conditions</a></li>
             </ul>
           </nav>
         </div>
@@ -339,7 +341,7 @@
     </footer>
     <div class="w-full py-5 border-t border-gray-200">
       <div class="container mx-auto px-4">
-        <span class="text-sm text-gray-500">� 2025 Lumi�re. All Rights Reserved.</span>
+        <span class="text-sm text-gray-500">© 2025 Lumière. All Rights Reserved.</span>
       </div>
     </div>
   

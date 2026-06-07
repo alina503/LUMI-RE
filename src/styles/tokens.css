@@ -1,67 +1,171 @@
-/* ─── Design Tokens ──────────────────────────────────────────────────────── */
-:root {
-  /* Brand colours — Lumière */
-  --color-brand-primary: #8B5A8C;
-  --color-brand-dark: #6B3F6E;
-  --color-brand-light: #E8D5B0;
-  --color-brand-bg: #FAF5F0;
-  --color-brand-nav-bg: #F4EEE8;
+/* ─── Design Tokens — LUMIÈRE ─────────────────────────────────────────────── */
+/*
+ * Single source of truth for every design decision.
+ * Tailwind theme variables (--color-*) are picked up by @theme in index.css.
+ * Plain :root custom properties are for use in component CSS.
+ * Never write a raw hex colour outside this file.
+ */
 
-  /* Neutral */
-  --color-black: #111111;
-  --color-white: #ffffff;
-  --color-gray-50: #f9fafb;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
+@layer base {
+  :root {
+    /* ── Brand palette ───────────────────────────────────────────────────── */
+    --lum-plum-50:  #f8f0f8;
+    --lum-plum-100: #f0e0f0;
+    --lum-plum-200: #dab8da;
+    --lum-plum-500: #8B5A8C;   /* primary CTA, icons, links          */
+    --lum-plum-700: #6B3F6E;   /* hover state on plum elements       */
+    --lum-plum-900: #4a2a4c;   /* deep accent, rarely used           */
 
-  /* Feedback */
-  --color-success: #16a34a;
-  --color-error: #ef4444;
+    --lum-rose-400: #c37989;   /* promo badges, secondary highlights */
 
-  /* Spacing scale */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
+    /* ── PINK sub-brand palette (PINK collection page) ───────────────────── */
+    --lum-pink-hero:   #f472b6;  /* hero banner background              */
+    --lum-pink-dark:   #db2777;  /* CTA fill, headings                  */
+    --lum-pink-darker: #be185d;  /* hover on pink CTAs                  */
+    --lum-pink-light:  #fdf2f8;  /* light section background            */
+    --lum-pink-border: #f9a8d4;  /* border on light pink sections       */
 
-  /* Typography */
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.5rem;
-  --font-size-3xl: 1.875rem;
+    /* ── Neutrals ────────────────────────────────────────────────────────── */
+    --lum-black:    #111111;
+    --lum-ink:      #1a1a1a;   /* near-black for editorial hero backgrounds */
+    --lum-white:    #ffffff;
+    --lum-gray-50:  #f9fafb;
+    --lum-gray-100: #f3f4f6;
+    --lum-gray-200: #e5e7eb;
+    --lum-gray-300: #d1d5db;
+    --lum-gray-400: #9ca3af;
+    --lum-gray-500: #6b7280;
+    --lum-gray-600: #4b5563;
+    --lum-gray-700: #374151;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    /* ── Warm surface palette ────────────────────────────────────────────── */
+    --lum-blush:          #FAF5F0;   /* top banner, light backgrounds       */
+    --lum-nav:            #F4EEE8;   /* brand nav bar background            */
+    --lum-champagne:      #E8D5B0;   /* champagne accent (newsletter btn)   */
+    --lum-champagne-dark: #d4be94;   /* hover on champagne elements         */
 
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 200ms ease;
-  --transition-slow: 300ms ease;
+    /* ── Social brand colours ────────────────────────────────────────────── */
+    --lum-facebook: #1877F2;
 
-  /* Z-index layers */
-  --z-dropdown: 10;
-  --z-sticky: 20;
-  --z-overlay: 40;
-  --z-modal: 50;
-  --z-toast: 60;
+    /* ── Semantic feedback ───────────────────────────────────────────────── */
+    --lum-success:         #16a34a;
+    --lum-success-surface: #f0fdf4;
+    --lum-error:           #dc2626;
+    --lum-warning:         #d97706;
 
-  /* Container */
-  --container-max: 1280px;
-  --container-padding: 1rem;
+    /* ── Typography ──────────────────────────────────────────────────────── */
+    --lum-font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+                     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --lum-font-serif: Georgia, "Times New Roman", serif;
+
+    --lum-text-xs:   0.6875rem;  /* 11px — labels, badges              */
+    --lum-text-sm:   0.8125rem;  /* 13px — body copy, form labels      */
+    --lum-text-base: 0.9375rem;  /* 15px — default body                */
+    --lum-text-lg:   1.0625rem;  /* 17px — lead text                   */
+    --lum-text-xl:   1.25rem;    /* 20px — card titles                 */
+    --lum-text-2xl:  1.5rem;     /* 24px — section heads               */
+    --lum-text-3xl:  1.875rem;   /* 30px — page H1s mobile             */
+    --lum-text-4xl:  2.25rem;    /* 36px — page H1s desktop            */
+    --lum-text-5xl:  3rem;       /* 48px — hero / brand lock-up        */
+
+    --lum-leading-tight:   1.25;
+    --lum-leading-snug:    1.375;
+    --lum-leading-normal:  1.5;
+    --lum-leading-relaxed: 1.625;
+
+    --lum-tracking-tight:   -0.01em;
+    --lum-tracking-normal:   0;
+    --lum-tracking-wide:     0.04em;
+    --lum-tracking-wider:    0.08em;
+    --lum-tracking-widest:   0.18em;
+
+    /* ── Spacing scale (4-point) ─────────────────────────────────────────── */
+    --lum-space-1:   0.25rem;   /*  4px */
+    --lum-space-2:   0.5rem;    /*  8px */
+    --lum-space-3:   0.75rem;   /* 12px */
+    --lum-space-4:   1rem;      /* 16px */
+    --lum-space-5:   1.25rem;   /* 20px */
+    --lum-space-6:   1.5rem;    /* 24px */
+    --lum-space-8:   2rem;      /* 32px */
+    --lum-space-10:  2.5rem;    /* 40px */
+    --lum-space-12:  3rem;      /* 48px */
+    --lum-space-16:  4rem;      /* 64px */
+    --lum-space-20:  5rem;      /* 80px */
+    --lum-space-24:  6rem;      /* 96px */
+
+    /* ── Radii ───────────────────────────────────────────────────────────── */
+    --lum-radius-none: 0;
+    --lum-radius-sm:   0.125rem;  /* 2px  — subtle rounding on badges  */
+    --lum-radius-md:   0.25rem;   /* 4px  — pills, tags                */
+    --lum-radius-full: 9999px;    /* circle badges                     */
+
+    /* LUMIÈRE is an editorial brand — near-zero radius is intentional.
+       Buttons, inputs, and cards are all sharp-cornered.                  */
+
+    /* ── Shadows ─────────────────────────────────────────────────────────── */
+    --lum-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+    --lum-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+    --lum-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    --lum-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+    --lum-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+
+    /* ── Motion ──────────────────────────────────────────────────────────── */
+    --lum-ease-in:     cubic-bezier(0.4, 0, 1, 1);
+    --lum-ease-out:    cubic-bezier(0, 0, 0.2, 1);
+    --lum-ease-inout:  cubic-bezier(0.4, 0, 0.2, 1);
+    --lum-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --lum-duration-75:  75ms;
+    --lum-duration-100: 100ms;
+    --lum-duration-150: 150ms;
+    --lum-duration-200: 200ms;
+    --lum-duration-300: 300ms;
+    --lum-duration-400: 400ms;
+    --lum-duration-500: 500ms;
+
+    /* ── Z-index layers ──────────────────────────────────────────────────── */
+    --lum-z-base:     0;
+    --lum-z-raised:   1;
+    --lum-z-dropdown: 10;
+    --lum-z-sticky:   20;
+    --lum-z-overlay:  40;
+    --lum-z-modal:    50;
+    --lum-z-toast:    60;
+    --lum-z-skip:     100;
+
+    /* ── Layout ──────────────────────────────────────────────────────────── */
+    --lum-container-max:     1280px;
+    --lum-container-padding: clamp(1rem, 3vw, 2rem);
+    --lum-sidebar-width:     24rem;   /* 384px order summary / account sidebar */
+    --lum-form-max-width:    28rem;   /* 448px max-width for auth forms        */
+  }
+
+  /* ── Dark mode overrides ─────────────────────────────────────────────────
+   * Applied when <html class="dark"> is set.
+   * Structural / spacing / radius tokens never change — only colour surfaces.
+   * Components use the same token names; just the values flip.
+   * ──────────────────────────────────────────────────────────────────────── */
+  .dark {
+    --lum-black:   #f3f0ed;   /* body text flips to warm near-white    */
+    --lum-white:   #18161a;   /* surfaces flip to deep plum-tinted bg  */
+
+    --lum-gray-50:  #211e24;
+    --lum-gray-100: #2a262e;
+    --lum-gray-200: #3a3540;
+    --lum-gray-300: #524c5a;
+    --lum-gray-400: #7a7285;
+    --lum-gray-500: #a199ab;
+    --lum-gray-600: #c5bece;
+    --lum-gray-700: #ddd7e4;
+
+    --lum-blush:     #211e24;
+    --lum-nav:       #1e1b21;
+    --lum-champagne: #5a4a30;
+    --lum-champagne-dark: #6b5a3a;
+
+    --lum-plum-50:  #2a1e2b;
+    --lum-plum-100: #3a2a3b;
+
+    --lum-success-surface: #052e16;
+  }
 }

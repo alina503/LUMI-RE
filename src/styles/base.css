@@ -1,55 +1,100 @@
 /* ─── Reset & Base ───────────────────────────────────────────────────────── */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/*
+ * Minimal opinionated reset on top of Tailwind's Preflight.
+ * Goal: consistent cross-browser baseline for the LUMIÈRE editorial aesthetic.
+ */
 
-html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-}
+@layer base {
+  /* Box model */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #111;
-  background-color: #fff;
-  line-height: 1.5;
-}
+  /* Document */
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Prevent layout shift from scrollbar appearing */
+    scrollbar-gutter: stable;
+  }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+  body {
+    font-family: var(--lum-font-sans);
+    font-size: var(--lum-text-base);
+    line-height: var(--lum-leading-normal);
+    color: var(--lum-black);
+    background-color: var(--lum-white);
+    /* Subpixel rendering for crisp text on modern displays */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-img,
-video {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
+  /* Links */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  font-family: inherit;
-}
+  /* Media */
+  img,
+  video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
 
-input,
-textarea,
-select {
-  font-family: inherit;
-}
+  /* Buttons — reset browser defaults */
+  button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    /* Prevent double-tap zoom on mobile */
+    touch-action: manipulation;
+  }
 
-input:focus,
-textarea:focus {
-  outline: none;
-}
+  /* Form controls */
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+  }
 
-ul,
-ol {
-  list-style: none;
+  /* Remove default outline — we add our own visible focus rings */
+  :focus {
+    outline: none;
+  }
+
+  /* Visible focus ring for keyboard navigation — WCAG AA */
+  :focus-visible {
+    outline: 2px solid var(--lum-plum-500);
+    outline-offset: 2px;
+  }
+
+  /* Lists */
+  ul,
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Headings — editorial weight */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    line-height: var(--lum-leading-tight);
+    letter-spacing: var(--lum-tracking-wide);
+  }
+
+  /* Horizontal rule */
+  hr {
+    border: none;
+    border-top: 1px solid var(--lum-gray-200);
+  }
 }

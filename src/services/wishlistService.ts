@@ -1,5 +1,6 @@
 import { showToast } from '../components/ui/Toast';
 import { STORAGE_KEYS } from '../constants/config';
+import { storageGet, storageSet } from '../lib/storage';
 
 const WISHLIST_KEY = STORAGE_KEYS.wishlist;
 
@@ -10,19 +11,7 @@ export interface WishlistProduct {
   price: number;
   image: string;
   color: string;
-}
-
-function storageGet<T>(key: string, fallback: T): T {
-  try {
-    const raw = localStorage.getItem(key);
-    return raw !== null ? (JSON.parse(raw) as T) : fallback;
-  } catch {
-    return fallback;
-  }
-}
-
-function storageSet(key: string, value: unknown): void {
-  try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* quota */ }
+  sizes: string[];
 }
 
 export const WishlistService = {
@@ -68,11 +57,12 @@ export function initWishlistButtons(root: Document | HTMLElement = document): vo
     btn.setAttribute('aria-label', 'Add to wishlist');
     btn.setAttribute('title', 'Add to wishlist');
     btn.innerHTML = WishlistService.has(id)
-      ? '<i class="fa-solid fa-heart text-[#c37989] text-sm"></i>'
-      : '<i class="fa-regular fa-heart text-gray-400 text-sm hover:text-[#c37989]"></i>';
+      ? '<i class="fa-solid fa-heart text-rose text-sm"></i>'
+      : '<i class="fa-regular fa-heart text-gray-400 text-sm hover:text-rose"></i>';
 
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
+      const rawSizes = card.dataset.sizes ?? '';
       const product: WishlistProduct = {
         id: card.dataset.id ?? '',
         name: card.dataset.name ?? '',
@@ -80,11 +70,12 @@ export function initWishlistButtons(root: Document | HTMLElement = document): vo
         price: parseFloat(card.dataset.price ?? '0') || 0,
         image: card.dataset.image ?? (card.querySelector('img') as HTMLImageElement | null)?.src ?? '',
         color: card.dataset.color ?? '',
+        sizes: rawSizes ? rawSizes.split(',').filter(Boolean) : [],
       };
       const added = WishlistService.toggle(product);
       btn.innerHTML = added
-        ? '<i class="fa-solid fa-heart text-[#c37989] text-sm"></i>'
-        : '<i class="fa-regular fa-heart text-gray-400 text-sm hover:text-[#c37989]"></i>';
+        ? '<i class="fa-solid fa-heart text-rose text-sm"></i>'
+        : '<i class="fa-regular fa-heart text-gray-400 text-sm hover:text-rose"></i>';
       btn.setAttribute('title', added ? 'Remove from wishlist' : 'Add to wishlist');
       showToast(added ? `${product.name} added to wishlist!` : `${product.name} removed from wishlist.`);
     });

@@ -15,7 +15,7 @@ export function storageSet<T>(key: string, value: T): void {
     localStorage.setItem(key, JSON.stringify(value));
   } catch (err) {
     if (err instanceof DOMException && err.name === 'QuotaExceededError') {
-      showToast('Spațiul de stocare este plin. Coșul nu a putut fi salvat.');
+      showToast('Storage is full. Your bag could not be saved.');
     }
   }
 }

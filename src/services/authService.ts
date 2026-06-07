@@ -1,95 +1,61 @@
 import { STORAGE_KEYS } from '../constants/config';
+import { storageGet, storageSet } from '../lib/storage';
+import { supabase } from '../lib/supabase';
+import { lockScroll, unlockScroll } from '../hooks/useModal';
+import type { UserSession } from '../types';
 
-const AUTH_KEY = STORAGE_KEYS.session;
-const USERS_KEY = STORAGE_KEYS.users;
+export type { UserSession };
 
-export interface UserSession {
-  id: number;
-  firstName: string;
-  lastName: string;
-  email: string;
-}
-
-interface StoredUser extends UserSession {
-  password: string;
-  salt: string;
-}
-
-function storageGet<T>(key: string, fallback: T): T {
-  try {
-    const raw = localStorage.getItem(key);
-    return raw !== null ? (JSON.parse(raw) as T) : fallback;
-  } catch {
-    return fallback;
-  }
-}
-
-function storageSet(key: string, value: unknown): void {
-  try {
-    localStorage.setItem(key, JSON.stringify(value));
-  } catch { /* quota */ }
-}
-
-async function hashPassword(password: string, salt: string): Promise<string> {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(salt + password);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-  return Array.from(new Uint8Array(hashBuffer))
-    .map((b) => b.toString(16).padStart(2, '0'))
-    .join('');
-}
-
-function generateSalt(): string {
-  return Array.from(crypto.getRandomValues(new Uint8Array(16)))
-    .map((b) => b.toString(16).padStart(2, '0'))
-    .join('');
-}
-
-function getUsers(): StoredUser[] {
-  return storageGet<StoredUser[]>(USERS_KEY, []);
-}
-
-function saveUsers(users: StoredUser[]): void {
-  storageSet(USERS_KEY, users);
-}
+// ─── AuthService ──────────────────────────────────────────────────────────────
 
 export const AuthService = {
-  async register(firstName: string, lastName: string, email: string, password: string): Promise<{ ok: boolean; error?: string }> {
-    const users = getUsers();
-    if (users.find((u) => u.email.toLowerCase() === email.toLowerCase())) {
-      return { ok: false, error: 'exists' };
-    }
-    const salt = generateSalt();
-    const user: StoredUser = {
-      id: Date.now(),
-      firstName,
-      lastName,
+  async register(
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string,
+  ): Promise<{ ok: boolean; error?: string }> {
+    const { data, error } = await supabase.auth.signUp({
       email,
-      salt,
-      password: await hashPassword(password, salt),
-    };
-    users.push(user);
-    saveUsers(users);
-    this.setSession({ id: user.id, firstName, lastName, email });
+      password,
+      options: { data: { first_name: firstName, last_name: lastName } },
+    });
+    if (error) {
+      return { ok: false, error: error.message.includes('already') ? 'exists' : error.message };
+    }
+    if (data.user) {
+      this.setSession({
+        id: data.user.id,
+        firstName,
+        lastName,
+        email: data.user.email ?? email,
+      });
+    }
     return { ok: true };
   },
 
   async login(email: string, password: string): Promise<{ ok: boolean; error?: string }> {
-    const users = getUsers();
-    const user = users.find((u) => u.email.toLowerCase() === email.toLowerCase());
-    if (!user) return { ok: false, error: 'invalid' };
-    const hash = await hashPassword(password, user.salt ?? '');
-    if (hash !== user.password) return { ok: false, error: 'invalid' };
-    this.setSession({ id: user.id, firstName: user.firstName, lastName: user.lastName, email: user.email });
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) return { ok: false, error: 'invalid' };
+    if (data.user) {
+      const meta = data.user.user_metadata ?? {};
+      this.setSession({
+        id: data.user.id,
+        firstName: (meta['first_name'] as string | undefined) ?? '',
+        lastName: (meta['last_name'] as string | undefined) ?? '',
+        email: data.user.email ?? email,
+      });
+    }
     return { ok: true };
   },
 
-  logout(): void {
-    localStorage.removeItem(AUTH_KEY);
+  async logout(): Promise<void> {
+    await supabase.auth.signOut();
+    localStorage.removeItem(STORAGE_KEYS.session);
   },
 
   getSession(): UserSession | null {
-    return storageGet<UserSession | null>(AUTH_KEY, null);
+    return storageGet<UserSession | null>(STORAGE_KEYS.session, null);
   },
 
   isLoggedIn(): boolean {
@@ -97,9 +63,32 @@ export const AuthService = {
   },
 
   setSession(data: UserSession): void {
-    storageSet(AUTH_KEY, data);
+    storageSet(STORAGE_KEYS.session, data);
+  },
+
+  async updateProfile(_id: string, firstName: string, lastName: string): Promise<void> {
+    await supabase.auth.updateUser({ data: { first_name: firstName, last_name: lastName } });
+    const session = this.getSession();
+    if (session) this.setSession({ ...session, firstName, lastName });
   },
 };
+
+// ─── Sync Supabase session on load ────────────────────────────────────────────
+// Supabase restores the session from its own storage on page load.
+// We mirror it into our lightweight session cache so synchronous callers work.
+supabase.auth.onAuthStateChange((event, session) => {
+  if (session?.user) {
+    const meta = session.user.user_metadata ?? {};
+    AuthService.setSession({
+      id: session.user.id,
+      firstName: (meta['first_name'] as string | undefined) ?? '',
+      lastName: (meta['last_name'] as string | undefined) ?? '',
+      email: session.user.email ?? '',
+    });
+  } else if (event === 'SIGNED_OUT') {
+    localStorage.removeItem(STORAGE_KEYS.session);
+  }
+});
 
 // ─── Logout modal ─────────────────────────────────────────────────────────────
 
@@ -120,11 +109,12 @@ const LOGOUT_MODAL_HTML = `
 
 function closeLogoutModal(): void {
   const modal = document.getElementById('logout-modal');
-  if (modal) modal.style.display = 'none';
-  document.body.style.overflow = '';
+  if (!modal || modal.style.display === 'none') return;
+  modal.style.display = 'none';
+  unlockScroll();
 }
 
-function openLogoutModal(userName: string, onConfirm: () => void): void {
+export function openLogoutModal(userName: string, onConfirm: () => void): void {
   if (!document.getElementById('logout-modal')) {
     document.body.insertAdjacentHTML('beforeend', LOGOUT_MODAL_HTML);
     document.getElementById('logout-cancel')!.addEventListener('click', closeLogoutModal);
@@ -137,7 +127,7 @@ function openLogoutModal(userName: string, onConfirm: () => void): void {
   document.getElementById('logout-modal-msg')!.textContent =
     `Are you sure you want to sign out from ${userName}?`;
   document.getElementById('logout-modal')!.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
+  lockScroll();
 
   const confirmBtn = document.getElementById('logout-confirm')!;
   const newBtn = confirmBtn.cloneNode(true) as HTMLElement;
@@ -157,13 +147,12 @@ export function initAuthHeader(): void {
     userLink.href = '#';
     userLink.title = `${session.firstName} ${session.lastName}`;
     if (userIcon) {
-      userIcon.className = 'fa-solid fa-user text-xl sm:text-2xl cursor-pointer text-[#c37989]';
+      userIcon.className = 'fa-solid fa-user text-xl sm:text-2xl cursor-pointer text-brand';
     }
     userLink.addEventListener('click', (e) => {
       e.preventDefault();
       openLogoutModal(`${session.firstName} ${session.lastName}`, () => {
-        AuthService.logout();
-        window.location.reload();
+        AuthService.logout().then(() => window.location.reload());
       });
     });
   }

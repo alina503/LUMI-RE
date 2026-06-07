@@ -2,40 +2,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>�nregistrare � LUMI�RE</title>
+    <title>Înregistrare | LUMIÈRE</title>
     <meta property="og:type"        content="website" />
     <meta property="og:url"         content="https://alina503.github.io/victoria.secret.clone/inregistrare.html" />
     <meta property="og:image"       content="https://alina503.github.io/victoria.secret.clone/assets/image/og-image.jpg" />
-    <meta property="og:title"       content="�nregistrare � LUMI�RE" />
+    <meta property="og:title"       content="Înregistrare | LUMIÈRE" />
     <meta property="og:description" content="Create a LUMIÈRE account for exclusive offers, order tracking and wishlist access." />
     <meta name="twitter:card"       content="summary_large_image" />
     <meta name="description"        content="Create a LUMIÈRE account for exclusive offers, order tracking and wishlist access." />
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body class="bg-white">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:text-sm">Skip to content</a>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <header>
-      <div class="bg-[#FAF5F0] py-2 w-full">
+      <div class="bg-blush py-2 w-full">
         <div class="font-extralight text-xs sm:text-sm mx-auto flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 text-center px-4">
-          <p>FREE SHIPPING ON ORDERS OVER 269 LEI � WEAR YOUR STORY.</p>
-          <a class="text-xs sm:text-sm bg-transparent hover:bg-[#F4EEE8] border-black border px-3 py-[3px] rounded-sm whitespace-nowrap" href="#">VIEW OFFERS</a>
+          <p>FREE SHIPPING ON ORDERS OVER 269 LEI | WEAR YOUR STORY.</p>
+          <a class="banner-offer-btn" href="#">VIEW OFFERS</a>
         </div>
       </div>
-      <div class="w-full bg-[#F4EEE8] py-2">
+      <div class="w-full bg-nav py-2">
         <div class="container mx-auto px-4">
           <div class="flex justify-between items-center">
-            <nav class="flex flex-wrap gap-2 sm:gap-4 items-center">
-              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">LUMI�RE</a></li>
+            <nav aria-label="Brand navigation"><ul class="flex flex-wrap gap-2 sm:gap-4 items-center">
+              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">LUMIÈRE</a></li>
               <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="atelier.html" class="hover:font-semibold">ATELIER</a></li>
               <li class="list-none text-xs sm:text-sm font-light"><a href="beauty.html" class="hover:font-semibold">BEAUTY</a></li>
-            </nav>
+            </ul></nav>
             <div class="flex gap-4 items-center">
               <button aria-label="Meniu" id="hamburger" class="sm:hidden text-xl"><i class="fa-solid fa-bars"></i></button>
               <button id="search-toggle" aria-label="Cautare" title="Cautare"><i class="fa-solid fa-magnifying-glass text-xl sm:text-2xl cursor-pointer"></i></button>
               <a href="login.html" id="user-nav-link" title="My Account"><i id="user-nav-icon" class="fa-regular fa-user text-xl sm:text-2xl cursor-pointer"></i></a>
-              <a href="cart.html" title="Co? de cumparaturi" class="relative">
+              <a href="cart.html" title="Shopping bag" aria-label="Shopping bag, 0 items" class="relative">
                 <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer"></i>
-                <span class="cart-badge absolute -top-2 -right-2 bg-[#8B5A8C] text-white text-[10px] rounded-full w-4 h-4 font-bold" style="display:none;align-items:center;justify-content:center">0</span>
+                <span class="cart-badge absolute -top-2 -right-2 bg-brand text-white text-[10px] rounded-full w-4 h-4 font-bold" aria-live="polite" aria-atomic="true">0</span>
               </a>
             </div>
           </div>
@@ -73,7 +73,7 @@
       </div>
     </header>
     <!-- Search overlay -->
-    <div id="search-overlay" style="display:none" class="fixed inset-0 z-50 flex-col items-center justify-start bg-white pt-20 px-4">
+    <div id="search-overlay" class="hidden fixed inset-0 z-50 flex-col items-center justify-start bg-white pt-20 px-4">
       <div class="w-full max-w-2xl mx-auto">
         <div class="flex items-center border-b-2 border-black pb-2 mb-6">
           <i class="fa-solid fa-magnifying-glass text-gray-400 mr-3"></i>
@@ -81,7 +81,7 @@
           <button id="search-close" class="ml-4 text-2xl text-gray-400 hover:text-black">&times;</button>
         </div>
         <div id="search-results" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
-        <p id="search-empty" class="text-gray-500 text-center mt-8" style="display:none">Niciun produs gasit.</p>
+        <p id="search-empty" class="hidden text-gray-500 text-center mt-8">Niciun produs gasit.</p>
       </div>
     </div>
 
@@ -91,96 +91,93 @@
 
           <!-- Logo & title -->
           <div class="text-center mb-8">
-            <a href="index.html" class="font-serif text-3xl sm:text-4xl font-bold tracking-widest">LUMI�RE</a>
+            <a href="index.html" class="font-serif text-3xl sm:text-4xl font-bold tracking-widest">LUMIÈRE</a>
             <h1 class="text-xl sm:text-2xl font-light mt-4 mb-1">Creeaza un cont</h1>
-            <p class="text-sm text-gray-500">Bucura-te de 15% reducere la prima comanda dupa �nregistrare.</p>
+            <p class="text-sm text-gray-500">Bucura-te de 15% reducere la prima comanda dupa Înregistrare.</p>
           </div>
 
           <!-- Form -->
           <form id="signup-form" class="flex flex-col gap-4" novalidate>
 
             <div class="flex flex-col sm:flex-row gap-4">
-              <div class="flex-1">
-                <label class="text-xs text-gray-600 block mb-1">Prenume <span class="text-red-400">*</span></label>
-                <input id="first-name" type="text" autocomplete="given-name"
-                  class="w-full border border-gray-300 px-3 py-2 text-sm transition" />
-                <p class="error-msg text-red-400 text-xs mt-1 hidden">C�mp obligatoriu.</p>
+              <div class="lum-field flex-1">
+                <label for="first-name" class="lum-label lum-label-required">Prenume</label>
+                <input id="first-name" type="text" autocomplete="given-name" class="lum-input" />
+                <p class="error-msg lum-field-error hidden">Câmp obligatoriu.</p>
               </div>
-              <div class="flex-1">
-                <label class="text-xs text-gray-600 block mb-1">Nume <span class="text-red-400">*</span></label>
-                <input id="last-name" type="text" autocomplete="family-name"
-                  class="w-full border border-gray-300 px-3 py-2 text-sm transition" />
-                <p class="error-msg text-red-400 text-xs mt-1 hidden">C�mp obligatoriu.</p>
+              <div class="lum-field flex-1">
+                <label for="last-name" class="lum-label lum-label-required">Nume</label>
+                <input id="last-name" type="text" autocomplete="family-name" class="lum-input" />
+                <p class="error-msg lum-field-error hidden">Câmp obligatoriu.</p>
               </div>
             </div>
 
-            <div>
-              <label class="text-xs text-gray-600 block mb-1">Adresa de e-mail <span class="text-red-400">*</span></label>
-              <input id="email" type="email" autocomplete="email"
-                class="w-full border border-gray-300 px-3 py-2 text-sm transition" />
-              <p class="error-msg text-red-400 text-xs mt-1 hidden">Introduce?i un e-mail valid.</p>
+            <div class="lum-field">
+              <label for="email" class="lum-label lum-label-required">Adresa de e-mail</label>
+              <input id="email" type="email" autocomplete="email" class="lum-input" />
+              <p class="error-msg lum-field-error hidden">Introduceți un e-mail valid.</p>
             </div>
 
-            <div>
-              <label class="text-xs text-gray-600 block mb-1">Parola <span class="text-red-400">*</span></label>
+            <div class="lum-field">
+              <label for="password" class="lum-label lum-label-required">Parola</label>
               <div class="relative">
                 <input id="password" type="password" autocomplete="new-password"
-                  class="w-full border border-gray-300 px-3 py-2 text-sm pr-10 transition" />
-                <button type="button" id="toggle-pwd" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700 text-sm">
-                  <i class="fa-regular fa-eye"></i>
+                  class="lum-input pr-10" />
+                <button type="button" id="toggle-pwd"
+                  aria-label="Afișează parola"
+                  class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700 text-sm">
+                  <i class="fa-regular fa-eye" aria-hidden="true"></i>
                 </button>
               </div>
-              <p class="text-[11px] text-gray-400 mt-1">Minim 8 caractere, o litera mare ?i un numar.</p>
-              <p class="error-msg text-red-400 text-xs mt-1 hidden">Parola nu �ndepline?te cerin?ele.</p>
+              <p class="text-xs text-gray-400 mt-1">Minim 8 caractere, o literă mare și un număr.</p>
+              <p class="error-msg lum-field-error hidden">Parola nu îndeplinește cerințele.</p>
             </div>
 
-            <div>
-              <label class="text-xs text-gray-600 block mb-1">Confirma parola <span class="text-red-400">*</span></label>
-              <input id="confirm-password" type="password" autocomplete="new-password"
-                class="w-full border border-gray-300 px-3 py-2 text-sm transition" />
-              <p class="error-msg text-red-400 text-xs mt-1 hidden">Parolele nu coincid.</p>
+            <div class="lum-field">
+              <label for="confirm-password" class="lum-label lum-label-required">Confirmă parola</label>
+              <input id="confirm-password" type="password" autocomplete="new-password" class="lum-input" />
+              <p class="error-msg lum-field-error hidden">Parolele nu coincid.</p>
             </div>
 
             <div class="flex items-start gap-2 mt-1">
-              <input id="newsletter" type="checkbox" class="mt-1 accent-[#c37989]" checked />
+              <input id="newsletter" type="checkbox" class="mt-1 accent-rose" checked />
               <label for="newsletter" class="text-xs text-gray-600 leading-relaxed cursor-pointer">
-                Doresc sa primesc oferte ?i nouta?i LUMI�RE prin e-mail (reducere de 15% inclusa).
+                Doresc sa primesc oferte și noutăți LUMIÈRE prin e-mail (reducere de 15% inclusa).
               </label>
             </div>
 
             <div class="flex items-start gap-2">
-              <input id="terms" type="checkbox" class="mt-1 accent-[#c37989]" />
+              <input id="terms" type="checkbox" class="mt-1 accent-rose" />
               <label for="terms" class="text-xs text-gray-600 leading-relaxed cursor-pointer">
-                Sunt de acord cu <a href="termeni-conditii.html" class="text-[#8B5A8C] underline">Terms ?i Condi?iile</a> ?i
-                <a href="politica-de-confidentialitate.html" class="text-[#8B5A8C] underline">Politica de Confiden?ialitate</a>. <span class="text-red-400">*</span>
+                Sunt de acord cu <a href="termeni-conditii.html" class="text-brand underline">Terms și Condițiile</a> și
+                <a href="politica-de-confidentialitate.html" class="text-brand underline">Politica de Confidențialitate</a>. <span class="text-red-400">*</span>
               </label>
             </div>
-            <p id="terms-error" class="text-red-400 text-xs -mt-3 hidden">Trebuie sa accep?i termenii pentru a continua.</p>
+            <p id="terms-error" class="text-red-400 text-xs -mt-3 hidden">Trebuie sa accepți termenii pentru a continua.</p>
 
-            <button type="submit"
-              class="bg-black text-white text-sm py-3 hover:bg-gray-800 transition mt-2 tracking-wider">
+            <button type="submit" class="btn btn-primary btn-block mt-2">
               CREEAZA CONT
             </button>
 
             <p class="text-center text-xs text-gray-500">
               Ai deja un cont?
-              <a href="login.html" class="text-[#8B5A8C] underline hover:text-[#6B3F6E]">Conecteaza-te</a>
+              <a href="login.html" class="text-brand underline hover:text-plum">Conecteaza-te</a>
             </p>
 
           </form>
 
           <!-- Success state (hidden by default) -->
           <div id="signup-success" class="hidden text-center py-10">
-            <i class="fa-solid fa-circle-check text-4xl text-[#8B5A8C] mb-4 block"></i>
+            <i class="fa-solid fa-circle-check text-4xl text-brand mb-4 block"></i>
             <h2 class="text-xl font-light mb-2">Contul tau a fost creat!</h2>
-            <p class="text-sm text-gray-500 mb-4">Bun venit �n familia LUMI�RE.</p>
-            <div class="bg-[#FAF5F0] border border-[#c37989] rounded px-6 py-4 mb-6 inline-block">
+            <p class="text-sm text-gray-500 mb-4">Bun venit în familia LUMIÈRE.</p>
+            <div class="bg-blush border border-rose rounded px-6 py-4 mb-6 inline-block">
               <p class="text-xs text-gray-500 mb-1">Codul tau de reducere 15% la prima comanda:</p>
-              <p class="text-2xl font-bold tracking-widest text-[#8B5A8C]">VS15</p>
-              <p class="text-xs text-gray-400 mt-1">Introdu-l la co? �nainte de finalizare</p>
+              <p class="text-2xl font-bold tracking-widest text-brand">VS15</p>
+              <p class="text-xs text-gray-400 mt-1">Introdu-l la coș înainte de finalizare</p>
             </div>
             <br/>
-            <a href="index.html" class="bg-black text-white text-sm px-8 py-3 hover:bg-gray-800 transition">�NCEPE CUMPARATURILE</a>
+            <a href="index.html" class="btn btn-primary">ÎNCEPE CUMPARATURILE</a>
           </div>
 
         </div>
@@ -190,106 +187,18 @@
     <footer class="bg-gray-100 w-full mt-10">
       <div class="container mx-auto flex flex-col lg:flex-row gap-10 lg:gap-[150px] px-4 pt-10 pb-10">
         <div class="flex flex-col w-full lg:max-w-[500px]">
-          <p class="text-lg font-semibold pb-4">SUBSCRIBE LA NEWSLETTER</p>
+          <p class="text-lg font-semibold pb-4">SUBSCRIBE TO STAY IN THE STORY</p>
           <form class="newsletter-form flex flex-col gap-0">
-            <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Enter your email address" type="email" />
-            <button type="submit" class="bg-black text-white text-xs py-3 px-6 hover:bg-gray-800 transition mt-2 tracking-wider w-full">SUBSCRIBE</button>
+            <input class="lum-input" placeholder="Enter your email address" type="email" />
+            <button type="submit" class="btn btn-primary btn-block btn-sm mt-2">SUBSCRIBE</button>
             <p class="newsletter-msg text-xs mt-2"></p>
           </form>
-          <span class="pt-5 pb-10 text-sm">Prin abonare e?ti de acord cu <a class="text-[#8B5A8C]" href="politica-de-confidentialitate.html">politica noastra de confiden?ialitate.</a></span>
-          <img class="w-full max-w-[400px] pb-7" src="assets/icon/VSFA_220818_-_ANPC_Buttons_1.avif" alt="ANPC" />
-          <img class="w-full max-w-[400px] pb-11" src="assets/icon/VSFA_220818_-_ANPC_Buttons_2.avif" alt="ANPC" />
+          <span class="pt-5 pb-10 text-sm">Prin abonare ești de acord cu <a class="text-brand" href="politica-de-confidentialitate.html">politica noastra de confidențialitate.</a></span>
         </div>
-        <div class="w-full pb-10"><nav class="grid grid-cols-1 sm:grid-cols-3 gap-8"><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">HELP</li><li><a href="faq.html" class="hover:text-[#6B3F6E]">FAQ</a></li><li><a href="contact.html" class="hover:text-[#6B3F6E]">Contact Us</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">INFORMATION</li><li><a href="livrare-plata.html" class="hover:text-[#6B3F6E]">Shipping & Payment</a></li><li><a href="returnari.html" class="hover:text-[#6B3F6E]">Returns</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">ASISTEN?A</li><li><a href="contul-meu.html" class="hover:text-[#6B3F6E]">My Account</a></li><li><a href="termeni-conditii.html" class="hover:text-[#6B3F6E]">Termeni</a></li></ul></nav></div>
+        <div class="w-full pb-10"><nav class="grid grid-cols-1 sm:grid-cols-3 gap-8"><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">HELP</li><li><a href="faq.html" class="footer-link">FAQ</a></li><li><a href="contact.html" class="footer-link">Contact Us</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">INFORMATION</li><li><a href="livrare-plata.html" class="footer-link">Shipping & Payment</a></li><li><a href="returnari.html" class="footer-link">Returns</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">ASISTENȚĂ</li><li><a href="contul-meu.html" class="footer-link">My Account</a></li><li><a href="termeni-conditii.html" class="footer-link">Termeni</a></li></ul></nav></div>
       </div>
     </footer>
-    <div class="w-full py-5 border-t border-gray-200"><div class="container mx-auto px-4"><span class="text-sm text-gray-500">� 2025 Lumi�re. All Rights Reserved.</span></div></div>
-    <script>
-      // Redirect if already logged in
-      if (AuthService.isLoggedIn()) {
-        window.location.href = 'index.html';
-      }
-
-      document.getElementById('hamburger').addEventListener('click', function () {
-        document.getElementById('mobile-menu').classList.toggle('open');
-      });
-
-      document.getElementById('toggle-pwd').addEventListener('click', function () {
-        var pwd = document.getElementById('password');
-        var icon = this.querySelector('i');
-        if (pwd.type === 'password') {
-          pwd.type = 'text';
-          icon.classList.replace('fa-eye', 'fa-eye-slash');
-        } else {
-          pwd.type = 'password';
-          icon.classList.replace('fa-eye-slash', 'fa-eye');
-        }
-      });
-
-      (function () {
-        var params = new URLSearchParams(window.location.search);
-        if (params.get('email')) document.getElementById('email').value = params.get('email');
-        if (params.get('name')) document.getElementById('first-name').value = params.get('name');
-      })();
-
-      document.getElementById('signup-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        var valid = true;
-        document.querySelectorAll('.error-msg').forEach(function (el) { el.classList.add('hidden'); });
-        document.getElementById('terms-error').classList.add('hidden');
-
-        var firstName = document.getElementById('first-name');
-        var lastName = document.getElementById('last-name');
-        var email = document.getElementById('email');
-        var password = document.getElementById('password');
-        var confirmPwd = document.getElementById('confirm-password');
-        var terms = document.getElementById('terms');
-
-        function showError(input) {
-          input.closest('div').querySelector('.error-msg').classList.remove('hidden');
-          input.classList.add('border-red-400');
-          valid = false;
-        }
-
-        if (!firstName.value.trim()) showError(firstName);
-        if (!lastName.value.trim()) showError(lastName);
-        if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) showError(email);
-        if (!password.value || password.value.length < 8 || !/[A-Z]/.test(password.value) || !/[0-9]/.test(password.value)) showError(password);
-        if (confirmPwd.value !== password.value) showError(confirmPwd);
-        if (!terms.checked) { document.getElementById('terms-error').classList.remove('hidden'); valid = false; }
-        if (!valid) return;
-
-        var result = AuthService.register(
-          firstName.value.trim(), lastName.value.trim(),
-          email.value.trim(), password.value
-        );
-        if (result.ok) {
-          document.getElementById('signup-form').classList.add('hidden');
-          document.getElementById('signup-success').classList.remove('hidden');
-          setTimeout(function () { window.location.href = 'index.html'; }, 2000);
-        } else if (result.error === 'exists') {
-          email.classList.add('border-red-400');
-          email.closest('div').querySelector('.error-msg').textContent = 'Acest e-mail este deja �nregistrat.';
-          email.closest('div').querySelector('.error-msg').classList.remove('hidden');
-        }
-      });
-
-      document.querySelectorAll('input[type=text], input[type=email], input[type=password]').forEach(function (el) {
-        el.addEventListener('input', function () { this.classList.remove('border-red-400'); });
-      });
-
-      document.getElementById('search-toggle').addEventListener('click', function () {
-        var overlay = document.getElementById('search-overlay');
-        overlay.style.display = 'flex'; overlay.style.flexDirection = 'column';
-        document.getElementById('search-input').focus();
-      });
-      document.getElementById('search-close').addEventListener('click', function () {
-        document.getElementById('search-overlay').style.display = 'none';
-        document.getElementById('search-input').value = '';
-        document.getElementById('search-results').innerHTML = '';
-        document.getElementById('search-empty').style.display = 'none';
-      });
-    </script>
+    <div class="w-full py-5 border-t border-gray-200"><div class="container mx-auto px-4"><span class="text-sm text-gray-500">© 2025 Lumière. All Rights Reserved.</span></div></div>
     <script type="module" src="src/pages/register.ts"></script>
   </body>
 </html>

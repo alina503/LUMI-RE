@@ -8,7 +8,7 @@ import { renderCartSummary, initPromoCode } from '../components/features/CartSum
 import { cart } from '../hooks/useCart';
 import { PROMO_CODES } from '../constants/config';
 
-document.addEventListener('DOMContentLoaded', () => {
+function init(): void {
   injectToast();
   initHeader();
   initSearchOverlay();
@@ -49,7 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCart();
 
   initCrossTabSync(renderCart);
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init, { once: true });
+} else {
+  init();
+}
 
 function initCrossTabSync(onExternalChange: () => void): void {
   window.addEventListener('storage', (e) => {

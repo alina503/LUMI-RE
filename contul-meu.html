@@ -2,40 +2,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contul Meu � LUMI�RE</title>
+    <title>My Account | LUMIÈRE</title>
     <meta property="og:type"        content="website" />
     <meta property="og:url"         content="https://alina503.github.io/victoria.secret.clone/contul-meu.html" />
     <meta property="og:image"       content="https://alina503.github.io/victoria.secret.clone/assets/image/og-image.jpg" />
-    <meta property="og:title"       content="Contul Meu � LUMI�RE" />
+    <meta property="og:title"       content="My Account | LUMIÈRE" />
     <meta property="og:description" content="Your LUMIÈRE account — view orders, manage your profile and wishlist." />
     <meta name="twitter:card"       content="summary_large_image" />
     <meta name="description"        content="Your LUMIÈRE account — view orders, manage your profile and wishlist." />
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body class="bg-white">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:text-sm">Skip to content</a>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <header>
-      <div class="bg-[#FAF5F0] py-2 w-full">
+      <div class="bg-blush py-2 w-full">
         <div class="font-extralight text-xs sm:text-sm mx-auto flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 text-center px-4">
-          <p>FREE SHIPPING ON ORDERS OVER 269 LEI � WEAR YOUR STORY.</p>
-          <a class="text-xs sm:text-sm bg-transparent hover:bg-[#F4EEE8] border-black border px-3 py-[3px] rounded-sm whitespace-nowrap" href="#">VIEW OFFERS</a>
+          <p>FREE SHIPPING ON ORDERS OVER 269 LEI | WEAR YOUR STORY.</p>
+          <a class="banner-offer-btn" href="#">VIEW OFFERS</a>
         </div>
       </div>
-      <div class="w-full bg-[#F4EEE8] py-2">
+      <div class="w-full bg-nav py-2">
         <div class="container mx-auto px-4">
           <div class="flex justify-between items-center">
-            <nav class="flex flex-wrap gap-2 sm:gap-4 items-center">
-              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">LUMI�RE</a></li>
+            <nav aria-label="Brand navigation"><ul class="flex flex-wrap gap-2 sm:gap-4 items-center">
+              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">LUMIÈRE</a></li>
               <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="atelier.html" class="hover:font-semibold">ATELIER</a></li>
               <li class="list-none text-xs sm:text-sm font-light"><a href="beauty.html" class="hover:font-semibold">BEAUTY</a></li>
-            </nav>
+            </ul></nav>
             <div class="flex gap-4 items-center">
-              <button aria-label="Meniu" id="hamburger" class="sm:hidden text-xl"><i class="fa-solid fa-bars"></i></button>
-              <button id="search-toggle" aria-label="Cautare" title="Cautare"><i class="fa-solid fa-magnifying-glass text-xl sm:text-2xl cursor-pointer"></i></button>
+              <button aria-label="Menu" id="hamburger" class="sm:hidden text-xl"><i class="fa-solid fa-bars"></i></button>
+              <button id="search-toggle" aria-label="Search" title="Search"><i class="fa-solid fa-magnifying-glass text-xl sm:text-2xl cursor-pointer"></i></button>
               <a href="login.html" id="user-nav-link" title="My Account"><i id="user-nav-icon" class="fa-regular fa-user text-xl sm:text-2xl cursor-pointer"></i></a>
-              <a href="cart.html" title="Co? de cumparaturi" class="relative">
+              <a href="cart.html" title="Shopping bag" aria-label="Shopping bag, 0 items" class="relative">
                 <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer"></i>
-                <span class="cart-badge absolute -top-2 -right-2 bg-[#8B5A8C] text-white text-[10px] rounded-full w-4 h-4 font-bold" style="display:none;align-items:center;justify-content:center">0</span>
+                <span class="cart-badge absolute -top-2 -right-2 bg-brand text-white text-[10px] rounded-full w-4 h-4 font-bold" aria-live="polite" aria-atomic="true">0</span>
               </a>
             </div>
           </div>
@@ -74,15 +74,15 @@
     </header>
 
     <!-- Search overlay -->
-    <div id="search-overlay" style="display:none" class="fixed inset-0 z-50 flex-col items-center justify-start bg-white pt-20 px-4">
+    <div id="search-overlay" class="hidden fixed inset-0 z-50 flex-col items-center justify-start bg-white pt-20 px-4">
       <div class="w-full max-w-2xl mx-auto">
         <div class="flex items-center border-b-2 border-black pb-2 mb-6">
           <i class="fa-solid fa-magnifying-glass text-gray-400 mr-3"></i>
-          <input id="search-input" type="text" placeholder="Cauta produse..." class="flex-1 text-lg outline-none" autocomplete="off" />
+          <input id="search-input" type="text" placeholder="Search products..." class="flex-1 text-lg outline-none" autocomplete="off" />
           <button id="search-close" class="ml-4 text-2xl text-gray-400 hover:text-black">&times;</button>
         </div>
         <div id="search-results" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
-        <p id="search-empty" class="text-gray-500 text-center mt-8" style="display:none">Niciun produs gasit.</p>
+        <p id="search-empty" class="hidden text-gray-500 text-center mt-8">No products found.</p>
       </div>
     </div>
 
@@ -92,17 +92,17 @@
       <div class="text-center">
         <i class="fa-regular fa-user text-5xl text-gray-300 mb-4 block"></i>
         <h1 class="text-2xl font-light mb-2">My Account</h1>
-        <p class="text-gray-500 text-sm mb-6">Conecteaza-te pentru a-?i vedea contul ?i istoricul comenzilor.</p>
+        <p class="text-gray-500 text-sm mb-6">Sign in to view your account and order history.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="login.html" class="bg-black text-white text-sm px-8 py-3 hover:bg-gray-800 transition">CONECTEAZA-TE</a>
-          <a href="inregistrare.html" class="border border-black text-sm px-8 py-3 hover:bg-gray-50 transition">CREEAZA CONT</a>
+          <a href="login.html" class="btn btn-primary">SIGN IN</a>
+          <a href="inregistrare.html" class="border border-black text-sm px-8 py-3 hover:bg-gray-50 transition">CREATE ACCOUNT</a>
         </div>
       </div>
     </div>
 
     <!-- Logged in state -->
     <main id="account-content" class="hidden container mx-auto px-4 py-10 max-w-4xl">
-      <h1 class="text-2xl sm:text-3xl font-light mb-8">CONTUL MEU</h1>
+      <h1 class="text-2xl sm:text-3xl font-light mb-8">MY ACCOUNT</h1>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
@@ -110,8 +110,8 @@
         <aside class="lg:col-span-1">
           <div class="border border-gray-200 p-6">
             <div class="flex items-center gap-3 mb-6">
-              <div class="w-12 h-12 rounded-full bg-[#FAF5F0] flex items-center justify-center">
-                <i class="fa-solid fa-user text-[#8B5A8C] text-lg"></i>
+              <div class="w-12 h-12 rounded-full bg-blush flex items-center justify-center">
+                <i class="fa-solid fa-user text-brand text-lg"></i>
               </div>
               <div>
                 <p id="acc-name" class="font-medium text-sm"></p>
@@ -120,17 +120,17 @@
             </div>
             <nav class="flex flex-col gap-1">
               <button data-tab="orders" class="tab-btn text-left text-sm px-3 py-2 hover:bg-gray-50 transition font-medium text-black bg-gray-50">
-                <i class="fa-solid fa-box-open mr-2 text-gray-400 w-4"></i>Istoricul comenzilor
+                <i class="fa-solid fa-box-open mr-2 text-gray-400 w-4"></i>Order History
               </button>
               <button data-tab="profile" class="tab-btn text-left text-sm px-3 py-2 hover:bg-gray-50 transition text-gray-600">
-                <i class="fa-solid fa-user mr-2 text-gray-400 w-4"></i>Profilul meu
+                <i class="fa-solid fa-user mr-2 text-gray-400 w-4"></i>My Profile
               </button>
-              <button data-tab="wishlist-link" class="tab-btn text-left text-sm px-3 py-2 hover:bg-gray-50 transition text-gray-600" onclick="window.location.href='wishlist.html'">
-                <i class="fa-regular fa-heart mr-2 text-gray-400 w-4"></i>Lista de dorin?e
+              <button data-tab="wishlist-link" class="tab-btn text-left text-sm px-3 py-2 hover:bg-gray-50 transition text-gray-600" onclick="window.location.href='lista-de-dorinte.html'">
+                <i class="fa-regular fa-heart mr-2 text-gray-400 w-4"></i>Wishlist
               </button>
               <hr class="my-2 border-gray-200" />
               <button id="logout-btn" class="text-left text-sm px-3 py-2 hover:bg-gray-50 transition text-gray-600">
-                <i class="fa-solid fa-right-from-bracket mr-2 text-gray-400 w-4"></i>Deconecteaza-te
+                <i class="fa-solid fa-right-from-bracket mr-2 text-gray-400 w-4"></i>Sign Out
               </button>
             </nav>
           </div>
@@ -141,36 +141,36 @@
 
           <!-- Orders tab -->
           <div id="tab-orders" class="tab-panel">
-            <h2 class="text-lg font-semibold mb-6">Istoricul comenzilor</h2>
+            <h2 class="text-lg font-semibold mb-6">Order History</h2>
             <div id="orders-list" class="flex flex-col gap-4"></div>
             <div id="no-orders" class="hidden text-center py-12 border border-gray-200">
               <i class="fa-solid fa-box-open text-4xl text-gray-300 mb-3 block"></i>
-              <p class="text-gray-500 text-sm mb-4">Nu ai plaseat nicio comanda �nca.</p>
-              <a href="index.html" class="bg-black text-white text-sm px-6 py-3 hover:bg-gray-800 transition">�NCEPE CUMPARATURILE</a>
+              <p class="text-gray-500 text-sm mb-4">You haven't placed any orders yet.</p>
+              <a href="index.html" class="bg-black text-white text-sm px-6 py-3 hover:bg-gray-800 transition">START SHOPPING</a>
             </div>
           </div>
 
           <!-- Profile tab -->
           <div id="tab-profile" class="tab-panel hidden">
-            <h2 class="text-lg font-semibold mb-6">Profilul meu</h2>
+            <h2 class="text-lg font-semibold mb-6">My Profile</h2>
             <form id="profile-form" class="flex flex-col gap-4 max-w-md">
               <div class="flex flex-col sm:flex-row gap-4">
                 <div class="flex-1">
-                  <label class="text-xs text-gray-600 block mb-1">Prenume</label>
-                  <input id="pf-first-name" type="text" class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
+                  <label class="text-xs text-gray-600 block mb-1">First Name</label>
+                  <input id="pf-first-name" type="text" class="lum-input" />
                 </div>
                 <div class="flex-1">
-                  <label class="text-xs text-gray-600 block mb-1">Nume</label>
-                  <input id="pf-last-name" type="text" class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
+                  <label class="text-xs text-gray-600 block mb-1">Last Name</label>
+                  <input id="pf-last-name" type="text" class="lum-input" />
                 </div>
               </div>
               <div>
-                <label class="text-xs text-gray-600 block mb-1">Adresa de e-mail</label>
+                <label class="text-xs text-gray-600 block mb-1">Email Address</label>
                 <input id="pf-email" type="email" class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition bg-gray-50" disabled />
-                <p class="text-xs text-gray-400 mt-1">E-mailul nu poate fi modificat.</p>
+                <p class="text-xs text-gray-400 mt-1">Email cannot be changed.</p>
               </div>
-              <p id="profile-success" class="text-green-600 text-xs hidden">Profilul a fost actualizat cu succes.</p>
-              <button type="submit" class="bg-black text-white text-sm py-3 hover:bg-gray-800 transition w-full sm:w-auto sm:px-10 tracking-wider mt-2">SALVEAZA</button>
+              <p id="profile-success" class="text-green-600 text-xs hidden">Profile updated successfully.</p>
+              <button type="submit" class="bg-black text-white text-sm py-3 hover:bg-gray-800 transition w-full sm:w-auto sm:px-10 tracking-wider mt-2">SAVE CHANGES</button>
             </form>
           </div>
 
@@ -181,148 +181,19 @@
     <footer class="bg-gray-100 w-full mt-10">
       <div class="container mx-auto flex flex-col lg:flex-row gap-10 lg:gap-[150px] px-4 pt-10 pb-10">
         <div class="flex flex-col w-full lg:max-w-[500px]">
-          <p class="text-lg font-semibold pb-4">SUBSCRIBE LA NEWSLETTER</p>
+          <p class="text-lg font-semibold pb-4">SUBSCRIBE TO OUR NEWSLETTER</p>
           <form class="newsletter-form flex flex-col gap-0">
-            <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Enter your email address" type="email" />
-            <button type="submit" class="bg-black text-white text-xs py-3 px-6 hover:bg-gray-800 transition mt-2 tracking-wider w-full">SUBSCRIBE</button>
+            <input class="lum-input" placeholder="Enter your email address" type="email" />
+            <button type="submit" class="btn btn-primary btn-block btn-sm mt-2">SUBSCRIBE</button>
             <p class="newsletter-msg text-xs mt-2"></p>
           </form>
-          <span class="pt-5 pb-10 text-sm">Prin abonare e?ti de acord cu <a class="text-[#8B5A8C]" href="politica-de-confidentialitate.html">politica noastra de confiden?ialitate.</a></span>
-          <img class="w-full max-w-[400px] pb-7" src="assets/icon/VSFA_220818_-_ANPC_Buttons_1.avif" alt="ANPC" />
-          <img class="w-full max-w-[400px] pb-11" src="assets/icon/VSFA_220818_-_ANPC_Buttons_2.avif" alt="ANPC" />
+          <span class="pt-5 pb-10 text-sm">By subscribing you agree to our <a class="text-brand" href="politica-de-confidentialitate.html">privacy policy.</a></span>
         </div>
-        <div class="w-full pb-10"><nav class="grid grid-cols-1 sm:grid-cols-3 gap-8"><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">HELP</li><li><a href="faq.html" class="hover:text-[#6B3F6E]">FAQ</a></li><li><a href="contact.html" class="hover:text-[#6B3F6E]">Contact Us</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">INFORMATION</li><li><a href="livrare-plata.html" class="hover:text-[#6B3F6E]">Shipping & Payment</a></li><li><a href="returnari.html" class="hover:text-[#6B3F6E]">Returns</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">ASISTEN?A</li><li><a href="contul-meu.html" class="hover:text-[#6B3F6E]">My Account</a></li><li><a href="termeni-conditii.html" class="hover:text-[#6B3F6E]">Termeni</a></li></ul></nav></div>
+        <div class="w-full pb-10"><nav class="grid grid-cols-1 sm:grid-cols-3 gap-8"><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">HELP</li><li><a href="faq.html" class="footer-link">FAQ</a></li><li><a href="contact.html" class="footer-link">Contact Us</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">INFORMATION</li><li><a href="livrare-plata.html" class="footer-link">Shipping & Payment</a></li><li><a href="returnari.html" class="footer-link">Returns</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">ACCOUNT</li><li><a href="contul-meu.html" class="footer-link">My Account</a></li><li><a href="termeni-conditii.html" class="footer-link">Terms</a></li></ul></nav></div>
       </div>
     </footer>
-    <div class="w-full py-5 border-t border-gray-200"><div class="container mx-auto px-4"><span class="text-sm text-gray-500">� 2025 Lumi�re. All Rights Reserved.</span></div></div>
+    <div class="w-full py-5 border-t border-gray-200"><div class="container mx-auto px-4"><span class="text-sm text-gray-500">© 2025 Lumière. All Rights Reserved.</span></div></div>
 
-    <script>
-    (function () {
-      var session = AuthService.getSession();
-
-      if (!session) {
-        document.getElementById('not-logged-in').classList.remove('hidden');
-        document.getElementById('not-logged-in').classList.add('flex');
-        return;
-      }
-
-      document.getElementById('account-content').classList.remove('hidden');
-      document.getElementById('acc-name').textContent = session.firstName + ' ' + session.lastName;
-      document.getElementById('acc-email').textContent = session.email;
-
-      // Pre-fill profile form
-      document.getElementById('pf-first-name').value = session.firstName || '';
-      document.getElementById('pf-last-name').value = session.lastName || '';
-      document.getElementById('pf-email').value = session.email || '';
-
-      // Tab switching
-      document.querySelectorAll('.tab-btn').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var tab = this.dataset.tab;
-          if (!tab || tab === 'wishlist-link') return;
-          document.querySelectorAll('.tab-btn').forEach(function (b) {
-            b.classList.remove('font-medium', 'text-black', 'bg-gray-50');
-            b.classList.add('text-gray-600');
-          });
-          this.classList.add('font-medium', 'text-black', 'bg-gray-50');
-          this.classList.remove('text-gray-600');
-          document.querySelectorAll('.tab-panel').forEach(function (p) { p.classList.add('hidden'); });
-          document.getElementById('tab-' + tab).classList.remove('hidden');
-        });
-      });
-
-      // Load orders
-      var historyKey = 'vs_orders_' + session.id;
-      var orders = [];
-      try { orders = JSON.parse(localStorage.getItem(historyKey) || '[]'); } catch { orders = []; }
-
-      var ordersContainer = document.getElementById('orders-list');
-      if (orders.length === 0) {
-        document.getElementById('no-orders').classList.remove('hidden');
-      } else {
-        orders.forEach(function (order) {
-          var date = new Date(order.date);
-          var dateStr = date.toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' });
-          var payLabels = { card: 'Card bancar', paypal: 'PayPal', ramburs: 'Ramburs' };
-          var itemCount = order.items.reduce(function (s, i) { return s + i.qty; }, 0);
-
-          var div = document.createElement('div');
-          div.className = 'border border-gray-200 p-5';
-          div.innerHTML =
-            '<div class="flex flex-col sm:flex-row justify-between gap-3 mb-4">' +
-              '<div>' +
-                '<p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Comanda</p>' +
-                '<p class="font-mono font-semibold text-[#8B5A8C]">' + order.id + '</p>' +
-              '</div>' +
-              '<div class="text-right sm:text-right">' +
-                '<p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Data</p>' +
-                '<p class="text-sm">' + dateStr + '</p>' +
-              '</div>' +
-              '<div class="text-right">' +
-                '<p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Total</p>' +
-                '<p class="text-sm font-semibold">' + order.total.toFixed(2) + ' lei</p>' +
-              '</div>' +
-            '</div>' +
-            '<div class="border-t border-gray-100 pt-3 flex flex-wrap gap-2 text-xs text-gray-500">' +
-              '<span><i class="fa-solid fa-box mr-1"></i>' + itemCount + ' produ' + (itemCount === 1 ? 's' : 'se') + '</span>' +
-              '<span class="mx-2">�</span>' +
-              '<span><i class="fa-solid fa-truck mr-1"></i>' + (order.delivery.method === 'express' ? 'Express' : 'Standard') + '</span>' +
-              '<span class="mx-2">�</span>' +
-              '<span><i class="fa-solid fa-credit-card mr-1"></i>' + (payLabels[order.payment] || order.payment) + '</span>' +
-              '<span class="mx-2">�</span>' +
-              '<span><i class="fa-solid fa-location-dot mr-1"></i>' + order.delivery.city + '</span>' +
-            '</div>';
-          ordersContainer.appendChild(div);
-        });
-      }
-
-      // Profile save
-      document.getElementById('profile-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        var fn = document.getElementById('pf-first-name').value.trim();
-        var ln = document.getElementById('pf-last-name').value.trim();
-        if (!fn || !ln) return;
-
-        // Update session
-        var users = [];
-        try { users = JSON.parse(localStorage.getItem('vs_users') || '[]'); } catch { users = []; }
-        var user = users.find(function (u) { return u.id === session.id; });
-        if (user) { user.firstName = fn; user.lastName = ln; }
-        try { localStorage.setItem('vs_users', JSON.stringify(users)); } catch { /* quota */ }
-
-        var newSession = { id: session.id, firstName: fn, lastName: ln, email: session.email };
-        localStorage.setItem('vs_user', JSON.stringify(newSession));
-
-        document.getElementById('acc-name').textContent = fn + ' ' + ln;
-        document.getElementById('profile-success').classList.remove('hidden');
-        setTimeout(function () { document.getElementById('profile-success').classList.add('hidden'); }, 3000);
-      });
-
-      // Logout
-      document.getElementById('logout-btn').addEventListener('click', function () {
-        openLogoutModal(session.firstName + ' ' + session.lastName, function () {
-          AuthService.logout();
-          window.location.href = 'index.html';
-        });
-      });
-
-      // Search overlay
-      document.getElementById('search-toggle').addEventListener('click', function () {
-        var overlay = document.getElementById('search-overlay');
-        overlay.style.display = 'flex'; overlay.style.flexDirection = 'column';
-        document.getElementById('search-input').focus();
-      });
-      document.getElementById('search-close').addEventListener('click', function () {
-        document.getElementById('search-overlay').style.display = 'none';
-      });
-
-      // Mobile menu
-      document.getElementById('hamburger').addEventListener('click', function () {
-        document.getElementById('mobile-menu').classList.toggle('open');
-      });
-    })();
-    </script>
-  
     <script type="module" src="src/pages/account.ts"></script>
   </body>
 </html>

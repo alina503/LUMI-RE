@@ -44,8 +44,3 @@ function createCart(): UseCart {
 }
 
 export const cart = createCart();
-
-/** @deprecated use the `cart` singleton instead */
-export function useCart(): UseCart {
-  return cart;
-}

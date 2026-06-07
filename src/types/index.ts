@@ -25,6 +25,13 @@ export type ProductCategory =
   | 'edit'
   | 'atelier';
 
+export interface UserSession {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+}
+
 export interface CartItem {
   id: string;
   name: string;

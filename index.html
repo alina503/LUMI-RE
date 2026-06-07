@@ -2,34 +2,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LUMI�RE � Premium Lingerie & Fashion</title>
+    <title>LUMIÈRE | Premium Lingerie & Fashion</title>
     <meta property="og:type"        content="website" />
     <meta property="og:url"         content="https://alina503.github.io/victoria.secret.clone/index.html" />
     <meta property="og:image"       content="https://alina503.github.io/victoria.secret.clone/assets/image/og-image.jpg" />
-    <meta property="og:title"       content="LUMI�RE � Premium Lingerie & Fashion" />
+    <meta property="og:title"       content="LUMIÈRE | Premium Lingerie & Fashion" />
     <meta property="og:description" content="LUMIÈRE — discover premium lingerie, sleepwear, activewear, beauty and accessories. Free shipping on orders over 269 lei." />
     <meta name="twitter:card"       content="summary_large_image" />
     <meta name="description"        content="LUMIÈRE — discover premium lingerie, sleepwear, activewear, beauty and accessories. Free shipping on orders over 269 lei." />
-    <link rel="stylesheet" href="style/style.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body>
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:text-sm">Skip to content</a>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <header>
       <!-- Top banner -->
-      <div class="bg-[#FAF5F0] py-2 w-full">
+      <div class="bg-blush py-2 w-full">
         <div class="font-extralight text-xs sm:text-sm mx-auto flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 text-center px-4">
-          <p>FREE SHIPPING ON ORDERS OVER 269 LEI � WEAR YOUR STORY.</p>
-          <a class="text-xs sm:text-sm bg-transparent hover:bg-[#F4EEE8] border-black border px-3 py-[3px] rounded-sm whitespace-nowrap" href="#">VIEW OFFERS</a>
+          <p>FREE SHIPPING ON ORDERS OVER 269 LEI | WEAR YOUR STORY.</p>
+          <a class="banner-offer-btn" href="#">VIEW OFFERS</a>
         </div>
       </div>
 
       <!-- Brand bar -->
-      <div class="w-full bg-[#F4EEE8] py-2">
+      <div class="w-full bg-nav py-2">
         <div class="container mx-auto px-4">
           <div class="flex justify-between items-center">
-            <nav class="flex flex-wrap gap-2 sm:gap-4 items-center">
+            <nav aria-label="Brand navigation"><ul class="flex flex-wrap gap-2 sm:gap-4 items-center">
               <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-semibold">
-                <a href="index.html" class="nav-active">LUMI�RE</a>
+                <a href="index.html" class="nav-active">LUMIÈRE</a>
               </li>
               <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light">
                 <a href="atelier.html" class="hover:font-semibold">ATELIER</a>
@@ -37,14 +38,14 @@
               <li class="list-none text-xs sm:text-sm font-light">
                 <a href="beauty.html" class="hover:font-semibold">BEAUTY</a>
               </li>
-            </nav>
+            </ul></nav>
             <div class="flex gap-4 items-center">
               <button aria-label="Menu" id="hamburger" class="sm:hidden text-xl"><i class="fa-solid fa-bars"></i></button>
               <button id="search-toggle" aria-label="Search" title="Search"><i class="fa-solid fa-magnifying-glass text-xl sm:text-2xl cursor-pointer"></i></button>
               <a href="login.html" id="user-nav-link" title="My account"><i id="user-nav-icon" class="fa-regular fa-user text-xl sm:text-2xl cursor-pointer"></i></a>
-              <a href="cart.html" title="Shopping bag" class="relative">
+              <a href="cart.html" title="Shopping bag" aria-label="Shopping bag, 0 items" class="relative">
                 <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer"></i>
-                <span class="cart-badge absolute -top-2 -right-2 bg-[#8B5A8C] text-white text-[10px] rounded-full w-4 h-4 font-bold" style="display:none;align-items:center;justify-content:center">0</span>
+                <span class="cart-badge absolute -top-2 -right-2 bg-brand text-white text-[10px] rounded-full w-4 h-4 font-bold" aria-live="polite" aria-atomic="true">0</span>
               </a>
             </div>
           </div>
@@ -91,7 +92,7 @@
     </header>
 
     <!-- Search overlay -->
-    <div id="search-overlay" style="display:none;" class="fixed inset-0 z-50 flex flex-col bg-white">
+    <div id="search-overlay" class="fixed inset-0 z-50 flex-col bg-white">
       <!-- Top bar -->
       <div class="flex items-center px-6 sm:px-12 py-5 border-b border-gray-100">
         <i class="fa-solid fa-magnifying-glass text-gray-400 text-lg mr-4"></i>
@@ -112,25 +113,25 @@
       <div class="flex-1 overflow-y-auto px-6 sm:px-12 py-8">
         <!-- Popular searches (shown when input is empty) -->
         <div id="search-suggestions" class="mb-8">
-          <p class="text-[10px] tracking-[0.2em] text-gray-400 uppercase mb-4">Popular searches</p>
+          <p class="section-eyebrow mb-4">Popular searches</p>
           <div class="flex flex-wrap gap-2">
-            <button class="search-tag border border-gray-300 text-xs px-4 py-2 hover:border-black hover:bg-black hover:text-white transition tracking-wider">Bras</button>
-            <button class="search-tag border border-gray-300 text-xs px-4 py-2 hover:border-black hover:bg-black hover:text-white transition tracking-wider">Fragrance</button>
-            <button class="search-tag border border-gray-300 text-xs px-4 py-2 hover:border-black hover:bg-black hover:text-white transition tracking-wider">Body Cream</button>
-            <button class="search-tag border border-gray-300 text-xs px-4 py-2 hover:border-black hover:bg-black hover:text-white transition tracking-wider">Sleepwear</button>
-            <button class="search-tag border border-gray-300 text-xs px-4 py-2 hover:border-black hover:bg-black hover:text-white transition tracking-wider">�clat</button>
-            <button class="search-tag border border-gray-300 text-xs px-4 py-2 hover:border-black hover:bg-black hover:text-white transition tracking-wider">Dentelle</button>
+            <button class="search-tag">Bras</button>
+            <button class="search-tag">Fragrance</button>
+            <button class="search-tag">Body Cream</button>
+            <button class="search-tag">Sleepwear</button>
+            <button class="search-tag">Éclat</button>
+            <button class="search-tag">Dentelle</button>
           </div>
         </div>
 
         <!-- Results count -->
-        <p id="search-count" style="display:none;" class="text-[10px] tracking-[0.2em] text-gray-400 uppercase mb-4"></p>
+        <p id="search-count" class="hidden section-eyebrow mb-4"></p>
 
         <!-- Results grid -->
         <div id="search-results" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"></div>
 
         <!-- Empty state -->
-        <div id="search-empty" style="display:none;" class="flex-col items-center justify-center py-20 text-center">
+        <div id="search-empty" class="hidden flex-col items-center justify-center py-20 text-center">
           <i class="fa-regular fa-face-sad-tear text-4xl text-gray-200 mb-4"></i>
           <p class="text-gray-400 text-sm tracking-wide">No products found for this search.</p>
           <p class="text-gray-300 text-xs mt-2">Try a different term.</p>
@@ -138,35 +139,11 @@
       </div>
     </div>
 
-    <style>
-      #search-overlay { opacity: 0; transition: opacity 0.25s ease; }
-      #search-overlay.open { opacity: 1; }
-      .search-tag { font-family: inherit; cursor: pointer; }
-    </style>
-    <script>
-      document.querySelectorAll('.search-tag').forEach(function (tag) {
-        tag.addEventListener('click', function () {
-          var input = document.getElementById('search-input');
-          if (!input) return;
-          input.value = tag.textContent.trim();
-          input.dispatchEvent(new Event('input'));
-          document.getElementById('search-suggestions').style.display = 'none';
-        });
-      });
-    </script>
-
-    <!-- Toast notification -->
-    <div id="toast" style="display:none" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-black text-white text-sm px-6 py-3 rounded z-50 flex items-center gap-3">
-      <i class="fa-solid fa-circle-check text-green-400"></i>
-      <span id="toast-msg">Produs adaugat �n co?!</span>
-      <a href="cart.html" class="underline whitespace-nowrap">View bag</a>
-    </div>
-
     <main id="main-content" class="w-full mx-auto">
       <div class="container mx-auto px-4">
         <!-- Title + search -->
         <div class="flex justify-center items-center py-8 sm:py-12">
-          <h1 class="text-3xl sm:text-5xl font-light text-center tracking-widest">LUMI�RE</h1>
+          <h1 class="text-3xl sm:text-5xl font-light text-center tracking-widest">LUMIÈRE</h1>
         </div>
       </div>
 
@@ -180,11 +157,11 @@
         <a href="#"><img class="w-full" src="assets/image/bg-img-2.avif" alt="Body by Victoria" /></a>
 
         <div id="product-grid-1" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-5 py-7">
-          <div class="product-card flex flex-col" data-id="new-in-001" data-name="Lumi�re Signature" data-subtitle="Smooth Demi Bra � New Season" data-price="260" data-image="assets/icon/sutiene/be4321f3558805f0a29d93b6b5e201864bc5b965_42fd.avif" data-color="Bisque">
-            <img class="w-full cursor-pointer" src="assets/icon/sutiene/be4321f3558805f0a29d93b6b5e201864bc5b965_42fd.avif" alt="Lumi�re Signature Smooth Demi Bra" />
+          <div class="product-card flex flex-col" data-id="new-in-001" data-name="Lumière Signature" data-subtitle="Smooth Demi Bra | New Season" data-price="260" data-image="assets/icon/sutiene/be4321f3558805f0a29d93b6b5e201864bc5b965_42fd.avif" data-color="Bisque">
+            <img class="w-full aspect-[3/4] object-cover object-top cursor-pointer" src="assets/icon/sutiene/be4321f3558805f0a29d93b6b5e201864bc5b965_42fd.avif" alt="Lumière Signature Smooth Demi Bra" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
-              <p class="text-sm sm:text-base font-medium">Lumi�re Signature</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Smooth Demi Bra � New Season</p>
+              <p class="text-sm sm:text-base font-medium">Lumière Signature</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Smooth Demi Bra | New Season</p>
               <span class="text-base sm:text-lg font-semibold">260.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
@@ -196,11 +173,11 @@
               <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADD TO BAG</button>
             </div>
           </div>
-          <div class="product-card flex flex-col" data-id="new-in-002" data-name="Lumi�re Signature" data-subtitle="Smooth Demi Bra � Onyx" data-price="260" data-image="assets/icon/sutiene/UJpye_1123744928P7_OM_F.avif" data-color="Onyx">
-            <img class="w-full cursor-pointer" src="assets/icon/sutiene/UJpye_1123744928P7_OM_F.avif" alt="Lumi�re Signature Demi Bra Onyx" />
+          <div class="product-card flex flex-col" data-id="new-in-002" data-name="Lumière Signature" data-subtitle="Smooth Demi Bra | Onyx" data-price="260" data-image="assets/icon/sutiene/UJpye_1123744928P7_OM_F.avif" data-color="Onyx">
+            <img class="w-full aspect-[3/4] object-cover object-top cursor-pointer" src="assets/icon/sutiene/UJpye_1123744928P7_OM_F.avif" alt="Lumière Signature Demi Bra Onyx" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
-              <p class="text-sm sm:text-base font-medium">Lumi�re Signature</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Smooth Demi Bra � Onyx</p>
+              <p class="text-sm sm:text-base font-medium">Lumière Signature</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Smooth Demi Bra | Onyx</p>
               <span class="text-base sm:text-lg font-semibold">260.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
@@ -212,11 +189,11 @@
               <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADD TO BAG</button>
             </div>
           </div>
-          <div class="product-card flex flex-col" data-id="bra-002" data-name="Lumi�re Signature" data-subtitle="Smooth Demi Bra � Blush Rose" data-price="260" data-image="assets/icon/sutiene/13da4d200fe204be9ceca0d2547c32458ddc460f_ad91.avif" data-color="Blush Rose">
-            <img class="w-full cursor-pointer" src="assets/icon/sutiene/13da4d200fe204be9ceca0d2547c32458ddc460f_ad91.avif" alt="Lumi�re Signature Demi Bra Blush" />
+          <div class="product-card flex flex-col" data-id="bra-002" data-name="Lumière Signature" data-subtitle="Smooth Demi Bra | Blush Rose" data-price="260" data-image="assets/icon/sutiene/13da4d200fe204be9ceca0d2547c32458ddc460f_ad91.avif" data-color="Blush Rose">
+            <img class="w-full aspect-[3/4] object-cover object-top cursor-pointer" src="assets/icon/sutiene/13da4d200fe204be9ceca0d2547c32458ddc460f_ad91.avif" alt="Lumière Signature Demi Bra Blush" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
-              <p class="text-sm sm:text-base font-medium">Lumi�re Signature</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Smooth Demi Bra � Blush Rose</p>
+              <p class="text-sm sm:text-base font-medium">Lumière Signature</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Smooth Demi Bra | Blush Rose</p>
               <span class="text-base sm:text-lg font-semibold">260.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
@@ -228,10 +205,10 @@
               <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADD TO BAG</button>
             </div>
           </div>
-          <div class="product-card flex flex-col" data-id="bra-003" data-name="�clat Push-Up" data-subtitle="Push-Up Bra with Contour Cups" data-price="310" data-image="assets/icon/sutiene/body-by-victoria.avif" data-color="Ivory">
-            <img class="w-full cursor-pointer" src="assets/icon/sutiene/body-by-victoria.avif" alt="�clat Push-Up Bra Ivory" />
+          <div class="product-card flex flex-col" data-id="bra-003" data-name="Éclat Push-Up" data-subtitle="Push-Up Bra with Contour Cups" data-price="310" data-image="assets/icon/sutiene/body-by-victoria.avif" data-color="Ivory">
+            <img class="w-full aspect-[3/4] object-cover object-top cursor-pointer" src="assets/icon/sutiene/body-by-victoria.avif" alt="Éclat Push-Up Bra Ivory" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
-              <p class="text-sm sm:text-base font-medium">�clat Push-Up</p>
+              <p class="text-sm sm:text-base font-medium">Éclat Push-Up</p>
               <p class="text-xs sm:text-sm text-gray-600 mb-1">Push-Up Bra with Contour Cups</p>
               <span class="text-base sm:text-lg font-semibold">310.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
@@ -244,11 +221,11 @@
               <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADD TO BAG</button>
             </div>
           </div>
-          <div class="product-card flex flex-col" data-id="bra-004" data-name="Lumi�re Signature" data-subtitle="Smooth Demi Bra � Sand" data-price="260" data-image="assets/icon/sutiene/SuOsr_1123744654A2_OM_F.avif" data-color="Sand">
-            <img class="w-full cursor-pointer" src="assets/icon/sutiene/SuOsr_1123744654A2_OM_F.avif" alt="Lumi�re Signature Demi Bra Sand" />
+          <div class="product-card flex flex-col" data-id="bra-004" data-name="Lumière Signature" data-subtitle="Smooth Demi Bra | Sand" data-price="260" data-image="assets/icon/sutiene/SuOsr_1123744654A2_OM_F.avif" data-color="Sand">
+            <img class="w-full aspect-[3/4] object-cover object-top cursor-pointer" src="assets/icon/sutiene/SuOsr_1123744654A2_OM_F.avif" alt="Lumière Signature Demi Bra Sand" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
-              <p class="text-sm sm:text-base font-medium">Lumi�re Signature</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Smooth Demi Bra � Sand</p>
+              <p class="text-sm sm:text-base font-medium">Lumière Signature</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Smooth Demi Bra | Sand</p>
               <span class="text-base sm:text-lg font-semibold">260.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
@@ -268,11 +245,11 @@
 
         <!-- Product grid 2 -->
         <div id="product-grid-2" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-5 py-7">
-          <div class="product-card flex flex-col" data-id="new-in-003" data-name="�clat Push-Up" data-subtitle="Push-Up Bra � New Season" data-price="310" data-image="assets/icon/sutiene/be4321f3558805f0a29d93b6b5e201864bc5b965_42fd.avif" data-color="Midnight Black">
-            <img class="w-full cursor-pointer" src="assets/icon/sutiene/be4321f3558805f0a29d93b6b5e201864bc5b965_42fd.avif" alt="�clat Push-Up Bra" />
+          <div class="product-card flex flex-col" data-id="new-in-003" data-name="Éclat Push-Up" data-subtitle="Push-Up Bra | New Season" data-price="310" data-image="assets/icon/sutiene/be4321f3558805f0a29d93b6b5e201864bc5b965_42fd.avif" data-color="Midnight Black">
+            <img class="w-full aspect-[3/4] object-cover object-top cursor-pointer" src="assets/icon/sutiene/be4321f3558805f0a29d93b6b5e201864bc5b965_42fd.avif" alt="Éclat Push-Up Bra" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
-              <p class="text-sm sm:text-base font-medium">�clat Push-Up</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Push-Up Bra � New Season</p>
+              <p class="text-sm sm:text-base font-medium">Éclat Push-Up</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Push-Up Bra | New Season</p>
               <span class="text-base sm:text-lg font-semibold">310.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
@@ -284,13 +261,13 @@
               <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADD TO BAG</button>
             </div>
           </div>
-          <div class="product-card flex flex-col" data-id="new-in-004" data-name="Dentelle" data-subtitle="Lace Tanga Brief � New Season" data-price="85" data-image="assets/icon/sutiene/UJpye_1123744928P7_OM_F.avif" data-color="Champagne" data-promo="Buy 3 for 200 lei">
-            <img class="w-full cursor-pointer" src="assets/icon/sutiene/UJpye_1123744928P7_OM_F.avif" alt="Dentelle Lace Tanga" />
+          <div class="product-card flex flex-col" data-id="new-in-004" data-name="Dentelle" data-subtitle="Lace Tanga Brief | New Season" data-price="85" data-image="assets/icon/sutiene/UJpye_1123744928P7_OM_F.avif" data-color="Champagne" data-promo="Buy 3 for 200 lei">
+            <img class="w-full aspect-[3/4] object-cover object-top cursor-pointer" src="assets/icon/sutiene/UJpye_1123744928P7_OM_F.avif" alt="Dentelle Lace Tanga" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
               <p class="text-sm sm:text-base font-medium">Dentelle</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Lace Tanga Brief � New Season</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Lace Tanga Brief | New Season</p>
               <span class="text-base sm:text-lg font-semibold">85.00 lei</span>
-              <span class="text-[#8B5A8C] text-xs mt-1">Buy 3 for 200 lei</span>
+              <span class="product-card__promo">Buy 3 for 200 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">S</button>
@@ -301,11 +278,11 @@
               <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADD TO BAG</button>
             </div>
           </div>
-          <div class="product-card flex flex-col" data-id="bra-006" data-name="�clat Push-Up" data-subtitle="Push-Up Bra � Dark Edition" data-price="310" data-image="assets/icon/sutiene/USsAH_1123744666H6_OM_F_AMZ.avif" data-color="Midnight Black">
-            <img class="w-full cursor-pointer" src="assets/icon/sutiene/USsAH_1123744666H6_OM_F_AMZ.avif" alt="�clat Push-Up Dark Edition" />
+          <div class="product-card flex flex-col" data-id="bra-006" data-name="Éclat Push-Up" data-subtitle="Push-Up Bra | Dark Edition" data-price="310" data-image="assets/icon/sutiene/USsAH_1123744666H6_OM_F_AMZ.avif" data-color="Midnight Black">
+            <img class="w-full aspect-[3/4] object-cover object-top cursor-pointer" src="assets/icon/sutiene/USsAH_1123744666H6_OM_F_AMZ.avif" alt="Éclat Push-Up Dark Edition" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
-              <p class="text-sm sm:text-base font-medium">�clat Push-Up</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Push-Up Bra � Dark Edition</p>
+              <p class="text-sm sm:text-base font-medium">Éclat Push-Up</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Push-Up Bra | Dark Edition</p>
               <span class="text-base sm:text-lg font-semibold">310.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
@@ -318,12 +295,12 @@
             </div>
           </div>
           <div class="product-card flex flex-col" data-id="panty-003" data-name="Dentelle" data-subtitle="Lace Tanga with Bow Detail" data-price="85" data-image="assets/icon/sutiene/13da4d200fe204be9ceca0d2547c32458ddc460f_ad91.avif" data-color="Blush Rose" data-promo="Buy 3 for 200 lei">
-            <img class="w-full cursor-pointer" src="assets/icon/sutiene/13da4d200fe204be9ceca0d2547c32458ddc460f_ad91.avif" alt="Dentelle Lace Tanga Blush" />
+            <img class="w-full aspect-[3/4] object-cover object-top cursor-pointer" src="assets/icon/sutiene/13da4d200fe204be9ceca0d2547c32458ddc460f_ad91.avif" alt="Dentelle Lace Tanga Blush" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
               <p class="text-sm sm:text-base font-medium">Dentelle</p>
               <p class="text-xs sm:text-sm text-gray-600 mb-1">Lace Tanga with Bow Detail</p>
               <span class="text-base sm:text-lg font-semibold">85.00 lei</span>
-              <span class="text-[#8B5A8C] text-xs mt-1">Buy 3 for 200 lei</span>
+              <span class="product-card__promo">Buy 3 for 200 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">S</button>
@@ -334,11 +311,11 @@
               <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADD TO BAG</button>
             </div>
           </div>
-          <div class="product-card flex flex-col" data-id="bra-008" data-name="�clat Push-Up" data-subtitle="Push-Up Bra � Blanc" data-price="310" data-image="assets/icon/sutiene/body-by-victoria.avif" data-color="Blanc">
-            <img class="w-full cursor-pointer" src="assets/icon/sutiene/body-by-victoria.avif" alt="�clat Push-Up Blanc" />
+          <div class="product-card flex flex-col" data-id="bra-008" data-name="Éclat Push-Up" data-subtitle="Push-Up Bra | Blanc" data-price="310" data-image="assets/icon/sutiene/body-by-victoria.avif" data-color="Blanc">
+            <img class="w-full aspect-[3/4] object-cover object-top cursor-pointer" src="assets/icon/sutiene/body-by-victoria.avif" alt="Éclat Push-Up Blanc" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
-              <p class="text-sm sm:text-base font-medium">�clat Push-Up</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Push-Up Bra � Blanc</p>
+              <p class="text-sm sm:text-base font-medium">Éclat Push-Up</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Push-Up Bra | Blanc</p>
               <span class="text-base sm:text-lg font-semibold">310.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
@@ -357,11 +334,11 @@
 
         <!-- Product grid 3 -->
         <div id="product-grid-3" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-5 py-7">
-          <div class="product-card flex flex-col" data-id="beauty-001" data-name="Lumi�re Body" data-subtitle="Nourishing Body Cream � Velvet Bloom" data-price="120" data-image="assets/icon/creme de corp/G0u9Y_112283084840_OM_F_2048x2048.avif" data-color="">
-            <img class="w-full cursor-pointer" src="assets/icon/creme de corp/G0u9Y_112283084840_OM_F_2048x2048.avif" alt="Lumi�re Body Cream Velvet Bloom" />
+          <div class="product-card flex flex-col" data-id="beauty-001" data-name="Lumière Body" data-subtitle="Nourishing Body Cream | Velvet Bloom" data-price="120" data-image="assets/icon/creme de corp/G0u9Y_112283084840_OM_F_2048x2048.avif" data-color="">
+            <img class="w-full aspect-[3/4] object-cover object-top cursor-pointer" src="assets/icon/creme de corp/G0u9Y_112283084840_OM_F_2048x2048.avif" alt="Lumière Body Cream Velvet Bloom" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
-              <p class="text-sm sm:text-base font-medium">Lumi�re Body</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Nourishing Body Cream � Velvet Bloom</p>
+              <p class="text-sm sm:text-base font-medium">Lumière Body</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Nourishing Body Cream | Velvet Bloom</p>
               <span class="text-base sm:text-lg font-semibold">120.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">236 ml</button>
@@ -370,11 +347,11 @@
               <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADD TO BAG</button>
             </div>
           </div>
-          <div class="product-card flex flex-col" data-id="beauty-002" data-name="Lumi�re Body" data-subtitle="Nourishing Body Cream � Golden Vanilla" data-price="120" data-image="assets/icon/creme de corp/rNmnX_112283094840_OM_F_2048x2048.avif" data-color="">
-            <img class="w-full cursor-pointer" src="assets/icon/creme de corp/rNmnX_112283094840_OM_F_2048x2048.avif" alt="Lumi�re Body Cream Golden Vanilla" />
+          <div class="product-card flex flex-col" data-id="beauty-002" data-name="Lumière Body" data-subtitle="Nourishing Body Cream | Golden Vanilla" data-price="120" data-image="assets/icon/creme de corp/rNmnX_112283094840_OM_F_2048x2048.avif" data-color="">
+            <img class="w-full aspect-[3/4] object-cover object-top cursor-pointer" src="assets/icon/creme de corp/rNmnX_112283094840_OM_F_2048x2048.avif" alt="Lumière Body Cream Golden Vanilla" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
-              <p class="text-sm sm:text-base font-medium">Lumi�re Body</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Nourishing Body Cream � Golden Vanilla</p>
+              <p class="text-sm sm:text-base font-medium">Lumière Body</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Nourishing Body Cream | Golden Vanilla</p>
               <span class="text-base sm:text-lg font-semibold">120.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">236 ml</button>
@@ -383,11 +360,11 @@
               <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADD TO BAG</button>
             </div>
           </div>
-          <div class="product-card flex flex-col" data-id="beauty-003" data-name="Lumi�re Body" data-subtitle="Nourishing Body Cream � Midnight Rose" data-price="120" data-image="assets/icon/creme de corp/HKTeo_112283084833_OM_F_2048x2048.avif" data-color="">
-            <img class="w-full cursor-pointer" src="assets/icon/creme de corp/HKTeo_112283084833_OM_F_2048x2048.avif" alt="Lumi�re Body Cream Midnight Rose" />
+          <div class="product-card flex flex-col" data-id="beauty-003" data-name="Lumière Body" data-subtitle="Nourishing Body Cream | Midnight Rose" data-price="120" data-image="assets/icon/creme de corp/HKTeo_112283084833_OM_F_2048x2048.avif" data-color="">
+            <img class="w-full aspect-[3/4] object-cover object-top cursor-pointer" src="assets/icon/creme de corp/HKTeo_112283084833_OM_F_2048x2048.avif" alt="Lumière Body Cream Midnight Rose" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
-              <p class="text-sm sm:text-base font-medium">Lumi�re Body</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Nourishing Body Cream � Midnight Rose</p>
+              <p class="text-sm sm:text-base font-medium">Lumière Body</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Nourishing Body Cream | Midnight Rose</p>
               <span class="text-base sm:text-lg font-semibold">120.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">236 ml</button>
@@ -396,11 +373,11 @@
               <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADD TO BAG</button>
             </div>
           </div>
-          <div class="product-card flex flex-col" data-id="beauty-004" data-name="Lumi�re Body" data-subtitle="Nourishing Body Cream � Ivory Musk" data-price="120" data-image="assets/icon/creme de corp/AinzB_112283094833_OM_F_2048x2048.avif" data-color="">
-            <img class="w-full cursor-pointer" src="assets/icon/creme de corp/AinzB_112283094833_OM_F_2048x2048.avif" alt="Lumi�re Body Cream Ivory Musk" />
+          <div class="product-card flex flex-col" data-id="beauty-004" data-name="Lumière Body" data-subtitle="Nourishing Body Cream | Ivory Musk" data-price="120" data-image="assets/icon/creme de corp/AinzB_112283094833_OM_F_2048x2048.avif" data-color="">
+            <img class="w-full aspect-[3/4] object-cover object-top cursor-pointer" src="assets/icon/creme de corp/AinzB_112283094833_OM_F_2048x2048.avif" alt="Lumière Body Cream Ivory Musk" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
-              <p class="text-sm sm:text-base font-medium">Lumi�re Body</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Nourishing Body Cream � Ivory Musk</p>
+              <p class="text-sm sm:text-base font-medium">Lumière Body</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Nourishing Body Cream | Ivory Musk</p>
               <span class="text-base sm:text-lg font-semibold">120.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">236 ml</button>
@@ -409,11 +386,11 @@
               <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADD TO BAG</button>
             </div>
           </div>
-          <div class="product-card flex flex-col" data-id="beauty-007" data-name="Lumi�re Parfum" data-subtitle="Eau de Parfum � Lumi�re Signature" data-price="350" data-image="assets/icon/creme de corp/parfum.avif" data-color="">
-            <img class="w-full cursor-pointer" src="assets/icon/creme de corp/parfum.avif" alt="Lumi�re Signature EDP" />
+          <div class="product-card flex flex-col" data-id="beauty-007" data-name="Lumière Parfum" data-subtitle="Eau de Parfum | Lumière Signature" data-price="350" data-image="assets/icon/creme de corp/parfum.avif" data-color="">
+            <img class="w-full aspect-[3/4] object-cover object-top cursor-pointer" src="assets/icon/creme de corp/parfum.avif" alt="Lumière Signature EDP" />
             <div class="flex flex-col p-2 sm:p-3 flex-1">
-              <p class="text-sm sm:text-base font-medium">Lumi�re Parfum</p>
-              <p class="text-xs sm:text-sm text-gray-600 mb-1">Eau de Parfum � Lumi�re Signature</p>
+              <p class="text-sm sm:text-base font-medium">Lumière Parfum</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Eau de Parfum | Lumière Signature</p>
               <span class="text-base sm:text-lg font-semibold">350.00 lei</span>
               <div class="flex gap-1 my-2 size-group">
                 <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">50 ml</button>
@@ -427,14 +404,14 @@
         <!-- Social section -->
         <div class="pt-16 sm:pt-28 pb-10 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-5 text-center px-4">
           <h2 class="text-lg sm:text-2xl font-semibold">FOLLOW OUR STORY</h2>
-          <a class="text-[#6B3F6E] text-lg sm:text-2xl font-semibold border-b-2 border-[#6B3F6E]" href="#">@LUMIERE.LINGERIE</a>
+          <a class="text-plum text-lg sm:text-2xl font-semibold border-b-2 border-plum" href="#">@LUMIERE.LINGERIE</a>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-5 pb-10">
-          <a href="#"><img class="w-full" src="assets/icon/sutiene/sutien-1.avif" alt="" /></a>
-          <a href="#"><img class="w-full" src="assets/icon/accesorii/24XtU_1125690554A2_OM_F.jpg.jpeg" alt="" /></a>
-          <a href="#"><img class="w-full" src="assets/icon/sutiene/sutien-2.avif" alt="" /></a>
-          <a href="#"><img class="w-full" src="assets/icon/accesorii/2N1VP_1125612154A2_OM_F.jpg.jpeg" alt="" /></a>
+          <a href="#" aria-label="Instagram post — LUMIÈRE bra collection"><img class="w-full" src="assets/icon/sutiene/sutien-1.avif" alt="LUMIÈRE bra editorial shot" /></a>
+          <a href="#" aria-label="Instagram post — LUMIÈRE accessories"><img class="w-full" src="assets/icon/accesorii/24XtU_1125690554A2_OM_F.jpg.jpeg" alt="LUMIÈRE accessories editorial shot" /></a>
+          <a href="#" aria-label="Instagram post — LUMIÈRE bra collection"><img class="w-full" src="assets/icon/sutiene/sutien-2.avif" alt="LUMIÈRE bra editorial shot" /></a>
+          <a href="#" aria-label="Instagram post — LUMIÈRE accessories"><img class="w-full" src="assets/icon/accesorii/2N1VP_1125612154A2_OM_F.jpg.jpeg" alt="LUMIÈRE accessories editorial shot" /></a>
         </div>
       </div>
     </main>
@@ -445,35 +422,35 @@
         <div class="flex flex-col w-full lg:max-w-[500px]">
           <p class="text-lg font-semibold pb-4">SUBSCRIBE TO STAY IN THE STORY</p>
           <form class="newsletter-form flex flex-col gap-0">
-            <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Enter your email address" type="email" aria-label="Newsletter email address" />
-            <button type="submit" class="bg-black text-white text-xs py-3 px-6 hover:bg-gray-800 transition mt-2 tracking-wider w-full">SUBSCRIBE</button>
+            <input class="lum-input" placeholder="Enter your email address" type="email" aria-label="Newsletter email address" />
+            <button type="submit" class="btn btn-primary btn-block btn-sm mt-2">SUBSCRIBE</button>
             <p class="newsletter-msg text-xs mt-2"></p>
           </form>
-          <span class="pt-5 text-sm">By subscribing you agree to the processing of your data for sending electronic messages containing commercial information. You may withdraw consent at any time via the unsubscribe option in any email. More details in our </span><a class="text-[#8B5A8C] hover:text-[#6B3F6E] pb-4 text-sm" href="politica-de-confidentialitate.html">Privacy Policy.</a>
-          <span class="pb-10 sm:pb-16 text-sm pt-3">Your personal data will be used to process your orders, support your experience on this website, and for other purposes described in our <a class="text-[#8B5A8C] hover:text-[#6B3F6E] text-sm" href="politica-de-confidentialitate.html">Privacy Policy.</a></span>
+          <span class="pt-5 text-sm">By subscribing you agree to the processing of your data for sending electronic messages containing commercial information. You may withdraw consent at any time via the unsubscribe option in any email. More details in our </span><a class="text-brand hover:text-plum pb-4 text-sm" href="politica-de-confidentialitate.html">Privacy Policy.</a>
+          <span class="pb-10 sm:pb-16 text-sm pt-3">Your personal data will be used to process your orders, support your experience on this website, and for other purposes described in our <a class="text-brand hover:text-plum text-sm" href="politica-de-confidentialitate.html">Privacy Policy.</a></span>
         </div>
         <div class="w-full pb-10">
           <nav class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <ul class="flex flex-col gap-4 text-sm">
               <li class="text-black font-semibold">HELP</li>
-              <li><a href="faq.html" class="hover:text-[#6B3F6E]">FAQ</a></li>
-              <li><a href="contact.html" class="hover:text-[#6B3F6E]">Contact Us</a></li>
+              <li><a href="faq.html" class="footer-link">FAQ</a></li>
+              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
             </ul>
             <ul class="flex flex-col gap-4 text-sm">
               <li class="text-black font-semibold">INFORMATION</li>
-              <li><a href="livrare-plata.html" class="hover:text-[#6B3F6E]">Shipping & Payment</a></li>
-              <li><a href="returnari.html" class="hover:text-[#6B3F6E]">Returns & Claims</a></li>
-              <li><a href="politica-de-confidentialitate.html" class="hover:text-[#6B3F6E]">Privacy Policy</a></li>
-              <li><a href="termeni-conditii.html" class="hover:text-[#6B3F6E]">Terms & Conditions</a></li>
+              <li><a href="livrare-plata.html" class="footer-link">Shipping & Payment</a></li>
+              <li><a href="returnari.html" class="footer-link">Returns & Claims</a></li>
+              <li><a href="politica-de-confidentialitate.html" class="footer-link">Privacy Policy</a></li>
+              <li><a href="termeni-conditii.html" class="footer-link">Terms & Conditions</a></li>
             </ul>
             <ul class="flex flex-col gap-4 text-sm">
               <li class="text-black font-semibold">CUSTOMER CARE</li>
-              <li><a href="contul-meu.html" class="hover:text-[#6B3F6E]">My Account</a></li>
-              <li><a href="wishlist.html" class="hover:text-[#6B3F6E]">Wishlist</a></li>
-              <li><a href="termeni-conditii.html" class="hover:text-[#6B3F6E]">Terms & Conditions</a></li>
-              <li><a href="faq.html" class="hover:text-[#6B3F6E]">Promotions</a></li>
-              <li><a href="returnari.html" class="hover:text-[#6B3F6E]">Returns & Claims</a></li>
-              <li><a href="politica-de-confidentialitate.html" class="hover:text-[#6B3F6E]">Privacy Policy</a></li>
+              <li><a href="contul-meu.html" class="footer-link">My Account</a></li>
+              <li><a href="wishlist.html" class="footer-link">Wishlist</a></li>
+              <li><a href="termeni-conditii.html" class="footer-link">Terms & Conditions</a></li>
+              <li><a href="faq.html" class="footer-link">Promotions</a></li>
+              <li><a href="returnari.html" class="footer-link">Returns & Claims</a></li>
+              <li><a href="politica-de-confidentialitate.html" class="footer-link">Privacy Policy</a></li>
             </ul>
           </nav>
         </div>
@@ -481,16 +458,16 @@
     </footer>
     <div class="w-full py-5 border-t border-gray-200">
       <div class="container mx-auto px-4">
-        <span class="text-sm text-gray-500">� 2025 Lumi�re. All Rights Reserved.</span>
+        <span class="text-sm text-gray-500">© 2025 Lumière. All Rights Reserved.</span>
       </div>
     </div>
 
     <!-- Newsletter Popup -->
-    <div id="newsletter-popup" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
+    <div id="newsletter-popup" role="dialog" aria-modal="true" aria-labelledby="popup-heading" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
       <div class="bg-white relative max-w-md w-full px-8 py-10 text-center shadow-xl">
-        <button id="close-popup" class="absolute top-3 right-4 text-black text-xl font-light leading-none">&times;</button>
-        <p class="font-serif text-4xl sm:text-5xl font-bold tracking-widest mb-4">LUMI�RE</p>
-        <h2 class="text-xl sm:text-2xl font-light mb-3">Wear your story.</h2>
+        <button id="close-popup" aria-label="Close newsletter popup" class="absolute top-3 right-4 text-black text-xl font-light leading-none">&times;</button>
+        <p class="font-serif text-4xl sm:text-5xl font-bold tracking-widest mb-4 text-balance" aria-hidden="true">LUMIÈRE</p>
+        <h2 id="popup-heading" class="text-xl sm:text-2xl font-light mb-3">Wear your story.</h2>
         <p class="text-sm sm:text-base mb-6">
           Subscribe to our <strong>newsletter</strong>,<br />
           and receive a <strong>15% discount</strong> on your first order<br />
@@ -498,40 +475,20 @@
         </p>
         <div class="flex flex-col gap-3 text-left mb-5">
           <div>
-            <label class="text-xs text-gray-600 block mb-1">First Name</label>
-            <input id="popup-name" type="text" class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-gray-500" />
+            <label for="popup-name" class="text-xs text-gray-600 block mb-1">First Name</label>
+            <input id="popup-name" type="text" class="lum-input" />
           </div>
           <div>
-            <label class="text-xs text-gray-600 block mb-1">Email</label>
-            <input id="popup-email" type="email" class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-gray-500" />
+            <label for="popup-email" class="text-xs text-gray-600 block mb-1">Email</label>
+            <input id="popup-email" type="email" class="lum-input" />
           </div>
         </div>
-        <button id="popup-submit" class="bg-[#E8D5B0] hover:bg-[#d4be94] text-black text-sm px-10 py-3 transition mb-5">Subscribe</button>
+        <button id="popup-submit" class="btn btn-brand mb-5">Subscribe</button>
         <p class="text-[10px] text-gray-500 leading-relaxed">
           By subscribing, you agree to the processing of your personal data for sending electronic messages containing commercial information. You may withdraw consent at any time via the unsubscribe option in any email. For more information, please refer to our <a href="politica-de-confidentialitate.html" class="underline">Privacy Policy</a>.
         </p>
       </div>
     </div>
-    <script>
-      // Newsletter popup
-      (function () {
-        var popup = document.getElementById('newsletter-popup');
-        if (!popup) return;
-        function closePopup() { popup.style.display = 'none'; }
-        document.getElementById('close-popup').addEventListener('click', closePopup);
-        popup.addEventListener('click', function (e) { if (e.target === popup) closePopup(); });
-        document.getElementById('popup-submit').addEventListener('click', function () {
-          var name  = document.getElementById('popup-name').value.trim();
-          var email = document.getElementById('popup-email').value.trim();
-          if (!email) { document.getElementById('popup-email').focus(); return; }
-          var params = new URLSearchParams();
-          if (name) params.set('name', name);
-          params.set('email', email);
-          window.location.href = 'register.html?' + params.toString();
-        });
-      })();
-    </script>
-  
     <script type="module" src="src/pages/home.ts"></script>
   </body>
 </html>
