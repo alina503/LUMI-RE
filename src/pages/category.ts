@@ -25,7 +25,7 @@ async function loadCategoryProducts(): Promise<void> {
       const nameEl = card.querySelector<HTMLElement>('.product-name');
       if (nameEl) {
         nameEl.addEventListener('click', () => {
-          window.location.href = `produs.html?id=${product.id}`;
+          window.location.href = `${import.meta.env.BASE_URL}produs.html?id=${product.id}`;
         });
       }
       grid.appendChild(card);

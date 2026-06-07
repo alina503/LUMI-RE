@@ -25,6 +25,7 @@ export function initNewsletterModal(): void {
       emailInput.focus();
       return;
     }
+    modal.close();
     submitNewsletterForm({
       name: nameInput?.value.trim() ?? '',
       email,

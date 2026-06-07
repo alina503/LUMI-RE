@@ -9,9 +9,9 @@ import { PLACEHOLDER } from '../../constants/images';
 const s = sanitizeText;
 
 const MODAL_HTML = `
-<div id="product-popup" role="dialog" aria-modal="true" aria-labelledby="pp-name" style="display:none"
-  class="fixed inset-0 flex items-center justify-center bg-black/60 px-4 py-8"
-  style="z-index:var(--lum-z-modal);">
+<div id="product-popup" role="dialog" aria-modal="true" aria-labelledby="pp-name"
+  style="display:none;z-index:var(--lum-z-modal);"
+  class="fixed inset-0 flex items-center justify-center bg-black/60 px-4 py-8">
   <div class="bg-white relative w-full max-w-2xl max-h-[90vh] overflow-y-auto flex flex-col sm:flex-row"
     style="box-shadow:var(--lum-shadow-xl);">
 

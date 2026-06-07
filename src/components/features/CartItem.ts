@@ -40,10 +40,15 @@ export function renderCartItem(
       ${item.promo ? `<p class="text-red-400 text-xs mt-1">${s(item.promo)}</p>` : ''}
     </div>`;
 
+  const qtySpan = div.querySelector<HTMLElement>('.qty-val');
   div.querySelector('.remove-btn')?.addEventListener('click', () => onRemove(item.key));
-  div.querySelector('.qty-btn.plus')?.addEventListener('click', () => onQtyChange(item.key, item.qty + 1));
+  div.querySelector('.qty-btn.plus')?.addEventListener('click', () => {
+    const current = parseInt(qtySpan?.textContent ?? '1', 10);
+    onQtyChange(item.key, current + 1);
+  });
   div.querySelector('.qty-btn.minus')?.addEventListener('click', () => {
-    if (item.qty > 1) onQtyChange(item.key, item.qty - 1);
+    const current = parseInt(qtySpan?.textContent ?? '1', 10);
+    if (current > 1) onQtyChange(item.key, current - 1);
   });
 
   return div;

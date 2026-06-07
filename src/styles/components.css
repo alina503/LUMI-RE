@@ -21,6 +21,13 @@
      utility chain that appears on every page header.
      ════════════════════════════════════════════════════════════════════════ */
 
+  .cart-discount-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--lum-text-sm);
+    color: var(--lum-success);
+  }
+
   .banner-offer-btn {
     font-size: var(--lum-text-xs);
     background: transparent;

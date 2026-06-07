@@ -144,8 +144,8 @@ export function initAuthHeader(): void {
   if (!userLink) return;
 
   if (session) {
-    userLink.href = '#';
-    userLink.title = `${session.firstName} ${session.lastName}`;
+    userLink.href = 'contul-meu.html';
+    userLink.title = `${session.firstName} ${session.lastName} — My Account`;
     if (userIcon) {
       userIcon.className = 'fa-solid fa-user text-xl sm:text-2xl cursor-pointer text-brand';
     }
